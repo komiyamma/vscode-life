@@ -1,0 +1,9 @@
+{
+  "name": "vscode",
+  "version": "0.0.0",
+  "description": "VSCode",
+  "main": "app.js",
+  "author": {
+    "name": "admin"
+  }
+}
