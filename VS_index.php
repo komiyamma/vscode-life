@@ -137,11 +137,11 @@ if ( strpos($strPageTemplate, "hovercard") != false ) {
 
 //-------------- 単純な単語の置き換え。 --------------
 // １つのコンテンツページに関して、各種置き換え
-$replaceNameKeys = Array("%(hilight)s", "%(home)s", "%(tshd)s", "%(ts95)s", "%(olink)s", "%(ilink)s", "%(environment_os)s", "%(environment_dnet)s", "%(environment_rt)s", "%(environment_rt_warn)s" );
-$replaceNameVals = Array($strHilightJS, '<i class="fa fa-ts95 fa-fw"></i>サイト', "天翔記HD版", "天翔記95PK版", '<i class="fa fa-external-link fa-fw" id="link_icon"></i>', '<i class="fa fa-internal-link-95 fa-fw" id="link_icon"></i>',
+$replaceNameKeys = Array("%(hilight)s", "%(home)s", "%(vscode)s", "%(olink)s", "%(environment_os)s", "%(environment_dnet)s", "%(environment_rt)s", "%(environment_rt_warn)s" );
+$replaceNameVals = Array($strHilightJS, '<i class="fa fa-vscode fa-fw"></i>サイト', "VSCode.life", '<i class="fa fa-external-link fa-fw" id="link_icon"></i>',
                                         '<tr><td>OS</td><td>Windows10以上</td><td>それ未満のバージョンのOSでも動作する可能性はありますが、<br>対象外となります。</td></tr>',
                                         '<tr><td>.NET</td><td>.NET FrameWork 4.6以上</td><td>(※ Windows10には最初から入っています。)</td></tr>',
-                                        '<tr><td>再頒布<br>パッケージ</td><td>VS2015 Runtime x86版<br>Update 1</td><td><a href="http://www.microsoft.com/ja-jp/download/details.aspx?id=49984"><b>Visual Studio 2015 Runtime Update 1</b></a> をインストールしたことがない人は、 <br>インストールしてください。<br></td></tr>',
+                                        '<tr><td>再頒布<br>パッケージ</td><td>VS2015 Runtime x86版<br>Update 1</td><td><a href="http://www.microsoft.com/ja-jp/download/details.aspx?id=48145"><b>Visual Studio 2015 Runtime</b></a> をインストールしたことがない人は、 <br>インストールしてください。<br></td></tr>',
                                         '<fieldset class="alert alert-warning"><legend>VS2015 Runtime x86版</legend>OSのビット数が64bitか32bitかに関わらずx86版をインストールしてください。<br></fieldset>' );
 $strPageTemplate = str_replace($replaceNameKeys, $replaceNameVals, $strPageTemplate);
 //-------------- 単純な単語の置き換えここまで。 --------------
