@@ -10,7 +10,7 @@ $orgParamPage = $_GET['page'];
 
 // デフォルトのページ
 if ( $urlParamPage == "" ) {
-  $urlParamPage = "VS_top";
+  $urlParamPage = "VS_setup_overview";
 }
 
 

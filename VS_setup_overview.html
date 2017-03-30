@@ -1,0 +1,57 @@
+%(hilight)s
+<h2><i class="fa fa-book fa-fw"></i>「セットアップ」の注目点</h2>
+
+<ul class="checklist">
+    <li>
+        <h3>.NET Framework 4.5.2</h3>
+        <p>
+            VSCodeを動かすには、VSCode 4.5.2が必要。
+        </p>
+    </li>
+
+    <li>
+        <h3>コマンドでの起動</h3>
+        <fieldset class="code">
+            <legend>カレントディレクトリで起動</legend><pre class="brush:ps;">
+code .
+</pre>
+        </fieldset>
+        <fieldset class="code">
+            <legend>ファイルを指定して起動</legend><pre class="brush:ps;">
+code ファイルパス
+</pre>
+        </fieldset>
+        <fieldset class="code">
+            <legend>ディレクトリを指定して起動</legend><pre class="brush:ps;">
+code ディレクトリパス
+</pre>
+        </fieldset>
+        <p>特にこの「<span class="positive">ディレクトリを指定して起動</span>」が便利。</p>
+        <p>
+            VSCodeは「プロジェクト」機能を持っており、<br>
+            Git/Githubや、拡張機能作成時など、<br>「まとまったファイル群」として捉えることが出来る。<br>
+        </p>
+    </li>
+
+    <li>
+        <h3>プロキシの設定</h3>
+        <p>
+            自宅PCや自分のノートなどでは問題ないものの、<br>
+            会社など、イントラネットがプロキシを利用するPCでは、<br>
+            拡張モジュール等で失敗する場合がある。<br>
+        </p>
+        <p>
+            こういった環境ではプロキシを指定する。
+        </p>
+        <p>環境変数に、</p>
+        <fieldset class="code">
+            <legend>PCの環境変数の一例</legend><pre class="brush:ps;auto-links:false">
+http_proxy=http://10.203.0.1:5187/ 
+</pre>
+        </fieldset>
+        <p>
+            などと、指定する。<br>
+            (IPアドレスやPort番号は、会社のプロキシのものを調べて指定する)
+        </p>
+    </li>
+</ul>

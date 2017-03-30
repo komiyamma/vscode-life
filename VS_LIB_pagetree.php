@@ -3,6 +3,9 @@ $content_hash = [
     'VS_top' =>
         [ 'html'=>'VS_top.html', 'title'=>'トップページ' , 'dir'=>'初期設置'],
 
+    'VS_setup_overview' =>
+        [ 'html'=>'VS_setup_overview.html', 'title'=>'VSCode関連リンク' , 'dir'=>'セットアップ'],
+
     'VS_link' =>
         [ 'html'=>'VS_link.html', 'title'=>'VSCode関連リンク' , 'dir'=>'リンク']
 ];
