@@ -28,7 +28,7 @@ jquery依存。SyntaxHighlightの実装。
 イメージ画像は実際に画面内に入ってから読み込まれる機能。  
 jquery依存。LazyLoadの実装。
 
-＊ HoverCard系  
+* HoverCard系  
 jquery依存。下線等にマウスをもっていくと、  
 文字位置そのままで説明噴出しが被る。
 
