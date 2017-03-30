@@ -3,8 +3,8 @@ $content_hash = [
     'VS_top' =>
         [ 'html'=>'VS_top.html', 'title'=>'トップページ' , 'dir'=>'初期設置'],
 
-    'HD_nobu_link' =>
-        [ 'html'=>'HD_nobu_link.html', 'title'=>'天翔記関連リンク' , 'dir'=>'リンク']
+    'VS_link' =>
+        [ 'html'=>'VS_link.html', 'title'=>'VSCode関連リンク' , 'dir'=>'リンク']
 ];
 
 
