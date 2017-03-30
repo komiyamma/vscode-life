@@ -6,6 +6,9 @@ $content_hash = [
     'VS_setup_overview' =>
         [ 'html'=>'VS_setup_overview.html', 'title'=>'VSCode関連リンク' , 'dir'=>'セットアップ'],
 
+    'VS_keybindings' =>
+        [ 'html'=>'VS_keybindings.html', 'title'=>'既定のキーバインド' , 'dir'=>'セットアップ'],
+
     'VS_link' =>
         [ 'html'=>'VS_link.html', 'title'=>'VSCode関連リンク' , 'dir'=>'リンク']
 ];
