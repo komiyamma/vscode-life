@@ -121,6 +121,7 @@ if ( strpos($strPageTemplate, "brush:") != false ) {
     $strShCoreFooter = "<script type='text/javascript' src='./hilight/scripts/shcore-3.0.83.min.js'></script>\n" .
                        "<script type='text/javascript'>\n" .
                        "SyntaxHighlighter.defaults['toolbar'] = false;\n" .
+                       "SyntaxHighlighter.defaults['auto-links'] = false;\n" .
                        "SyntaxHighlighter.all();\n" .
                        "</script>\n";
 }
