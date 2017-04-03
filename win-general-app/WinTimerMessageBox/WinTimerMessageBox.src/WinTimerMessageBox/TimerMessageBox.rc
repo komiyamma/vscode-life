@@ -72,9 +72,9 @@ BEGIN
 VALUE "Comments", "時間制限付のメッセージボックス"
 VALUE "FileDescription", "時間制限付のメッセージボックス"
 VALUE "FileVersion", "1.0.0.0"
-VALUE "InternalName", "TimerMessageBox"
+VALUE "InternalName", "WinTimerMessageBox"
 VALUE "LegalCopyright", "Copyright (C) 2016-2017 VSCode.life"
-VALUE "OriginalFilename", "TimerMessageBox"
+VALUE "OriginalFilename", "WinTimerMessageBox"
 VALUE "ProductName", "時間制限付のメッセージボックス"
 VALUE "ProductVersion", "1.0.0.0"
 END
