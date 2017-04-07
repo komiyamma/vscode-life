@@ -3,9 +3,7 @@
 // and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
 
-const pl2exe_pl_path = "C:/usr/perl/site/bin/pl2exe.pl"
-
-let exec = require("child_process").exec;
+let process_exec = require("child_process").exec;
 
 // this method is called when your extension is activated your extension is
 // activated the very first time the command is executed
@@ -21,10 +19,8 @@ export function activate(context : vscode.ExtensionContext) {
     // must match the command field in package.json
     let disposable = vscode.commands.registerCommand('extension.pl2exe', () => {
 
-        // ファイル名の取得
-        var filename = vscode.window.activeTextEditor.document.fileName;
-
-        exec_command('perl' + ' ' + pl2exe_pl_path + ' ' +filename);
+        var pl2exe: PL2EXE = new PL2EXE();
+        pl2exe.Compile();
 
         // The code you place here will be executed every time your command is executed
         // Display a message box to the user
@@ -34,20 +30,56 @@ export function activate(context : vscode.ExtensionContext) {
     context.subscriptions.push(disposable);
 }
 
-/**
- * 
- * @param command : 実行するコマンドの文字列
- */
-function exec_command(command :string) {
-    exec(command , function (error, stdout, stderr) {
+class PL2EXE {
+
+    private static pl2exe = "C:/usr/perl/site/bin/pl2exe.pl";
+    private static perlexe = "perl.exe";
+
+    constructor() {
+    }
+    
+    private GetCommandString(): string {
+        // ファイル名の取得
+        var filename = vscode.window.activeTextEditor.document.fileName;
+        var command = PL2EXE.perlexe + ' ' + PL2EXE.pl2exe + ' ' +filename;
+        return command;
+    }
+
+    /**
+     * 外部コマンドを実行する。
+     * @param command : 実行するコマンドの文字列
+     */
+    public Compile() {
+        process_exec(this.GetCommandString(), this.OutputDataRecieved );
+    }
+
+    /**
+     * execしたアウトプットの受信
+     * @param error : エラーメッセージ
+     * @param stdout : 標準出力メッセージ
+     * @param stderr : 標準エラーメッセージ
+     */
+    private OutputDataRecieved (error: string, stdout: string, stderr: string) {
         console.log('stdout: ' + stdout);
         console.log('stderr: ' + stderr);
         if (error !== null) {
             console.log('exec error: ' + error);
         } else {
-            vscode.window.showInformationMessage("compile complete!!")
+            PL2EXE.OutputWindow(stdout);
         }
-    });
+    }
+
+    /**
+     * 出力ウィンドウに文字列を出す。
+     * @param channnel_name : チャンネルの名前
+     */
+    static OutputWindow(message: string) {
+        vscode.window.showInformationMessage("compile complete!!")
+        var output = vscode.window.createOutputChannel("py2exe");
+        output.show();
+        output.clear();
+        output.append(message)
+    }
 }
 
 // this method is called when your extension is deactivated
