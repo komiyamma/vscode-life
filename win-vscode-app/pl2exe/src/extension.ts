@@ -44,6 +44,8 @@ function exec_command(command :string) {
         console.log('stderr: ' + stderr);
         if (error !== null) {
             console.log('exec error: ' + error);
+        } else {
+            vscode.window.showInformationMessage("compile complete!!")
         }
     });
 }
