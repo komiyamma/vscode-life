@@ -5,8 +5,10 @@
 
 ## Requirements
 
-pl2exe.pl。  
-引数に現在編集中の.plテキストのフルパスが渡る。
+PAR::Packerが入っていること
+
+WinPARPacker.pl : 引数に現在編集中の.plテキストのフルパスが渡る。
+└このファイルは *perl* フォルダの *site\bin* に￥入れる。
 
 ## Extension Settings
 

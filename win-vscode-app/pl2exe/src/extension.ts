@@ -19,8 +19,8 @@ export function activate(context : vscode.ExtensionContext) {
     // must match the command field in package.json
     let disposable = vscode.commands.registerCommand('extension.pl2exe', () => {
 
-        var pl2exe: PL2EXE = new PL2EXE();
-        pl2exe.Compile();
+        var wpp: WinPARPacker = new WinPARPacker();
+        wpp.Compile();
 
         // The code you place here will be executed every time your command is executed
         // Display a message box to the user
@@ -30,10 +30,10 @@ export function activate(context : vscode.ExtensionContext) {
     context.subscriptions.push(disposable);
 }
 
-class PL2EXE {
+class WinPARPacker {
 
-    private static pl2exe = "C:/usr/perl/site/bin/pl2exe.pl";
-    private static perlexe = "perl.exe";
+    private static command = "C:/usr/perl/site/bin/WinPARPacker.pl";
+    private static interpreter = "perl.exe";
 
     constructor() {
     }
@@ -41,7 +41,7 @@ class PL2EXE {
     private GetCommandString(): string {
         // ファイル名の取得
         var filename = vscode.window.activeTextEditor.document.fileName;
-        var command = PL2EXE.perlexe + ' ' + PL2EXE.pl2exe + ' ' +filename;
+        var command = WinPARPacker.interpreter + ' ' + WinPARPacker.command + ' ' +filename;
         return command;
     }
 
@@ -65,7 +65,7 @@ class PL2EXE {
         if (error !== null) {
             console.log('exec error: ' + error);
         } else {
-            PL2EXE.OutputWindow(stdout);
+            WinPARPacker.OutputWindow(stdout);
         }
     }
 
@@ -75,7 +75,7 @@ class PL2EXE {
      */
     static OutputWindow(message: string) {
         vscode.window.showInformationMessage("compile complete!!")
-        var output = vscode.window.createOutputChannel("py2exe");
+        var output = vscode.window.createOutputChannel("PAR::Packer");
         output.show();
         output.clear();
         output.append(message)
