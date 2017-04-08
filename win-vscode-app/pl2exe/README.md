@@ -6,6 +6,17 @@
 ## Requirements
 
 PAR::Packerが入っていること
+├Strberry Perlなら入りやすいが、シェア的に難あり
+└Active Perlだと5.16ぐらいのやや古めのパッケージでないと、入れるのに苦労する。
+```powershell
+ppm install Getopt::ArgvFile
+ppm install Module::ScanDeps
+ppm install PAR
+cpan install PAR::Dist
+cpan install Win32::ShellQuote
+ppm install Win32::Exe
+cpan isntall PAR::Packer
+```
 
 WinPARPacker.pl : 引数に現在編集中の.plテキストのフルパスが渡る。
 └このファイルは *perl* フォルダの *site\bin* に￥入れる。
