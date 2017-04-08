@@ -5,9 +5,9 @@
 
 ## Requirements
 
-PAR::Packerが入っていること
-├Strberry Perlなら入りやすいが、シェア的に難あり
-└Active Perlだと5.16ぐらいのやや古めのパッケージでないと、入れるのに苦労する。
+PAR::Packerが入っていること  
+├Strberry Perlなら入りやすいが、シェア的に難あり  
+└Active Perlだと5.16ぐらいのやや古めのパッケージでないと、入れるのに苦労する。  
 ```powershell
 ppm install Getopt::ArgvFile
 ppm install Module::ScanDeps
