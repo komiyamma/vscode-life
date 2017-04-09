@@ -33,6 +33,7 @@ class WinPARPacker {
 
     private static command = "C:/usr/perl/site/bin/WinPARPacker.pl";
     private static interpreter = "perl.exe";
+    private static output = vscode.window.createOutputChannel("PerlParPacker");
 
     constructor() {
     }
@@ -49,7 +50,7 @@ class WinPARPacker {
      * @param command : 実行するコマンドの文字列
      */
     public Compile() {
-        process_exec(this.GetCommandString(), this.OutputDataRecieved );
+        child_process.exec(this.GetCommandString(), this.OutputDataRecieved );
     }
 
     /**
@@ -64,7 +65,7 @@ class WinPARPacker {
         if (error !== null) {
             console.log('exec error: ' + error);
         } else {
-            WinPARPacker.OutputWindow(stdout);
+            WinPARPacker.OutputWindow(WinPARPacker.output, stdout);
         }
     }
 
@@ -72,9 +73,8 @@ class WinPARPacker {
      * 出力ウィンドウに文字列を出す。
      * @param channnel_name : チャンネルの名前
      */
-    static OutputWindow(message: string) {
+    static OutputWindow(output: vscode.OutputChannel, message: string) {
         vscode.window.showInformationMessage("compile complete!!")
-        var output = vscode.window.createOutputChannel("PAR::Packer");
         output.show();
         output.clear();
         output.append(message)

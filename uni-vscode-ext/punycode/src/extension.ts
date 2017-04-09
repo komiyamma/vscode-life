@@ -71,8 +71,8 @@ function GetConvertedPunyCode(sel: string) {
  * 対象のメッセージを出力ウィンドウへと表示する
  * @param message : 表示対象のメッセージ
  */
+var outputChannel = vscode.window.createOutputChannel("ConvertPunyCode");
 function OutputWindow(message: string) {
-    var outputChannel = vscode.window.createOutputChannel("ConvertPunyCode");
     outputChannel.show();
     outputChannel.clear();
     outputChannel.append(message + "\n");
