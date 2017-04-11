@@ -1,4 +1,4 @@
-# プログラミング用フォント RictyDiminishedJPYen-Regular
+# プログラミング用フォント Ricty Diminished JPYen
 
 Ricty Diminished Discordのフォントの「(半角)＼」を「(半角)￥」へと形状を変更しただけのものとなります。
 
