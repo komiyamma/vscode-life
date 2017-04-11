@@ -9,6 +9,9 @@ $content_hash = [
     'VS_keybindings' =>
         [ 'html'=>'VS_keybindings.html', 'title'=>'既定のキーバインド' , 'dir'=>'セットアップ'],
 
+    'VS_font_rdd' =>
+        [ 'html'=>'VS_font_rdd.html', 'title'=>'Rictyフォント ' , 'dir'=>'フォント'],
+
     'VS_link' =>
         [ 'html'=>'VS_link.html', 'title'=>'VSCode関連リンク' , 'dir'=>'リンク']
 ];

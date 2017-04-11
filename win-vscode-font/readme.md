@@ -10,5 +10,3 @@ Ricty Diminished Font の著作やランセンスについては、
 * Ricty Diminished JPYen は [SIL Open Font License (OFL) Version 1.1](http://scripts.sil.org/ofl) に従うものとします。
 
 # バージョン
-
-
