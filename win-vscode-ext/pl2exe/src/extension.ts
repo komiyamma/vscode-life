@@ -33,7 +33,6 @@ class WinPARPacker {
 
     private static command = "C:/usr/perl/site/bin/WinPARPacker.pl";
     private static interpreter = "perl.exe";
-    private static output = vscode.window.createOutputChannel("PerlParPacker");
 
     constructor() {
     }
@@ -65,21 +64,23 @@ class WinPARPacker {
         if (error !== null) {
             console.log('exec error: ' + error);
         } else {
-            WinPARPacker.OutputWindow(WinPARPacker.output, stdout);
+            OutputWindow(stdout);
         }
     }
-
-    /**
-     * 出力ウィンドウに文字列を出す。
-     * @param channnel_name : チャンネルの名前
-     */
-    static OutputWindow(output: vscode.OutputChannel, message: string) {
-        vscode.window.showInformationMessage("compile complete!!")
-        output.show();
-        output.clear();
-        output.append(message)
-    }
 }
+
+/**
+ * 出力ウィンドウに文字列を出す。
+ * @param channnel_name : チャンネルの名前
+ */
+var outputChannel = vscode.window.createOutputChannel("PerlParPacker");
+function OutputWindow(message: string) {
+    vscode.window.showInformationMessage("compile complete!!")
+    outputChannel.show();
+    outputChannel.clear();
+    outputChannel.append(message)
+}
+
 
 // this method is called when your extension is deactivated
 export function deactivate() {}
