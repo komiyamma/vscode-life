@@ -9,8 +9,14 @@ $content_hash = [
     'VS_keybindings' =>
         [ 'html'=>'VS_keybindings.html', 'title'=>'既定のキーバインド' , 'dir'=>'セットアップ'],
 
+	'VS_extension_location' =>
+        [ 'html'=>'VS_extension_location.html', 'title'=>'自作のextensionの配置場所' , 'dir'=>'拡張機能'],
+
     'VS_font_rdd' =>
         [ 'html'=>'VS_font_rdd.html', 'title'=>'Rictyフォント ' , 'dir'=>'フォント'],
+
+    'VS_book_ts' =>
+        [ 'html'=>'VS_book_ts.html', 'title'=>'TypeScript関連のお薦め電子書籍' , 'dir'=>'リンク'],
 
     'VS_link' =>
         [ 'html'=>'VS_link.html', 'title'=>'VSCode関連リンク' , 'dir'=>'リンク']
@@ -19,14 +25,6 @@ $content_hash = [
 
 
 $filetime_hash = [
-    'HD_nobu_tools_retsuden' =>
-        'cnt_tool/mod_retsuden/HD.RetsudenEditor.zip',
-
-    'HD_nobu_sdk_hdsdk_install' =>
-        'cnt_sdk/hd_version/HD.version.SDK.zip',
-
-    'HD_nobu_mod_ironpython_init' =>
-        'cnt_mod/mod_ironpython/HD.IronPythonMod.zip'
 
 ];
 ?>
