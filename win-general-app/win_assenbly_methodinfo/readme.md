@@ -5,7 +5,7 @@
 - .NET Framework 4.7 その性質上、4系で最も新しい.NET Frameworkを必要なようにしている。
    (新しいものは古いものも読めるが、古いと新しいアセンブリは読めないため)
 - 検索対象は、「.NET Framework 4系のフォルダ」と「カレントフォルダ」
-- PowerShellだと「`」などがいたずらずるので、cmd.exeの方が良い。
+- PowerShellだと「`」などが邪魔するので、cmd.exeの方が良い。
 
 ```
 WinAssemblyMethodInfoForDTS [NameSpace] [Class] [Option]
