@@ -4,6 +4,7 @@
 
 
 - 検索対象は、「.NET Framework 4系のフォルダ」と「カレントフォルダ」
+- PowerShellだと「`」などがいたずらずるので、cmd.exeの方が良い。
 
 ```
 WinAssenblyMethodInfoFotDTS [NameSpace] [Class] [Option]
@@ -19,6 +20,13 @@ WinAssenblyMethodInfoFotDTS any Form
 
 -- 上と同様だが、「string」「number」「boolean」以外の型は「any」にする
 WinAssenblyMethodInfoFotDTS any Form any
+
+-- １つのGenericパラメータがあるList
+WinAssenblyMethodInfoFotDTS System.Collections.Generic List`1
+
+-- ２つのGenericパラメータがあるDictionary
+WinAssenblyMethodInfoFotDTS System.Collections.Generic Dictionary`2
+
 
 ```
 
