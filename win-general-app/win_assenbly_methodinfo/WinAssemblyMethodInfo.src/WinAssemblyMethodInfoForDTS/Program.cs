@@ -87,7 +87,7 @@ namespace WinAssemblyMethodInfoForDTS
             s = Regex.Replace(s, @"\[.+?\]", "");
             s = Regex.Replace(s, @"`1", "<T>");
             s = Regex.Replace(s, @"`2", "<T, U>");
-            s = Regex.Replace(s, @"`3", "<T, U, M>");
+            s = Regex.Replace(s, @"`3", "<T, U, V>");
 
             return s;
 
@@ -128,7 +128,7 @@ namespace WinAssemblyMethodInfoForDTS
                     Type[] types = asm.GetTypes();
                     foreach (Type t in types)
                     {
-                        analyze(t, args[0], args[1]);
+                        AnalyzeAssembly(t, args[0], args[1]);
                     }
                 }
                 catch (Exception e)
@@ -138,18 +138,20 @@ namespace WinAssemblyMethodInfoForDTS
             }
 
             //"C:\test"以下のファイルをすべて取得する
-            IEnumerable<string> files = System.IO.Directory.EnumerateFiles( @"C:\Windows\Microsoft.NET\Framework\v4.0.30319", "*.dll");
+            IEnumerable<string> files = System.IO.Directory.EnumerateFiles(@"C:\Windows\Microsoft.NET\Framework\v4.0.30319", "*.dll");
             //ファイルを列挙する
             foreach (string f in files)
             {
-                try {
+                try
+                {
                     Assembly asm = Assembly.LoadFile(f);
                     Type[] types = asm.GetTypes();
                     foreach (Type t in types)
                     {
-                        analyze(t, args[0], args[1]);
+                        AnalyzeAssembly(t, args[0], args[1]);
                     }
-                } catch(Exception)
+                }
+                catch (Exception)
                 {
 
                 }
@@ -159,12 +161,11 @@ namespace WinAssemblyMethodInfoForDTS
         }
 
 
-        static void analyze(Type t, string strNameSpace, string strClassName)
+        static void AnalyzeAssembly(Type t, string strNameSpace, string strClassName)
         {
             nsList = new List<NameSpaceNested>();
 
-            if ( 
-                (t.Namespace == strNameSpace || strNameSpace=="any") && t.Name == strClassName)
+            if ((t.Namespace == strNameSpace || strNameSpace == "any") && t.Name == strClassName)
             {
                 string _ns = t.Namespace;
                 if (_ns == null || _ns == "")
@@ -175,7 +176,7 @@ namespace WinAssemblyMethodInfoForDTS
                 Console.WriteLine("名前空間:{0}", _ns == "any" ? "無し" : _ns);
                 Console.WriteLine("完全限定名:{0}", t.FullName);
                 Console.WriteLine("このメンバを宣言するクラス:{0}", t.DeclaringType);
-                Console.WriteLine("直接の継承元:{0}", t.BaseType);
+                Console.WriteLine("親クラス:{0}", t.BaseType);
                 Console.WriteLine("属性:{0}", t.Attributes);
                 Console.WriteLine();
 
@@ -209,9 +210,10 @@ namespace WinAssemblyMethodInfoForDTS
                 int nLastNext = 0;
                 for (int n = 0; n < nsList.Count; n++)
                 {
-                    if (nsList[n].NameSpace != "any") { 
+                    if (nsList[n].NameSpace != "any")
+                    {
                         Console.Write(new string(' ', 4 * n));
-                        if (n==0)
+                        if (n == 0)
                         {
                             Console.Write("declare ");
                         }
@@ -221,7 +223,7 @@ namespace WinAssemblyMethodInfoForDTS
                         if (n == nsList.Count - 1)
                         {
                             nLastNext = n;
-                            PrintMethod(t, n + 1);
+                            AnalyzeMemberInfo(t, n + 1);
                         }
 
                     }
@@ -229,7 +231,7 @@ namespace WinAssemblyMethodInfoForDTS
                     {
                         Console.Write("declare ");
                         nLastNext = n;
-                        PrintMethod(t, 0);
+                        AnalyzeMemberInfo(t, 0);
                     }
                 }
 
@@ -241,26 +243,35 @@ namespace WinAssemblyMethodInfoForDTS
                         Console.WriteLine("}");
                     }
                 }
-
-
             }
 
         }
 
         static bool IsNoTypeScriptClass(String str)
         {
-            if ( str != "string" && str != "number" && str != "boolean" )
+            if (str != "string" && str != "number" && str != "boolean")
             {
                 return true;
             }
             return false;
         }
 
-        static void PrintMethod(Type t, int nestLevel)
+        static void AnalyzeMemberInfo(Type t, int nestLevel)
         {
             Console.Write(new string(' ', nestLevel * 4));
-            Console.WriteLine("class " + ReplaceCsToTsType(t.Name) + " {");
-            ConstructorInfo[] conss = t.GetConstructors(BindingFlags.Public | BindingFlags.Instance | BindingFlags.Static | BindingFlags.DeclaredOnly);
+            Console.WriteLine("interface " + ReplaceCsToTsType(t.Name) + " {");
+            AnalyzeConstructorInfo(t, nestLevel);
+            AnalyzeFieldInfo(t, nestLevel);
+            AnalyzePropertyInfo(t, nestLevel);
+            AnalyzeMethodInfo(t, nestLevel);
+            Console.Write(new string(' ', (nestLevel) * 4));
+            Console.WriteLine("}");
+
+        }
+
+        static void AnalyzeConstructorInfo(Type t, int nestLevel)
+        {
+            ConstructorInfo[] conss = t.GetConstructors(BindingFlags.Public | BindingFlags.Instance | BindingFlags.Static );
             foreach (ConstructorInfo m in conss)
             {
                 try
@@ -269,6 +280,7 @@ namespace WinAssemblyMethodInfoForDTS
                     //アクセシビリティを表示
                     //ここではIs...プロパティを使っているが、
                     //Attributesプロパティを調べても同じ
+                    /*
                     if (m.IsPublic)
                         Console.Write("public ");
                     if (m.IsPrivate)
@@ -288,10 +300,10 @@ namespace WinAssemblyMethodInfoForDTS
                         Console.Write("abstract ");
                     else if (m.IsVirtual)
                         Console.Write(""); // NestConsoleWrite("virtual ");
-
+                    */
 
                     //メソッド名を表示
-                    Console.Write("constructor");
+                    Console.Write("new");
 
                     //パラメータを表示
                     ParameterInfo[] prms = m.GetParameters();
@@ -309,11 +321,60 @@ namespace WinAssemblyMethodInfoForDTS
                     Console.Write(";");
 
                     Console.WriteLine();
-                } catch(Exception e)
+                }
+                catch (Exception e)
                 {
                     Console.WriteLine(e.Message);
                 }
             }
+
+        }
+
+        static void AnalyzeFieldInfo(Type t, int nestLevel)
+        {
+
+            //メソッドの一覧を取得する
+            FieldInfo[] props = t.GetFields(
+            BindingFlags.Public | /* BindingFlags.NonPublic | */
+            BindingFlags.Instance | BindingFlags.Static);
+
+            foreach (FieldInfo m in props)
+            {
+                try
+                {
+                    if (!m.IsPublic)
+                    {
+                        continue;
+                    }
+                    string s = m.FieldType.FullName;
+                    s = ReplaceCsToTsType(s);
+                    if (isAnyMode)
+                    {
+                        if (IsNoTypeScriptClass(s))
+                        {
+                            s = "any";
+                        }
+                    }
+
+                    Console.Write(new string(' ', (nestLevel + 1) * 4));
+
+                    // Console.Write("public ");
+                    Console.Write(m.Name + " :" + s);
+
+                    Console.Write(";");
+
+                    Console.WriteLine();
+                }
+                catch (Exception e)
+                {
+                    // Console.WriteLine(e.Message);
+                }
+            }
+
+        }
+
+        static void AnalyzePropertyInfo(Type t, int nestLevel)
+        {
 
             //メソッドの一覧を取得する
             PropertyInfo[] props = t.GetProperties(
@@ -322,7 +383,8 @@ namespace WinAssemblyMethodInfoForDTS
 
             foreach (PropertyInfo m in props)
             {
-                try {
+                try
+                {
 
                     string s = m.PropertyType.FullName;
                     s = ReplaceCsToTsType(s);
@@ -336,7 +398,8 @@ namespace WinAssemblyMethodInfoForDTS
 
                     Console.Write(new string(' ', (nestLevel + 1) * 4));
 
-                    Console.Write("public " + m.Name + " :" + s);
+                    // Console.Write("public ");
+                    Console.Write( m.Name + " :" + s);
 
                     Console.Write(";");
 
@@ -347,6 +410,13 @@ namespace WinAssemblyMethodInfoForDTS
                     // Console.WriteLine(e.Message);
                 }
             }
+
+        }
+
+        static void AnalyzeMethodInfo(Type t, int nestLevel)
+        {
+            // すでに出力済みなもの
+            HashSet<string> doneWrite = new HashSet<string>();
 
             //メソッドの一覧を取得する
             MethodInfo[] methods = t.GetMethods(
@@ -369,6 +439,7 @@ namespace WinAssemblyMethodInfoForDTS
                     //アクセシビリティを表示
                     //ここではIs...プロパティを使っているが、
                     //Attributesプロパティを調べても同じ
+                    /*
                     if (m.IsPublic)
                         Console.Write("public ");
                     if (m.IsPrivate)
@@ -379,23 +450,24 @@ namespace WinAssemblyMethodInfoForDTS
                         Console.Write("protected ");
                     if (m.IsFamilyOrAssembly)
                         Console.Write("internal protected ");
-
+                    */
 
                     //その他修飾子を表示
+                    /*
                     if (m.IsStatic)
                         Console.Write("static ");
                     if (m.IsAbstract)
                         Console.Write("abstract ");
                     else if (m.IsVirtual)
                         Console.Write(""); // NestConsoleWrite("virtual ");
-
+                    */
 
                     //メソッド名を表示
                     Console.Write(m.Name);
 
                     //パラメータを表示
                     ParameterInfo[] prms = m.GetParameters();
-                    Console.Write(": (");
+                    Console.Write("(");
                     for (int i = 0; i < prms.Length; i++)
                     {
                         ParameterInfo p = prms[i];
@@ -413,7 +485,7 @@ namespace WinAssemblyMethodInfoForDTS
                     }
                     Console.Write(")");
 
-                    Console.Write(" => ");
+                    Console.Write(": ");
 
                     //戻り値を表示
                     if (m.ReturnType == typeof(void))
@@ -434,14 +506,12 @@ namespace WinAssemblyMethodInfoForDTS
                     Console.Write(";");
 
                     Console.WriteLine();
-                } catch(Exception e)
+                }
+                catch (Exception e)
                 {
                     Console.WriteLine(e.Message);
                 }
             }
-
-            Console.Write(new string(' ', (nestLevel) * 4));
-            Console.WriteLine("}");
         }
     }
 }
