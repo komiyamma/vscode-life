@@ -2,3 +2,8 @@ c:\users\admin\documents\visual studio 2015\Projects\WinGacInstaller\WinGacInsta
 c:\users\admin\documents\visual studio 2015\Projects\WinGacInstaller\WinGacInstaller\bin\Debug\WinGacInstaller.pdb
 c:\users\admin\documents\visual studio 2015\Projects\WinGacInstaller\WinGacInstaller\obj\Debug\WinGacInstaller.exe
 c:\users\admin\documents\visual studio 2015\Projects\WinGacInstaller\WinGacInstaller\obj\Debug\WinGacInstaller.pdb
+C:\usr\web\vscode-life\win-general-app\win_gac_installer\WinGacInstaller.src\WinGacInstaller\obj\Debug\WinGacInstaller.exe
+C:\usr\web\vscode-life\win-general-app\win_gac_installer\WinGacInstaller.src\WinGacInstaller\obj\Debug\WinGacInstaller.pdb
+C:\usr\web\vscode-life\win-general-app\win_gac_installer\WinGacInstaller.src\WinGacInstaller\bin\Debug\WinGacInstaller.exe
+C:\usr\web\vscode-life\win-general-app\win_gac_installer\WinGacInstaller.src\WinGacInstaller\bin\Debug\WinGacInstaller.pdb
+C:\usr\web\vscode-life\win-general-app\win_gac_installer\WinGacInstaller.src\WinGacInstaller\obj\Debug\WinGacInstaller.csprojResolveAssemblyReference.cache

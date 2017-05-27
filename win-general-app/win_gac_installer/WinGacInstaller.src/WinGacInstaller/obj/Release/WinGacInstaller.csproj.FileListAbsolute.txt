@@ -1,2 +1,4 @@
 c:\users\admin\documents\visual studio 2015\Projects\WinGacInstaller\WinGacInstaller\bin\Release\WinGacInstaller.exe
 c:\users\admin\documents\visual studio 2015\Projects\WinGacInstaller\WinGacInstaller\obj\Release\WinGacInstaller.exe
+C:\usr\web\vscode-life\win-general-app\win_gac_installer\WinGacInstaller.src\WinGacInstaller\obj\Release\WinGacInstaller.exe
+C:\usr\web\vscode-life\win-general-app\win_gac_installer\WinGacInstaller.src\WinGacInstaller\bin\Release\WinGacInstaller.exe

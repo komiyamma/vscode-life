@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // アセンブリに関する一般情報は以下の属性セットをとおして制御されます。
 // アセンブリに関連付けられている情報を変更するには、
 // これらの属性値を変更してください。
-[assembly: AssemblyTitle("WinGacInstaller")]
-[assembly: AssemblyDescription("Gacutilの簡易版。VS要らず版。")]
+[assembly: AssemblyTitle(".NET のクラスから、TypeScript の宣言を作成")]
+[assembly: AssemblyDescription(".NET Frameworkのクラスを、TypeScript風の宣言へと直す")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("WinGacInstaller")]
-[assembly: AssemblyCopyright("Public Domain")]
+[assembly: AssemblyProduct("WinAssemblyMethodInfoForDTS")]
+[assembly: AssemblyCopyright("Copyright © 2017 VSCode.life")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // このプロジェクトが COM に公開される場合、次の GUID が typelib の ID になります
-[assembly: Guid("cf1f7a87-7b08-4f03-9aae-a0c49a4a6f39")]
+[assembly: Guid("9325dc54-b6a8-437f-baca-77ba61e358e6")]
 
 // アセンブリのバージョン情報は次の 4 つの値で構成されています:
 //
