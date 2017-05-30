@@ -1,0 +1,5 @@
+C:\win_assenbly_methodinfo\WinAssemblyMethodInfo.src\WinAssemblyMethodInfoForDTS\bin\Debug\WinAssemblyToTypeScriptDeclare.exe.config
+C:\win_assenbly_methodinfo\WinAssemblyMethodInfo.src\WinAssemblyMethodInfoForDTS\bin\Debug\WinAssemblyToTypeScriptDeclare.exe
+C:\win_assenbly_methodinfo\WinAssemblyMethodInfo.src\WinAssemblyMethodInfoForDTS\bin\Debug\WinAssemblyToTypeScriptDeclare.pdb
+C:\win_assenbly_methodinfo\WinAssemblyMethodInfo.src\WinAssemblyMethodInfoForDTS\obj\Debug\WinAssemblyToTypeScriptDeclare.exe
+C:\win_assenbly_methodinfo\WinAssemblyMethodInfo.src\WinAssemblyMethodInfoForDTS\obj\Debug\WinAssemblyToTypeScriptDeclare.pdb

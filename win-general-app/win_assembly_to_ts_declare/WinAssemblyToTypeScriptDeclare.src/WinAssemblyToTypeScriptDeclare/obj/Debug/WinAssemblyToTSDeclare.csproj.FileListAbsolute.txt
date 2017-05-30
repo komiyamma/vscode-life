@@ -1,0 +1,5 @@
+C:\win_assenbly_methodinfo\WinAssemblyMethodInfo.src\WinAssemblyMethodInfoForDTS\bin\Debug\WinAssemblyMethodInfoForDTS.exe.config
+C:\win_assenbly_methodinfo\WinAssemblyMethodInfo.src\WinAssemblyMethodInfoForDTS\bin\Debug\WinAssemblyMethodInfoForDTS.exe
+C:\win_assenbly_methodinfo\WinAssemblyMethodInfo.src\WinAssemblyMethodInfoForDTS\bin\Debug\WinAssemblyMethodInfoForDTS.pdb
+C:\win_assenbly_methodinfo\WinAssemblyMethodInfo.src\WinAssemblyMethodInfoForDTS\obj\Debug\WinAssemblyMethodInfoForDTS.exe
+C:\win_assenbly_methodinfo\WinAssemblyMethodInfo.src\WinAssemblyMethodInfoForDTS\obj\Debug\WinAssemblyMethodInfoForDTS.pdb

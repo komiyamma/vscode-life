@@ -1,0 +1,12 @@
+C:\Users\admin\Documents\Visual Studio 2015\Projects\WinAssemblyMethodInfo\WinAssemblyMethodInfoForDTS\bin\Debug\WinAssemblyMethodInfoForDTS.exe.config
+C:\Users\0300002167\Downloads\vscode-life-master\vscode-life-master\win-general-app\win_assenbly_methodinfo\WinAssemblyMethodInfo.src\WinAssemblyMethodInfoForDTS\bin\Debug\WinAssemblyMethodInfoForDTS.exe.config
+C:\Users\0300002167\Downloads\vscode-life-master\vscode-life-master\win-general-app\win_assenbly_methodinfo\WinAssemblyMethodInfo.src\WinAssemblyMethodInfoForDTS\bin\Debug\WinAssemblyMethodInfoForDTS.exe
+C:\Users\0300002167\Downloads\vscode-life-master\vscode-life-master\win-general-app\win_assenbly_methodinfo\WinAssemblyMethodInfo.src\WinAssemblyMethodInfoForDTS\bin\Debug\WinAssemblyMethodInfoForDTS.pdb
+C:\Users\0300002167\Downloads\vscode-life-master\vscode-life-master\win-general-app\win_assenbly_methodinfo\WinAssemblyMethodInfo.src\WinAssemblyMethodInfoForDTS\obj\Debug\WinAssemblyMethodInfoForDTS.exe
+C:\Users\0300002167\Downloads\vscode-life-master\vscode-life-master\win-general-app\win_assenbly_methodinfo\WinAssemblyMethodInfo.src\WinAssemblyMethodInfoForDTS\obj\Debug\WinAssemblyMethodInfoForDTS.pdb
+C:\win_assenbly_methodinfo\WinAssemblyMethodInfo.src\WinAssemblyMethodInfoForDTS\bin\Debug\WinAssemblyMethodInfoForDTS.exe.config
+C:\win_assenbly_methodinfo\WinAssemblyMethodInfo.src\WinAssemblyMethodInfoForDTS\bin\Debug\WinAssemblyMethodInfoForDTS.exe
+C:\win_assenbly_methodinfo\WinAssemblyMethodInfo.src\WinAssemblyMethodInfoForDTS\bin\Debug\WinAssemblyMethodInfoForDTS.pdb
+C:\win_assenbly_methodinfo\WinAssemblyMethodInfo.src\WinAssemblyMethodInfoForDTS\obj\Debug\WinAssemblyMethodInfoForDTS.csprojResolveAssemblyReference.cache
+C:\win_assenbly_methodinfo\WinAssemblyMethodInfo.src\WinAssemblyMethodInfoForDTS\obj\Debug\WinAssemblyMethodInfoForDTS.exe
+C:\win_assenbly_methodinfo\WinAssemblyMethodInfo.src\WinAssemblyMethodInfoForDTS\obj\Debug\WinAssemblyMethodInfoForDTS.pdb
