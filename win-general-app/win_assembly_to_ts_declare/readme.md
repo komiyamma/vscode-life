@@ -16,7 +16,6 @@ WinAssemblyToTypeScriptDeclare System Console
 -- 上と同じだが、「string」「number」「boolean」以外の型は「any」にする
 WinAssemblyToTypeScriptDeclare System Console -deep:0
 
-
 -- 名前空間が「ない」、名前空間を「問わない」、もしくは名前空間が「よくわからない」状態で、「Form」クラスをTypeScritp風の宣言に
 WinAssemblyToTypeScriptDeclare any Form
 
