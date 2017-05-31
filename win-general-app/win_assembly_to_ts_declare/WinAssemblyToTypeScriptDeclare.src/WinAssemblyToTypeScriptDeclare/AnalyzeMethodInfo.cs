@@ -2,41 +2,73 @@
 using System.Collections.Generic;
 using System.Reflection;
 using System.Text.RegularExpressions;
+using System.IO;
 
 namespace WinAssemblyToTypeScriptDeclare
 {
     partial class WinAssemblyToTypeScriptDeclare
     {
+        // インデクサの分析
         static void AnalyzeIndexerInfo(MethodInfo m, int nestLevel)
         {
-            ConsoleTabSpace(nestLevel + 1);
+            SWTabSpace(nestLevel + 1);
+
+            StringWriter sw_for_ix = new StringWriter();
+            bool indexer_can_flush = true;
 
             ParameterInfo[] prms = m.GetParameters();
-            Console.Write("[");
+            sw_for_ix.Write("[");
+            
             // TypeScriptのインデクサは１つだけが対応なので１つの時だけ
-            if (prms.Length == 1)
+            if (prms.Length != 1)
             {
-                // まわす必要ないのだけれど、２つ以上に対応する時のために一応まわしておく
-                for (int i = 0; i < prms.Length; i++)
-                {
-                    if (i == 0)
-                    {
-                        // パラメータ
-                        ParameterInfo p = prms[i];
-                        // フル名があれば、それ、なければネーム
-                        var tname = p.ParameterType.FullName != null ? p.ParameterType.FullName : p.ParameterType.Name;
+                indexer_can_flush = false;
+            }
 
-                        var s = ReplaceCsToTs(tname);
-                        Console.Write(p.Name + ": " + s);
-                        if (prms.Length - 1 > i)
-                        {
-                            Console.Write(", ");
-                        }
-                    }
+            // まわす必要ないのだけれど、２つ以上に対応する時のために一応まわしておく
+            for (int i = 0; i < prms.Length; i++)
+            {
+                // パラメータ
+                ParameterInfo p = prms[i];
+
+                /*
+                // フル名があれば、それ、なければネーム
+                var tname = p.ParameterType.FullName != null ? p.ParameterType.FullName : p.ParameterType.Name;
+                
+                var ts = ReplaceCsToTs(tname);
+                */
+                var ts = TypeToString(p.ParameterType);
+
+                ts = ModifyType(ts, false);
+
+                sw_for_ix.Write(p.Name + ": " + ts);
+                if (prms.Length - 1 > i)
+                {
+                    sw_for_ix.Write(", ");
+                }
+
+                // TypeScriptの型はどちらかである必要がある
+                if (ts != "string" && ts != "number" )
+                {
+                    indexer_can_flush = false;
                 }
             }
-            Console.Write("]: " + m.ReturnType.ToString() + ";");
-            Console.WriteLine();
+
+            var rts = m.ReturnType.ToString();
+
+            rts = ModifyType(rts, false);
+
+            sw_for_ix.Write("]: " + rts + ";");
+            sw_for_ix.WriteLine();
+
+            // 大丈夫なインデクサなら出力するが、ダメならコメントアウト状態で出力
+            if (indexer_can_flush)
+            {
+                SW.Write(sw_for_ix);
+            } else
+            {
+                SW.Write("// " + sw_for_ix);
+            }
         }
 
         static void AnalyzeResultInfo(MethodInfo m, int nestLevel, List<string> genericParameterTypeStringList)
@@ -44,12 +76,12 @@ namespace WinAssemblyToTypeScriptDeclare
             //戻り値を表示
             if (m.ReturnType == typeof(void))
             {
-                Console.Write("void");
+                SW.Write("void");
             }
             else
             {
-                string s = m.ReturnType.ToString();
-                s = ReplaceCsToTs(s);
+
+                var ts = TypeToString(m.ReturnType);
 
                 // 複雑過ぎるかどうか
                 var genlist = m.ReturnType.GetGenericArguments();
@@ -64,27 +96,10 @@ namespace WinAssemblyToTypeScriptDeclare
                     }
                 );
 
-                // 複雑OKモードでなければ、型として「any」にしておく
-                if (!m_isAcceptComplexType && isComplex)
-                {
-                    s = "any";
-                }
 
-                // もともとanyモードなら
-                if (m_isTypeAnyMode)
-                {
-                    // TypeScriptのプリミティブ型でないならば
-                    if (NeverTypeScriptPrimitiveType(s))
-                    {
-                        s = "any";
-                    }
-                }
-                // TypeScriptのプリミティブ型でないならば
-                if (NeverTypeScriptPrimitiveType(s))
-                {
-                    RegistClassTypeToTaskList(s);
-                }
-                Console.Write(s + "");
+                ts = ModifyType(ts, isComplex);
+
+                SW.Write(ts + "");
             }
         }
 
@@ -105,9 +120,9 @@ namespace WinAssemblyToTypeScriptDeclare
                     {
                         if (g.ToString().Contains("."))
                         {
-                            if (!prmList.Contains("D"))
+                            if (!prmList.Contains("TANY"))
                             {
-                                prmList.Add("D");
+                                prmList.Add("TANY");
                             }
                         }
                         else
@@ -115,23 +130,6 @@ namespace WinAssemblyToTypeScriptDeclare
                             if (!prmList.Contains(g.ToString()))
                             {
                                 prmList.Add(g.ToString());
-                            }
-                        }
-                    }
-                }
-
-                if (genepara.Length == 0)
-                {
-                    var s = m.ToString();
-                    var param = Regex.Replace(s, @"^.+\s+" + m.Name + @"\[(.+?)\]\(.+$", "$1");
-                    if (s != param)
-                    {
-                        string[] list = param.Split(',');
-                        foreach (var l in list)
-                        {
-                            if (!prmList.Contains(l))
-                            {
-                                prmList.Add(l);
                             }
                         }
                     }
@@ -174,7 +172,7 @@ namespace WinAssemblyToTypeScriptDeclare
                     AnalyzeMethodInfo(m, nestLevel, genericParameterTypeStringList);                }
                 catch (Exception e)
                 {
-                    Console.WriteLine(e.Message);
+                    SW.WriteLine(e.Message);
                 }
             }
         }
@@ -191,26 +189,27 @@ namespace WinAssemblyToTypeScriptDeclare
                 return;
             }
 
-            ConsoleTabSpace(nestLevel + 1);
+            SWTabSpace(nestLevel + 1);
 
             //メソッド名を表示
-            Console.Write(m.Name);
+            SW.Write(m.Name);
 
             var prmList = GetMethodGenericTypeList(m, genericParameterTypeStringList);
 
             if (prmList.Count > 0)
             {
-                Console.Write("<" + String.Join(", ", prmList.ToArray()) + ">");
+                SW.Write("<" + String.Join(", ", prmList) + ">");
             }
 
-            Console.Write("(");
+            SW.Write("(");
 
             //パラメータを表示
             ParameterInfo[] prms = m.GetParameters();
             for (int i = 0; i < prms.Length; i++)
             {
                 ParameterInfo p = prms[i];
-                string ts = ReplaceCsToTs(p.ParameterType.ToString());
+                var ts = TypeToString(p.ParameterType);
+
                 // 複雑過ぎるかどうか
                 var genlist = p.ParameterType.GetGenericArguments();
                 bool isComplex = IsGenericAnyCondtion(genlist,
@@ -222,48 +221,31 @@ namespace WinAssemblyToTypeScriptDeclare
                     }
                 );
 
-                // 複雑OKモードでなければ、型として「any」にしておく
-                if (!m_isAcceptComplexType && isComplex)
-                {
-                    ts = "any";
-                }
-                // もともとanyモードなら
-                if (m_isTypeAnyMode)
-                {
-                    // TypeScriptのプリミティブ型でないならば
-                    if (NeverTypeScriptPrimitiveType(ts))
-                    {
-                        ts = "any";
-                    }
-                }
-                // TypeScriptのプリミティブ型でないならば
-                if (NeverTypeScriptPrimitiveType(ts))
-                {
-                    // 新たに処理するべきタスクとして登録する
-                    RegistClassTypeToTaskList(ts);
-                }
+                ts = ModifyType(ts, isComplex);
+
 
                 // 使ってはダメな変数名
                 if (p.Name == "function")
                 {
-                    Console.Write("_function" + ": " + ts);
+                    SW.Write("_function" + ": " + ts);
                 }
                 else
                 {
-                    Console.Write(p.Name + ": " + ts);
+                    SW.Write(p.Name + ": " + ts);
                 }
                 // 引数がまだ残ってるなら、「,」で繋げて次へ
                 if (prms.Length - 1 > i)
                 {
-                    Console.Write(", ");
+                    SW.Write(", ");
                 }
             }
-            Console.Write("): ");
+            SW.Write("): ");
 
             // 戻り値を分析
             AnalyzeResultInfo(m, nestLevel, genericParameterTypeStringList);
 
-            Console.WriteLine(";");
+            SW.WriteLine(";");
         }
+
     }
 }

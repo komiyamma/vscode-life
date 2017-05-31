@@ -20,25 +20,25 @@ namespace WinAssemblyToTypeScriptDeclare
                 }
                 catch (Exception)
                 {
-                    // Console.WriteLine(e.Message);
+                    // SW.WriteLine(e.Message);
                 }
             }
         }
 
         static void AnalyzeConstructorInfo(ConstructorInfo m, int nestLevel, List<string> genericParameterTypeStringList)
         {
-            ConsoleTabSpace(nestLevel + 1);
+            SWTabSpace(nestLevel + 1);
 
             //メソッド名を表示
-            Console.Write("new");
+            SW.Write("new");
 
             //パラメータを表示
             ParameterInfo[] prms = m.GetParameters();
-            Console.Write("(");
+            SW.Write("(");
             for (int i = 0; i < prms.Length; i++)
             {
                 ParameterInfo p = prms[i];
-                string s = ReplaceCsToTs(p.ParameterType.ToString());
+                string ts = TypeToString(p.ParameterType);
 
                 // 複雑過ぎるかどうか
                 var genlist = p.ParameterType.GetGenericArguments();
@@ -52,39 +52,26 @@ namespace WinAssemblyToTypeScriptDeclare
                         (!genericParameterTypeStringList.Exists((e) => { return e.ToString() == g.ToString(); }));
                     }
                 );
-                // 複雑OKモードでなければ、型として「any」にしておく
-                if (!m_isAcceptComplexType && isComplex)
-                {
-                    s = "any";
-                }
 
-                // もともとanyモードなら
-                if (m_isTypeAnyMode)
-                {
-                    // TypeScriptのプリミティブ型でないならば
-                    if (NeverTypeScriptPrimitiveType(s))
-                    {
-                        s = "any";
-                    }
-                }
-                // TypeScriptのプリミティブ型でないなら
-                if (NeverTypeScriptPrimitiveType(s))
-                {
-                    // 新たに処理するべきタスクとして登録する
-                    RegistClassTypeToTaskList(s);
-                }
+                ts = ModifyType(ts, isComplex);
 
-                Console.Write(p.Name + ": " + s);
+                // 使ってはダメな変数名
+                if (p.Name == "function")
+                {
+                    SW.Write("_function" + ": " + ts);
+                }　else { 
+                    SW.Write(p.Name + ": " + ts);
+                }
 
                 // 引数がまだ残ってるなら、「,」で繋げて次へ
                 if (prms.Length - 1 > i)
                 {
-                    Console.Write(", ");
+                    SW.Write(", ");
                 }
             }
 
             // 引数が全部終了
-            Console.WriteLine(");");
+            SW.WriteLine(");");
         }
     }
 }

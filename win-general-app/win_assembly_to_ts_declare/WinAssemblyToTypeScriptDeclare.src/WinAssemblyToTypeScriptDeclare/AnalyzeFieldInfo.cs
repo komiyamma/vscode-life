@@ -21,7 +21,7 @@ namespace WinAssemblyToTypeScriptDeclare
                 }
                 catch (Exception)
                 {
-                    // Console.WriteLine(e.Message);
+                    // SW.WriteLine(e.Message);
                 }
             }
 
@@ -32,38 +32,18 @@ namespace WinAssemblyToTypeScriptDeclare
             {
                 return;
             }
-            string s = m.FieldType.FullName;
-            s = ReplaceCsToTs(s);
+
+            var ts = TypeToString(m.FieldType);
 
             // 複雑過ぎるかどうか
             var genlist = m.FieldType.GetGenericArguments();
             bool isComplex = IsGenericAnyCondtion(genlist, (g) => { return g.ToString().Contains("."); });
-            // 複雑OKモードでなければ、型として「any」にしておく
-            if (!m_isAcceptComplexType && isComplex)
-            {
-                s = "any";
-            }
 
-            // もともとanyモードなら
-            if (m_isTypeAnyMode)
-            {
-                // TypeScriptのプリミティブ型でないならば
-                if (NeverTypeScriptPrimitiveType(s))
-                {
-                    s = "any";
-                }
-            }
+            ts = ModifyType(ts, isComplex);
 
-            // TypeScriptのプリミティブ型でないならば
-            if (NeverTypeScriptPrimitiveType(s))
-            {
-                // 新たに処理するべきタスクとして登録する
-                RegistClassTypeToTaskList(s);
-            }
+            SWTabSpace(nestLevel + 1);
 
-            ConsoleTabSpace(nestLevel + 1);
-
-            Console.WriteLine(m.Name + " :" + s + ";");
+            SW.WriteLine(m.Name + " :" + ts + ";");
         }
     }
 }

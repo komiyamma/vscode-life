@@ -11,24 +11,40 @@ namespace WinAssemblyToTypeScriptDeclare
 
         static void PrintClassDetail(Type t, String _ns, int n)
         {
-            ConsoleTabSpace(n); Console.WriteLine("/**");
-            ConsoleTabSpace(n); Console.WriteLine("名前:{0}", t.Name);
-            ConsoleTabSpace(n); Console.WriteLine("名前空間:{0}", _ns == "NONE" ? "無し" : _ns);
-            ConsoleTabSpace(n); Console.WriteLine("完全限定名:{0}", t.FullName);
-            ConsoleTabSpace(n); Console.WriteLine("このメンバを宣言するクラス:{0}", t.DeclaringType);
-            ConsoleTabSpace(n); Console.WriteLine("親クラス:{0}", t.BaseType);
-            ConsoleTabSpace(n); Console.WriteLine("属性:{0}", t.Attributes);
-            ConsoleTabSpace(n); Console.WriteLine("*/");
-
+            SWTabSpace(n); SW.WriteLine("/**");
+            SWTabSpace(n); SW.WriteLine("名前:{0}", t.Name.Replace("+", "."));
+            SWTabSpace(n); SW.WriteLine("名前空間:{0}", _ns == "NONE" ? "無し" : _ns);
+            SWTabSpace(n); SW.WriteLine("完全限定名:{0}", t.FullName);
+            SWTabSpace(n); SW.WriteLine("このメンバを宣言するクラス:{0}", t.DeclaringType);
+            SWTabSpace(n); SW.WriteLine("親クラス:{0}", t.BaseType);
+            SWTabSpace(n); SW.WriteLine("属性:{0}", t.Attributes);
+            SWTabSpace(n); SW.WriteLine("*/");
         }
 
         static void AnalyzeAssembly(Type t, string strNameSpace, string strClassName)
         {
             nsList = new List<NameSpaceNested>();
 
-            if ((t.Namespace == strNameSpace || strNameSpace == "any" || strNameSpace == "NONE") && t.Name == strClassName)
+            // 通常のネームスペース系
+            var cond1 = (t.Namespace == strNameSpace || strNameSpace == "any" || strNameSpace == "NONE") && t.Name == strClassName;
+
+            // ネームスペースとクラス名のそれぞれは一致しないのに、合算すると一致するということは…
+            // ネストクラスになっている可能性がある。これはTypeScriptでは表現できない。
+            var fullname1 = t.FullName.Replace("+", ".");
+            var fullname2 = strNameSpace + "." + strClassName;
+            var cond2 = fullname1 == fullname2;
+
+            string _ns = t.Namespace;
+
+            // 通常の条件は満たさないが、名前空間とクラス名を全部くっつけると一致する場合は、TypeScriptで実現できないので
+            // ちょっと構造を変えてパッチ。クラスも１つ名前空間としてしまう
+            if (!cond1 && cond2)
             {
-                string _ns = t.Namespace;
+                _ns = strNameSpace;
+            }
+
+            if (cond1 || cond2)
+            {
                 if (_ns == null || _ns == "")
                 {
                     _ns = "NONE";
@@ -41,18 +57,18 @@ namespace WinAssemblyToTypeScriptDeclare
                 // 対象の「名前空間、クラス名」の組み合わせはすでに、出力済み？
                 var item = TaskItems.Find( (tsk) => { return tsk.strNameSpace == _ns && tsk.strClassName == t.Name; } );
                 // すでに登録済みで、すでに処理済み
-                if (item != null && item.Status >= 2)
+                if (item != null && item.Status >= TaskItem.DoStatus.Done)
                 {
                     return;
                 }
 
                 if (item == null)
                 {
-                    item = new TaskItem { strNameSpace = _ns, strClassName = t.Name, Status = 2 };
+                    item = new TaskItem { strNameSpace = _ns, strClassName = t.Name, Status = TaskItem.DoStatus.Done };
                     TaskItems.Add(item);
                 } else
                 {
-                    item.Status = 2;
+                    item.Status = TaskItem.DoStatus.Done;
                 }
 
                 var exist = nsList.Find((ns) => { return ns.FullNameSpace == _ns; });
@@ -86,12 +102,12 @@ namespace WinAssemblyToTypeScriptDeclare
                 {
                     if (nsList[n].NameSpace != "any" && nsList[n].NameSpace != "NONE")
                     {
-                        ConsoleTabSpace(n);
+                        SWTabSpace(n);
                         if (n == 0)
                         {
-                            Console.Write("declare ");
+                            SW.Write("declare ");
                         }
-                        Console.WriteLine("namespace " + nsList[n].NameSpace + " {");
+                        SW.WriteLine("namespace " + nsList[n].NameSpace + " {");
 
                         // 一番深いネームスペースのところで…
                         if (n == nsList.Count - 1)
@@ -106,7 +122,7 @@ namespace WinAssemblyToTypeScriptDeclare
                     {
                         PrintClassDetail(t, _ns, 0);
 
-                        Console.Write("declare ");
+                        SW.Write("declare ");
                         nLastNext = n;
                         AnalyzeMemberInfo(t, 0);
                     }
@@ -116,8 +132,8 @@ namespace WinAssemblyToTypeScriptDeclare
                 {
                     if (nsList[n].NameSpace != "any" && nsList[n].NameSpace != "NONE")
                     {
-                        ConsoleTabSpace(n);
-                        Console.WriteLine("}");
+                        SWTabSpace(n);
+                        SW.WriteLine("}");
                     }
                 }
             }

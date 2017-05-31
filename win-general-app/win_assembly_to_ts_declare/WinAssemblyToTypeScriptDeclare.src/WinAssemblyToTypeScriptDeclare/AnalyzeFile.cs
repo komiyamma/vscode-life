@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Reflection;
 using System.Text.RegularExpressions;
+using System.IO;
 
 namespace WinAssemblyToTypeScriptDeclare
 {
@@ -13,6 +14,9 @@ namespace WinAssemblyToTypeScriptDeclare
 
         // 複雑な型でTypeScriptの文法ではエラー覚悟で出力するのを許容するかどうか。
         static bool m_isAcceptComplexType = false;
+
+
+        static StringWriter SW = new StringWriter();
 
         static void Main(string[] args)
         {
@@ -39,8 +43,37 @@ namespace WinAssemblyToTypeScriptDeclare
             IEnumerable<string> files2 = System.IO.Directory.EnumerateFiles(@"C:\Windows\Microsoft.NET\Framework\v4.0.30319", "*.dll");
             ForEachAnalyzeAssembly(files2, strNameSpace, strClassName);
 
+            WriteConsoleUniqueLine();
+            SetNextStringWriter();
+
             DoNextTask();
         }
+
+        // 重複行を削除して出力
+        static void WriteConsoleUniqueLine()
+        {
+            using (StringReader sr = new StringReader(SW.ToString()))
+            {
+                List<string> preline = new List<string>();
+                while (sr.Peek() >= 0)
+                {
+                    string line = sr.ReadLine();
+                    if (!preline.Contains(line) )
+                    {
+                        preline.Add(line);
+                        Console.WriteLine(line);
+                    }
+                }
+            }
+        }
+
+        // 次のStringWriterをセット
+        static void SetNextStringWriter()
+        {
+            SW.Close();
+            SW = new StringWriter();
+        }
+
 
         // 引数分析。オプション系
         static void AnalizeArgsOption(string[] args)

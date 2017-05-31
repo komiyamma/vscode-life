@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Reflection;
 using System.Text.RegularExpressions;
+using System.IO;
 
 namespace WinAssemblyToTypeScriptDeclare
 {
@@ -20,7 +21,8 @@ namespace WinAssemblyToTypeScriptDeclare
             .Replace("System.Single", "number")
             .Replace("System.Boolean", "boolean")
             .Replace("System.String", "string")
-            .Replace("System.Object", "any");
+            .Replace("System.Object", "any")
+            .Replace("System.Void", "void");
 
             return ts;
         }
@@ -96,6 +98,8 @@ namespace WinAssemblyToTypeScriptDeclare
             }
             ts = Regex.Replace(ts, @"`6", "");
 
+            // どうもうまく変換できないことがあるのでパッチ
+
             return ts;
 
         }
@@ -114,7 +118,7 @@ namespace WinAssemblyToTypeScriptDeclare
         // TypeScriptの値型
         static bool IsTypeScriptPrimitiveType(string ts)
         {
-            if (ts == "string" || ts == "number" || ts == "boolean" || ts == "any") {
+            if (ts == "string" || ts == "number" || ts == "boolean" || ts == "any" || ts == "void" ) {
                 return true;
             }
 
@@ -164,9 +168,9 @@ namespace WinAssemblyToTypeScriptDeclare
             return (strNameSpace, strClassName);
         }
 
-        static void ConsoleTabSpace(int cnt)
+        static void SWTabSpace(int cnt)
         {
-            Console.Write(new string(' ', cnt * 4));
+            SW.Write(new string(' ', cnt * 4));
         }
 
     }

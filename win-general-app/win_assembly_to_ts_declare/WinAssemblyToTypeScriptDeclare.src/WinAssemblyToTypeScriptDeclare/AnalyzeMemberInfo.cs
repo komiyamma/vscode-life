@@ -30,10 +30,86 @@ namespace WinAssemblyToTypeScriptDeclare
             List<string> generic_param_type_list = new List<string>();
             foreach (var g in generics)
             {
-                generic_param_type_list.Add(g.ToString());
+                generic_param_type_list.Add(TypeToString(g));
             }
 
             return generic_param_type_list;
+
+        }
+
+        // タイプを文字列に
+        static string TypeToString(Type t)
+        {
+            string ts = t.ToString();
+
+            var tp = t;
+            var gen = GetGenericParameterTypeStringList(tp);
+            var genstr = "";
+            if (gen.Count > 0)
+            {
+                genstr = "<" + String.Join(", ", gen) + ">";
+            }
+
+            var ns = "";
+            // nullではなくしかも、長さがある
+            if (tp.Namespace?.Length > 0)
+            {
+                ns = tp.Namespace + ".";
+            }
+
+            // ジェネリックパラメータとハッキリ出ているか、もしくは、toStringしたなかに、名前空間文字が含まれてない
+            if (t.IsGenericParameter || (ns.Length > 0) && !tp.ToString().Contains(ns))
+            {
+                ns = "";
+            }
+            if (gen.Count == 0)
+            {
+                ts = ns + tp.Name;
+            }
+            else
+            {
+                if (tp.IsArray) {
+                    ts = ns + tp.Name.Replace("[]", "") + genstr + "[]";
+                }
+                else
+                {
+                    ts = ns + tp.Name + genstr;
+                }
+            }
+
+            ts = ReplaceCsToTs(ts);
+            RegistClassTypeToTaskList(ns + tp.Name.Replace("[]", ""));
+
+            return ts;
+        }
+
+        // タイプを最後に修正する。その後登録もついでに
+        static string ModifyType(string ts, bool IsGenericAnyCondtion)
+        {
+            // 複雑OKモードでなければ、型として「any」にしておく
+            if (!m_isAcceptComplexType && IsGenericAnyCondtion)
+            {
+                ts = "any";
+            }
+
+            // もともとanyモードなら
+            if (m_isTypeAnyMode)
+            {
+                // TypeScriptのプリミティブ型でないならば
+                if (NeverTypeScriptPrimitiveType(ts))
+                {
+                    ts = "any";
+                }
+            }
+
+            // TypeScriptのプリミティブ型でないならば
+            if (NeverTypeScriptPrimitiveType(ts))
+            {
+                // 新たに処理するべきタスクとして登録する
+                RegistClassTypeToTaskList(ts);
+            }
+
+            return ts;
 
         }
 
@@ -43,10 +119,11 @@ namespace WinAssemblyToTypeScriptDeclare
             return BindingFlags.Public | BindingFlags.Instance | BindingFlags.Static;
         }
 
+
         // 全てのメンバーを分析する
         static void AnalyzeMemberInfo(Type t, int nestLevel)
         {
-            ConsoleTabSpace(nestLevel);
+            SWTabSpace(nestLevel);
 
             // クラス名名
             var gname = ReplaceCsToTs(t.Name);
@@ -58,19 +135,19 @@ namespace WinAssemblyToTypeScriptDeclare
             // メンバー名<Generic, ...>の形に
             if (genlist.Count > 0)
             {
-                string[] list = genlist.ToArray();
-                gname = gname + "<" + String.Join(", ", list) + ">";
+                gname = gname + "<" + String.Join(", ", genlist) + ">";
             }
 
-            Console.WriteLine("interface " + gname + " {");
+            SW.WriteLine("interface " + gname + " {");
 
             AnalyzeConstructorInfoList(t, nestLevel);
             AnalyzeFieldInfoList(t, nestLevel);
             AnalyzePropertyInfoList(t, nestLevel);
+            AnalyzeEventInfoList(t, nestLevel);
             AnalyzeMethodInfoList(t, nestLevel);
 
-            ConsoleTabSpace(nestLevel);
-            Console.WriteLine("}");
+            SWTabSpace(nestLevel);
+            SW.WriteLine("}");
 
         }
 

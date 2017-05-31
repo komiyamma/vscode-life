@@ -11,32 +11,34 @@ namespace WinAssemblyToTypeScriptDeclare
         // <名前空間, クラス名, 処理済みかどうか>
         class TaskItem
         {
+            public enum DoStatus { Unregist, Regist, Done };
+
             public string strNameSpace { get; set; }
             public string strClassName { get; set; }
-            public int Status { get; set; }
+            public DoStatus Status { get; set; }
             public int Nest { get; set; }
         }
         static List<TaskItem> TaskItems = new List<TaskItem>();
 
         static void DoNextTask()
         {
-            var notDone = TaskItems.Find((tsk) => { return tsk.Status == 0; });
+            var nextTask = TaskItems.Find((tsk) => { return tsk.Status == TaskItem.DoStatus.Unregist; });
 
             // まだ未処理のものがある。
-            if (notDone != null)
+            if (nextTask != null)
             {
-                string[] not_done_args = { notDone.strNameSpace, notDone.strClassName, notDone.Nest >= m_AnalyzeDeepLevel - 1 ? "-deep:0" : "", "-deep:" + m_AnalyzeDeepLevel }; // ずっとやり続けると終わりがなくなるので、anyで
+                string[] next_analyze_args = { nextTask.strNameSpace, nextTask.strClassName, nextTask.Nest >= m_AnalyzeDeepLevel - 1 ? "-deep:0" : "", "-deep:" + m_AnalyzeDeepLevel }; // ずっとやり続けると終わりがなくなるので、anyで
                 try
                 {
                     // 無限ループにならないように、実際には未発見だとしても「処理した」ということにする。
-                    notDone.Status = 1;
-                    notDone.Nest++;
-                    AnalyzeAll(not_done_args);
-                    notDone.Status = 2;
+                    nextTask.Status = TaskItem.DoStatus.Regist;
+                    nextTask.Nest++;
+                    AnalyzeAll(next_analyze_args);
+                    nextTask.Status = TaskItem.DoStatus.Done;
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine(e.Message);
+                    SW.WriteLine(e.Message);
                 }
 
             }
@@ -49,12 +51,12 @@ namespace WinAssemblyToTypeScriptDeclare
             var (strNameSpace, strClassName) = SplitStringNameSpaceAndClassName(ts);
 
             // 新たに登録しようとしているクラスがすでにタスクにある？
-            var TaskItem = TaskItems.Find((tsk) => { return tsk.strClassName == strClassName && tsk.strNameSpace == strNameSpace; });
+            var sameTask = TaskItems.Find((tsk) => { return tsk.strClassName == strClassName && tsk.strNameSpace == strNameSpace; });
             // 無いなら
-            if (TaskItem == null)
+            if (sameTask == null)
             {
                 // タスクに登録
-                TaskItems.Add(new TaskItem { strClassName = strClassName, strNameSpace = strNameSpace, Status = 0 });
+                TaskItems.Add(new TaskItem { strClassName = strClassName, strNameSpace = strNameSpace, Status = TaskItem.DoStatus.Unregist });
             }
         }
 

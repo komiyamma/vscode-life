@@ -7,16 +7,16 @@ namespace WinAssemblyToTypeScriptDeclare
 {
     partial class WinAssemblyToTypeScriptDeclare
     {
-        static void AnalyzePropertyInfoList(Type t, int nestLevel)
+        static void AnalyzeEventInfoList(Type t, int nestLevel)
         {
             // プロパティの一覧を取得する
-            PropertyInfo[] props = t.GetProperties(GetBindingFlags());
+            EventInfo[] props = t.GetEvents(GetBindingFlags());
 
-            foreach (PropertyInfo p in props)
+            foreach (EventInfo p in props)
             {
                 try
                 {
-                    AnalyzePropertyInfo(p, nestLevel);
+                    AnalyzeEventInfo(p, nestLevel);
                 }
                 catch (Exception)
                 {
@@ -24,14 +24,14 @@ namespace WinAssemblyToTypeScriptDeclare
                 }
             }
         }
-        static void AnalyzePropertyInfo(PropertyInfo p, int nestLevel)
+        static void AnalyzeEventInfo(EventInfo p, int nestLevel)
         {
- 
+
             // TypeScript向けに変換
-            var ts = TypeToString(p.PropertyType);
+            var ts = TypeToString(p.EventHandlerType);
 
             // 引数一覧
-            var genepara = p.PropertyType.GetGenericArguments();
+            var genepara = p.EventHandlerType.GetGenericArguments();
 
             // 「.」があったら、複雑すぎると判断する。
             bool isComplex = IsGenericAnyCondtion(genepara, (g) => { return g.ToString().Contains("."); });
