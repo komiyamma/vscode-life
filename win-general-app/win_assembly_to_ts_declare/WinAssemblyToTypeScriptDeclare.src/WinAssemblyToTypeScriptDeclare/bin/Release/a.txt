@@ -1,0 +1,3656 @@
+declare namespace System {
+    namespace Windows {
+        namespace Forms {
+            /**
+            名前:Button
+            名前空間:System.Windows.Forms
+            完全限定名:System.Windows.Forms.Button
+            このメンバを宣言するクラス:
+            親クラス:System.Windows.Forms.ButtonBase
+            属性:AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+            */
+            interface Button {
+                new();
+                AutoSizeMode :System.Windows.Forms.AutoSizeMode;
+                DialogResult :System.Windows.Forms.DialogResult;
+                AutoEllipsis :boolean;
+                AutoSize :boolean;
+                BackColor :System.Drawing.Color;
+                FlatStyle :System.Windows.Forms.FlatStyle;
+                FlatAppearance :System.Windows.Forms.FlatButtonAppearance;
+                Image :System.Drawing.Image;
+                ImageAlign :System.Drawing.ContentAlignment;
+                ImageIndex :number;
+                ImageKey :string;
+                ImageList :System.Windows.Forms.ImageList;
+                ImeMode :System.Windows.Forms.ImeMode;
+                Text :string;
+                TextAlign :System.Drawing.ContentAlignment;
+                TextImageRelation :System.Windows.Forms.TextImageRelation;
+                UseMnemonic :boolean;
+                UseCompatibleTextRendering :boolean;
+                UseVisualStyleBackColor :boolean;
+                AccessibilityObject :System.Windows.Forms.AccessibleObject;
+                AccessibleDefaultActionDescription :string;
+                AccessibleDescription :string;
+                AccessibleName :string;
+                AccessibleRole :System.Windows.Forms.AccessibleRole;
+                AllowDrop :boolean;
+                Anchor :System.Windows.Forms.AnchorStyles;
+                AutoScrollOffset :System.Drawing.Point;
+                LayoutEngine :System.Windows.Forms.Layout.LayoutEngine;
+                BackgroundImage :System.Drawing.Image;
+                BackgroundImageLayout :System.Windows.Forms.ImageLayout;
+                BindingContext :System.Windows.Forms.BindingContext;
+                Bottom :number;
+                Bounds :System.Drawing.Rectangle;
+                CanFocus :boolean;
+                CanSelect :boolean;
+                Capture :boolean;
+                CausesValidation :boolean;
+                ClientRectangle :System.Drawing.Rectangle;
+                ClientSize :System.Drawing.Size;
+                CompanyName :string;
+                ContainsFocus :boolean;
+                ContextMenu :System.Windows.Forms.ContextMenu;
+                ContextMenuStrip :System.Windows.Forms.ContextMenuStrip;
+                Controls :System.Windows.Forms.ControlCollection;
+                Created :boolean;
+                Cursor :System.Windows.Forms.Cursor;
+                DataBindings :System.Windows.Forms.ControlBindingsCollection;
+                DeviceDpi :number;
+                DisplayRectangle :System.Drawing.Rectangle;
+                IsDisposed :boolean;
+                Disposing :boolean;
+                Dock :System.Windows.Forms.DockStyle;
+                Enabled :boolean;
+                Focused :boolean;
+                Font :System.Drawing.Font;
+                ForeColor :System.Drawing.Color;
+                Handle :System.IntPtr;
+                HasChildren :boolean;
+                Height :number;
+                IsHandleCreated :boolean;
+                InvokeRequired :boolean;
+                IsAccessible :boolean;
+                IsMirrored :boolean;
+                Left :number;
+                Location :System.Drawing.Point;
+                Margin :System.Windows.Forms.Padding;
+                MaximumSize :System.Drawing.Size;
+                MinimumSize :System.Drawing.Size;
+                Name :string;
+                Parent :System.Windows.Forms.Control;
+                ProductName :string;
+                ProductVersion :string;
+                RecreatingHandle :boolean;
+                Region :System.Drawing.Region;
+                Right :number;
+                RightToLeft :System.Windows.Forms.RightToLeft;
+                Site :System.ComponentModel.ISite;
+                Size :System.Drawing.Size;
+                TabIndex :number;
+                TabStop :boolean;
+                Tag :any;
+                Top :number;
+                TopLevelControl :System.Windows.Forms.Control;
+                UseWaitCursor :boolean;
+                Visible :boolean;
+                Width :number;
+                WindowTarget :System.Windows.Forms.IWindowTarget;
+                PreferredSize :System.Drawing.Size;
+                Padding :System.Windows.Forms.Padding;
+                Container :System.ComponentModel.IContainer;
+                DoubleClick :System.EventHandler;
+                MouseDoubleClick :System.Windows.Forms.MouseEventHandler;
+                AutoSizeChanged :System.EventHandler;
+                ImeModeChanged :System.EventHandler;
+                BackColorChanged :System.EventHandler;
+                BackgroundImageChanged :System.EventHandler;
+                BackgroundImageLayoutChanged :System.EventHandler;
+                BindingContextChanged :System.EventHandler;
+                CausesValidationChanged :System.EventHandler;
+                ClientSizeChanged :System.EventHandler;
+                ContextMenuChanged :System.EventHandler;
+                ContextMenuStripChanged :System.EventHandler;
+                CursorChanged :System.EventHandler;
+                DockChanged :System.EventHandler;
+                EnabledChanged :System.EventHandler;
+                FontChanged :System.EventHandler;
+                ForeColorChanged :System.EventHandler;
+                LocationChanged :System.EventHandler;
+                MarginChanged :System.EventHandler;
+                RegionChanged :System.EventHandler;
+                RightToLeftChanged :System.EventHandler;
+                SizeChanged :System.EventHandler;
+                TabIndexChanged :System.EventHandler;
+                TabStopChanged :System.EventHandler;
+                TextChanged :System.EventHandler;
+                VisibleChanged :System.EventHandler;
+                Click :System.EventHandler;
+                ControlAdded :System.Windows.Forms.ControlEventHandler;
+                ControlRemoved :System.Windows.Forms.ControlEventHandler;
+                DragDrop :System.Windows.Forms.DragEventHandler;
+                DragEnter :System.Windows.Forms.DragEventHandler;
+                DragOver :System.Windows.Forms.DragEventHandler;
+                DragLeave :System.EventHandler;
+                GiveFeedback :System.Windows.Forms.GiveFeedbackEventHandler;
+                HandleCreated :System.EventHandler;
+                HandleDestroyed :System.EventHandler;
+                HelpRequested :System.Windows.Forms.HelpEventHandler;
+                Invalidated :System.Windows.Forms.InvalidateEventHandler;
+                PaddingChanged :System.EventHandler;
+                Paint :System.Windows.Forms.PaintEventHandler;
+                QueryContinueDrag :System.Windows.Forms.QueryContinueDragEventHandler;
+                QueryAccessibilityHelp :System.Windows.Forms.QueryAccessibilityHelpEventHandler;
+                Enter :System.EventHandler;
+                GotFocus :System.EventHandler;
+                KeyDown :System.Windows.Forms.KeyEventHandler;
+                KeyPress :System.Windows.Forms.KeyPressEventHandler;
+                KeyUp :System.Windows.Forms.KeyEventHandler;
+                Layout :System.Windows.Forms.LayoutEventHandler;
+                Leave :System.EventHandler;
+                LostFocus :System.EventHandler;
+                MouseClick :System.Windows.Forms.MouseEventHandler;
+                MouseCaptureChanged :System.EventHandler;
+                MouseDown :System.Windows.Forms.MouseEventHandler;
+                MouseEnter :System.EventHandler;
+                MouseLeave :System.EventHandler;
+                DpiChangedBeforeParent :System.EventHandler;
+                DpiChangedAfterParent :System.EventHandler;
+                MouseHover :System.EventHandler;
+                MouseMove :System.Windows.Forms.MouseEventHandler;
+                MouseUp :System.Windows.Forms.MouseEventHandler;
+                MouseWheel :System.Windows.Forms.MouseEventHandler;
+                Move :System.EventHandler;
+                PreviewKeyDown :System.Windows.Forms.PreviewKeyDownEventHandler;
+                Resize :System.EventHandler;
+                ChangeUICues :System.Windows.Forms.UICuesEventHandler;
+                StyleChanged :System.EventHandler;
+                SystemColorsChanged :System.EventHandler;
+                Validating :System.ComponentModel.CancelEventHandler;
+                Validated :System.EventHandler;
+                ParentChanged :System.EventHandler;
+                Disposed :System.EventHandler;
+                NotifyDefault(value: boolean): void;
+                PerformClick(): void;
+                ToString(): string;
+                GetPreferredSize(proposedSize: System.Drawing.Size): System.Drawing.Size;
+                ResetBindings(): void;
+                BeginInvoke(method: System.Delegate): System.IAsyncResult;
+                BeginInvoke(method: System.Delegate, args: any[]): System.IAsyncResult;
+                BringToFront(): void;
+                Contains(ctl: System.Windows.Forms.Control): boolean;
+                CreateGraphics(): System.Drawing.Graphics;
+                CreateControl(): void;
+                DoDragDrop(data: any, allowedEffects: System.Windows.Forms.DragDropEffects): System.Windows.Forms.DragDropEffects;
+                DrawToBitmap(bitmap: System.Drawing.Bitmap, targetBounds: System.Drawing.Rectangle): void;
+                EndInvoke(asyncResult: System.IAsyncResult): any;
+                FindForm(): System.Windows.Forms.Form;
+                Focus(): boolean;
+                GetChildAtPoint(pt: System.Drawing.Point, skipValue: System.Windows.Forms.GetChildAtPointSkip): System.Windows.Forms.Control;
+                GetChildAtPoint(pt: System.Drawing.Point): System.Windows.Forms.Control;
+                GetContainerControl(): System.Windows.Forms.IContainerControl;
+                GetNextControl(ctl: System.Windows.Forms.Control, forward: boolean): System.Windows.Forms.Control;
+                Hide(): void;
+                Invalidate(region: System.Drawing.Region): void;
+                Invalidate(region: System.Drawing.Region, invalidateChildren: boolean): void;
+                Invalidate(): void;
+                Invalidate(invalidateChildren: boolean): void;
+                Invalidate(rc: System.Drawing.Rectangle): void;
+                Invalidate(rc: System.Drawing.Rectangle, invalidateChildren: boolean): void;
+                Invoke(method: System.Delegate): any;
+                Invoke(method: System.Delegate, args: any[]): any;
+                LogicalToDeviceUnits(value: number): number;
+                ScaleBitmapLogicalToDevice(logicalBitmap: System.Drawing.Bitmap): void;
+                PerformLayout(): void;
+                PerformLayout(affectedControl: System.Windows.Forms.Control, affectedProperty: string): void;
+                PointToClient(p: System.Drawing.Point): System.Drawing.Point;
+                PointToScreen(p: System.Drawing.Point): System.Drawing.Point;
+                PreProcessMessage(msg: System.Windows.Forms.Message): boolean;
+                PreProcessControlMessage(msg: System.Windows.Forms.Message): System.Windows.Forms.PreProcessControlState;
+                ResetBackColor(): void;
+                ResetCursor(): void;
+                ResetFont(): void;
+                ResetForeColor(): void;
+                ResetRightToLeft(): void;
+                RectangleToClient(r: System.Drawing.Rectangle): System.Drawing.Rectangle;
+                RectangleToScreen(r: System.Drawing.Rectangle): System.Drawing.Rectangle;
+                Refresh(): void;
+                ResetText(): void;
+                ResumeLayout(): void;
+                ResumeLayout(performLayout: boolean): void;
+                Scale(ratio: number): void;
+                Scale(dx: number, dy: number): void;
+                Scale(factor: System.Drawing.SizeF): void;
+                Select(): void;
+                SelectNextControl(ctl: System.Windows.Forms.Control, forward: boolean, tabStopOnly: boolean, nested: boolean, wrap: boolean): boolean;
+                SendToBack(): void;
+                SetBounds(x: number, y: number, width: number, height: number): void;
+                SetBounds(x: number, y: number, width: number, height: number, specified: System.Windows.Forms.BoundsSpecified): void;
+                Show(): void;
+                SuspendLayout(): void;
+                Update(): void;
+                ResetImeMode(): void;
+                Dispose(): void;
+                GetLifetimeService(): any;
+                InitializeLifetimeService(): any;
+                CreateObjRef(requestedType: System.Type): System.Runtime.Remoting.ObjRef;
+                Equals(obj: any): boolean;
+                GetHashCode(): number;
+                GetType(): System.Type;
+            }
+        }
+    }
+}
+declare namespace System {
+    namespace Windows {
+        namespace Forms {
+            /**
+            名前:AutoSizeMode
+            名前空間:System.Windows.Forms
+            完全限定名:System.Windows.Forms.AutoSizeMode
+            このメンバを宣言するクラス:
+            親クラス:System.Enum
+            属性:AutoLayout, AnsiClass, Class, Public, Sealed
+            */
+            interface AutoSizeMode {
+                value__ :number;
+                GrowAndShrink :any;
+                GrowOnly :any;
+                Equals(obj: any): boolean;
+                GetHashCode(): number;
+                ToString(): string;
+                ToString(format: string, provider: any): string;
+                CompareTo(target: any): number;
+                ToString(format: string): string;
+                ToString(provider: any): string;
+                HasFlag(flag: any): boolean;
+                GetTypeCode(): any;
+                GetType(): any;
+            }
+        }
+    }
+}
+declare namespace System {
+    namespace Windows {
+        namespace Forms {
+            /**
+            名前:DialogResult
+            名前空間:System.Windows.Forms
+            完全限定名:System.Windows.Forms.DialogResult
+            このメンバを宣言するクラス:
+            親クラス:System.Enum
+            属性:AutoLayout, AnsiClass, Class, Public, Sealed
+            */
+            interface DialogResult {
+                value__ :number;
+                None :any;
+                OK :any;
+                Cancel :any;
+                Abort :any;
+                Retry :any;
+                Ignore :any;
+                Yes :any;
+                No :any;
+                Equals(obj: any): boolean;
+                GetHashCode(): number;
+                ToString(): string;
+                ToString(format: string, provider: any): string;
+                CompareTo(target: any): number;
+                ToString(format: string): string;
+                ToString(provider: any): string;
+                HasFlag(flag: any): boolean;
+                GetTypeCode(): any;
+                GetType(): any;
+            }
+        }
+    }
+}
+declare namespace System {
+    namespace Drawing {
+        /**
+        名前:Color
+        名前空間:System.Drawing
+        完全限定名:System.Drawing.Color
+        このメンバを宣言するクラス:
+        親クラス:System.ValueType
+        属性:AutoLayout, AnsiClass, Class, Public, SequentialLayout, Sealed, Serializable, BeforeFieldInit
+        */
+        interface Color {
+            Empty :any;
+            Transparent :any;
+            AliceBlue :any;
+            AntiqueWhite :any;
+            Aqua :any;
+            Aquamarine :any;
+            Azure :any;
+            Beige :any;
+            Bisque :any;
+            Black :any;
+            BlanchedAlmond :any;
+            Blue :any;
+            BlueViolet :any;
+            Brown :any;
+            BurlyWood :any;
+            CadetBlue :any;
+            Chartreuse :any;
+            Chocolate :any;
+            Coral :any;
+            CornflowerBlue :any;
+            Cornsilk :any;
+            Crimson :any;
+            Cyan :any;
+            DarkBlue :any;
+            DarkCyan :any;
+            DarkGoldenrod :any;
+            DarkGray :any;
+            DarkGreen :any;
+            DarkKhaki :any;
+            DarkMagenta :any;
+            DarkOliveGreen :any;
+            DarkOrange :any;
+            DarkOrchid :any;
+            DarkRed :any;
+            DarkSalmon :any;
+            DarkSeaGreen :any;
+            DarkSlateBlue :any;
+            DarkSlateGray :any;
+            DarkTurquoise :any;
+            DarkViolet :any;
+            DeepPink :any;
+            DeepSkyBlue :any;
+            DimGray :any;
+            DodgerBlue :any;
+            Firebrick :any;
+            FloralWhite :any;
+            ForestGreen :any;
+            Fuchsia :any;
+            Gainsboro :any;
+            GhostWhite :any;
+            Gold :any;
+            Goldenrod :any;
+            Gray :any;
+            Green :any;
+            GreenYellow :any;
+            Honeydew :any;
+            HotPink :any;
+            IndianRed :any;
+            Indigo :any;
+            Ivory :any;
+            Khaki :any;
+            Lavender :any;
+            LavenderBlush :any;
+            LawnGreen :any;
+            LemonChiffon :any;
+            LightBlue :any;
+            LightCoral :any;
+            LightCyan :any;
+            LightGoldenrodYellow :any;
+            LightGreen :any;
+            LightGray :any;
+            LightPink :any;
+            LightSalmon :any;
+            LightSeaGreen :any;
+            LightSkyBlue :any;
+            LightSlateGray :any;
+            LightSteelBlue :any;
+            LightYellow :any;
+            Lime :any;
+            LimeGreen :any;
+            Linen :any;
+            Magenta :any;
+            Maroon :any;
+            MediumAquamarine :any;
+            MediumBlue :any;
+            MediumOrchid :any;
+            MediumPurple :any;
+            MediumSeaGreen :any;
+            MediumSlateBlue :any;
+            MediumSpringGreen :any;
+            MediumTurquoise :any;
+            MediumVioletRed :any;
+            MidnightBlue :any;
+            MintCream :any;
+            MistyRose :any;
+            Moccasin :any;
+            NavajoWhite :any;
+            Navy :any;
+            OldLace :any;
+            Olive :any;
+            OliveDrab :any;
+            Orange :any;
+            OrangeRed :any;
+            Orchid :any;
+            PaleGoldenrod :any;
+            PaleGreen :any;
+            PaleTurquoise :any;
+            PaleVioletRed :any;
+            PapayaWhip :any;
+            PeachPuff :any;
+            Peru :any;
+            Pink :any;
+            Plum :any;
+            PowderBlue :any;
+            Purple :any;
+            Red :any;
+            RosyBrown :any;
+            RoyalBlue :any;
+            SaddleBrown :any;
+            Salmon :any;
+            SandyBrown :any;
+            SeaGreen :any;
+            SeaShell :any;
+            Sienna :any;
+            Silver :any;
+            SkyBlue :any;
+            SlateBlue :any;
+            SlateGray :any;
+            Snow :any;
+            SpringGreen :any;
+            SteelBlue :any;
+            Tan :any;
+            Teal :any;
+            Thistle :any;
+            Tomato :any;
+            Turquoise :any;
+            Violet :any;
+            Wheat :any;
+            White :any;
+            WhiteSmoke :any;
+            Yellow :any;
+            YellowGreen :any;
+            R :any;
+            G :any;
+            B :any;
+            A :any;
+            IsKnownColor :boolean;
+            IsEmpty :boolean;
+            IsNamedColor :boolean;
+            IsSystemColor :boolean;
+            Name :string;
+            FromArgb(argb: number): any;
+            FromArgb(alpha: number, red: number, green: number, blue: number): any;
+            FromArgb(alpha: number, baseColor: any): any;
+            FromArgb(red: number, green: number, blue: number): any;
+            FromKnownColor(color: any): any;
+            FromName(name: string): any;
+            GetBrightness(): number;
+            GetHue(): number;
+            GetSaturation(): number;
+            ToArgb(): number;
+            ToKnownColor(): any;
+            ToString(): string;
+            Equals(obj: any): boolean;
+            GetHashCode(): number;
+            GetType(): any;
+        }
+    }
+}
+declare namespace System {
+    namespace Windows {
+        namespace Forms {
+            /**
+            名前:FlatStyle
+            名前空間:System.Windows.Forms
+            完全限定名:System.Windows.Forms.FlatStyle
+            このメンバを宣言するクラス:
+            親クラス:System.Enum
+            属性:AutoLayout, AnsiClass, Class, Public, Sealed
+            */
+            interface FlatStyle {
+                value__ :number;
+                Flat :any;
+                Popup :any;
+                Standard :any;
+                System :any;
+                Equals(obj: any): boolean;
+                GetHashCode(): number;
+                ToString(): string;
+                ToString(format: string, provider: any): string;
+                CompareTo(target: any): number;
+                ToString(format: string): string;
+                ToString(provider: any): string;
+                HasFlag(flag: any): boolean;
+                GetTypeCode(): any;
+                GetType(): any;
+            }
+        }
+    }
+}
+declare namespace System {
+    namespace Windows {
+        namespace Forms {
+            /**
+            名前:FlatButtonAppearance
+            名前空間:System.Windows.Forms
+            完全限定名:System.Windows.Forms.FlatButtonAppearance
+            このメンバを宣言するクラス:
+            親クラス:System.Object
+            属性:AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+            */
+            interface FlatButtonAppearance {
+                BorderSize :number;
+                BorderColor :any;
+                CheckedBackColor :any;
+                MouseDownBackColor :any;
+                MouseOverBackColor :any;
+                ToString(): string;
+                Equals(obj: any): boolean;
+                GetHashCode(): number;
+                GetType(): any;
+            }
+        }
+    }
+}
+declare namespace System {
+    namespace Drawing {
+        /**
+        名前:Image
+        名前空間:System.Drawing
+        完全限定名:System.Drawing.Image
+        このメンバを宣言するクラス:
+        親クラス:System.MarshalByRefObject
+        属性:AutoLayout, AnsiClass, Class, Public, Abstract, Serializable, BeforeFieldInit
+        */
+        interface Image {
+            Tag :any;
+            PhysicalDimension :any;
+            Size :any;
+            Width :number;
+            Height :number;
+            HorizontalResolution :number;
+            VerticalResolution :number;
+            Flags :number;
+            RawFormat :any;
+            PixelFormat :any;
+            Palette :any;
+            FrameDimensionsList :any;
+            PropertyIdList :any;
+            PropertyItems :any;
+            FromFile(filename: string): any;
+            FromFile(filename: string, useEmbeddedColorManagement: boolean): any;
+            FromStream(stream: any): any;
+            FromStream(stream: any, useEmbeddedColorManagement: boolean): any;
+            FromStream(stream: any, useEmbeddedColorManagement: boolean, validateImageData: boolean): any;
+            Clone(): any;
+            Dispose(): void;
+            GetEncoderParameterList(encoder: any): any;
+            Save(filename: string): void;
+            Save(filename: string, format: any): void;
+            Save(filename: string, encoder: any, encoderParams: any): void;
+            Save(stream: any, format: any): void;
+            Save(stream: any, encoder: any, encoderParams: any): void;
+            SaveAdd(encoderParams: any): void;
+            SaveAdd(image: any, encoderParams: any): void;
+            GetBounds(pageUnit: any): any;
+            GetThumbnailImage(thumbWidth: number, thumbHeight: number, callback: any, callbackData: any): any;
+            GetFrameCount(dimension: any): number;
+            SelectActiveFrame(dimension: any, frameIndex: number): number;
+            RotateFlip(rotateFlipType: any): void;
+            GetPropertyItem(propid: number): any;
+            RemovePropertyItem(propid: number): void;
+            SetPropertyItem(propitem: any): void;
+            FromHbitmap(hbitmap: any): any;
+            FromHbitmap(hbitmap: any, hpalette: any): any;
+            GetPixelFormatSize(pixfmt: any): number;
+            IsAlphaPixelFormat(pixfmt: any): boolean;
+            IsExtendedPixelFormat(pixfmt: any): boolean;
+            IsCanonicalPixelFormat(pixfmt: any): boolean;
+            GetLifetimeService(): any;
+            InitializeLifetimeService(): any;
+            CreateObjRef(requestedType: any): any;
+            ToString(): string;
+            Equals(obj: any): boolean;
+            GetHashCode(): number;
+            GetType(): any;
+        }
+    }
+}
+declare namespace System {
+    namespace Drawing {
+        /**
+        名前:ContentAlignment
+        名前空間:System.Drawing
+        完全限定名:System.Drawing.ContentAlignment
+        このメンバを宣言するクラス:
+        親クラス:System.Enum
+        属性:AutoLayout, AnsiClass, Class, Public, Sealed
+        */
+        interface ContentAlignment {
+            value__ :number;
+            TopLeft :any;
+            TopCenter :any;
+            TopRight :any;
+            MiddleLeft :any;
+            MiddleCenter :any;
+            MiddleRight :any;
+            BottomLeft :any;
+            BottomCenter :any;
+            BottomRight :any;
+            Equals(obj: any): boolean;
+            GetHashCode(): number;
+            ToString(): string;
+            ToString(format: string, provider: any): string;
+            CompareTo(target: any): number;
+            ToString(format: string): string;
+            ToString(provider: any): string;
+            HasFlag(flag: any): boolean;
+            GetTypeCode(): any;
+            GetType(): any;
+        }
+    }
+}
+declare namespace System {
+    namespace Windows {
+        namespace Forms {
+            /**
+            名前:ImageList
+            名前空間:System.Windows.Forms
+            完全限定名:System.Windows.Forms.ImageList
+            このメンバを宣言するクラス:
+            親クラス:System.ComponentModel.Component
+            属性:AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+            */
+            interface ImageList {
+                new();
+                new(container: any);
+                ColorDepth :any;
+                Handle :any;
+                HandleCreated :boolean;
+                Images :any;
+                ImageSize :any;
+                ImageStream :any;
+                Tag :any;
+                TransparentColor :any;
+                Site :any;
+                Container :any;
+                RecreateHandle :any;
+                Disposed :any;
+                Draw(g: any, pt: any, index: number): void;
+                Draw(g: any, x: number, y: number, index: number): void;
+                Draw(g: any, x: number, y: number, width: number, height: number, index: number): void;
+                ToString(): string;
+                Dispose(): void;
+                GetLifetimeService(): any;
+                InitializeLifetimeService(): any;
+                CreateObjRef(requestedType: any): any;
+                Equals(obj: any): boolean;
+                GetHashCode(): number;
+                GetType(): any;
+            }
+        }
+    }
+}
+declare namespace System {
+    namespace Windows {
+        namespace Forms {
+            /**
+            名前:ImeMode
+            名前空間:System.Windows.Forms
+            完全限定名:System.Windows.Forms.ImeMode
+            このメンバを宣言するクラス:
+            親クラス:System.Enum
+            属性:AutoLayout, AnsiClass, Class, Public, Sealed
+            */
+            interface ImeMode {
+                value__ :number;
+                Inherit :any;
+                NoControl :any;
+                On :any;
+                Off :any;
+                Disable :any;
+                Hiragana :any;
+                Katakana :any;
+                KatakanaHalf :any;
+                AlphaFull :any;
+                Alpha :any;
+                HangulFull :any;
+                Hangul :any;
+                Close :any;
+                OnHalf :any;
+                Equals(obj: any): boolean;
+                GetHashCode(): number;
+                ToString(): string;
+                ToString(format: string, provider: any): string;
+                CompareTo(target: any): number;
+                ToString(format: string): string;
+                ToString(provider: any): string;
+                HasFlag(flag: any): boolean;
+                GetTypeCode(): any;
+                GetType(): any;
+            }
+        }
+    }
+}
+declare namespace System {
+    namespace Windows {
+        namespace Forms {
+            /**
+            名前:TextImageRelation
+            名前空間:System.Windows.Forms
+            完全限定名:System.Windows.Forms.TextImageRelation
+            このメンバを宣言するクラス:
+            親クラス:System.Enum
+            属性:AutoLayout, AnsiClass, Class, Public, Sealed
+            */
+            interface TextImageRelation {
+                value__ :number;
+                Overlay :any;
+                ImageBeforeText :any;
+                TextBeforeImage :any;
+                ImageAboveText :any;
+                TextAboveImage :any;
+                Equals(obj: any): boolean;
+                GetHashCode(): number;
+                ToString(): string;
+                ToString(format: string, provider: any): string;
+                CompareTo(target: any): number;
+                ToString(format: string): string;
+                ToString(provider: any): string;
+                HasFlag(flag: any): boolean;
+                GetTypeCode(): any;
+                GetType(): any;
+            }
+        }
+    }
+}
+declare namespace System {
+    namespace Windows {
+        namespace Forms {
+            /**
+            名前:AccessibleObject
+            名前空間:System.Windows.Forms
+            完全限定名:System.Windows.Forms.AccessibleObject
+            このメンバを宣言するクラス:
+            親クラス:System.Runtime.InteropServices.StandardOleMarshalObject
+            属性:AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+            */
+            interface AccessibleObject {
+                new();
+                Bounds :any;
+                DefaultAction :string;
+                Description :string;
+                Help :string;
+                KeyboardShortcut :string;
+                Name :string;
+                Parent :any;
+                Role :any;
+                State :any;
+                Value :string;
+                GetChild(index: number): any;
+                GetChildCount(): number;
+                GetFocused(): any;
+                GetHelpTopic(fileName: string): number;
+                GetSelected(): any;
+                HitTest(x: number, y: number): any;
+                DoDefaultAction(): void;
+                Navigate(navdir: any): any;
+                Select(flags: any): void;
+                GetLifetimeService(): any;
+                InitializeLifetimeService(): any;
+                CreateObjRef(requestedType: any): any;
+                ToString(): string;
+                Equals(obj: any): boolean;
+                GetHashCode(): number;
+                GetType(): any;
+            }
+        }
+    }
+}
+declare namespace System {
+    namespace Windows {
+        namespace Forms {
+            /**
+            名前:AccessibleRole
+            名前空間:System.Windows.Forms
+            完全限定名:System.Windows.Forms.AccessibleRole
+            このメンバを宣言するクラス:
+            親クラス:System.Enum
+            属性:AutoLayout, AnsiClass, Class, Public, Sealed
+            */
+            interface AccessibleRole {
+                value__ :number;
+                Default :any;
+                None :any;
+                TitleBar :any;
+                MenuBar :any;
+                ScrollBar :any;
+                Grip :any;
+                Sound :any;
+                Cursor :any;
+                Caret :any;
+                Alert :any;
+                Window :any;
+                Client :any;
+                MenuPopup :any;
+                MenuItem :any;
+                ToolTip :any;
+                Application :any;
+                Document :any;
+                Pane :any;
+                Chart :any;
+                Dialog :any;
+                Border :any;
+                Grouping :any;
+                Separator :any;
+                ToolBar :any;
+                StatusBar :any;
+                Table :any;
+                ColumnHeader :any;
+                RowHeader :any;
+                Column :any;
+                Row :any;
+                Cell :any;
+                Link :any;
+                HelpBalloon :any;
+                Character :any;
+                List :any;
+                ListItem :any;
+                Outline :any;
+                OutlineItem :any;
+                PageTab :any;
+                PropertyPage :any;
+                Indicator :any;
+                Graphic :any;
+                StaticText :any;
+                Text :any;
+                PushButton :any;
+                CheckButton :any;
+                RadioButton :any;
+                ComboBox :any;
+                DropList :any;
+                ProgressBar :any;
+                Dial :any;
+                HotkeyField :any;
+                Slider :any;
+                SpinButton :any;
+                Diagram :any;
+                Animation :any;
+                Equation :any;
+                ButtonDropDown :any;
+                ButtonMenu :any;
+                ButtonDropDownGrid :any;
+                WhiteSpace :any;
+                PageTabList :any;
+                Clock :any;
+                SplitButton :any;
+                IpAddress :any;
+                OutlineButton :any;
+                Equals(obj: any): boolean;
+                GetHashCode(): number;
+                ToString(): string;
+                ToString(format: string, provider: any): string;
+                CompareTo(target: any): number;
+                ToString(format: string): string;
+                ToString(provider: any): string;
+                HasFlag(flag: any): boolean;
+                GetTypeCode(): any;
+                GetType(): any;
+            }
+        }
+    }
+}
+declare namespace System {
+    namespace Windows {
+        namespace Forms {
+            /**
+            名前:AnchorStyles
+            名前空間:System.Windows.Forms
+            完全限定名:System.Windows.Forms.AnchorStyles
+            このメンバを宣言するクラス:
+            親クラス:System.Enum
+            属性:AutoLayout, AnsiClass, Class, Public, Sealed
+            */
+            interface AnchorStyles {
+                value__ :number;
+                Top :any;
+                Bottom :any;
+                Left :any;
+                Right :any;
+                None :any;
+                Equals(obj: any): boolean;
+                GetHashCode(): number;
+                ToString(): string;
+                ToString(format: string, provider: any): string;
+                CompareTo(target: any): number;
+                ToString(format: string): string;
+                ToString(provider: any): string;
+                HasFlag(flag: any): boolean;
+                GetTypeCode(): any;
+                GetType(): any;
+            }
+        }
+    }
+}
+declare namespace System {
+    namespace Drawing {
+        /**
+        名前:Point
+        名前空間:System.Drawing
+        完全限定名:System.Drawing.Point
+        このメンバを宣言するクラス:
+        親クラス:System.ValueType
+        属性:AutoLayout, AnsiClass, Class, Public, SequentialLayout, Sealed, Serializable, BeforeFieldInit
+        */
+        interface Point {
+            new(x: number, y: number);
+            new(sz: any);
+            new(dw: number);
+            Empty :any;
+            IsEmpty :boolean;
+            X :number;
+            Y :number;
+            Add(pt: any, sz: any): any;
+            Subtract(pt: any, sz: any): any;
+            Ceiling(value: any): any;
+            Truncate(value: any): any;
+            Round(value: any): any;
+            Equals(obj: any): boolean;
+            GetHashCode(): number;
+            Offset(dx: number, dy: number): void;
+            Offset(p: any): void;
+            ToString(): string;
+            GetType(): any;
+        }
+    }
+}
+declare namespace System {
+    namespace Windows {
+        namespace Forms {
+            namespace Layout {
+                /**
+                名前:LayoutEngine
+                名前空間:System.Windows.Forms.Layout
+                完全限定名:System.Windows.Forms.Layout.LayoutEngine
+                このメンバを宣言するクラス:
+                親クラス:System.Object
+                属性:AutoLayout, AnsiClass, Class, Public, Abstract, BeforeFieldInit
+                */
+                interface LayoutEngine {
+                    InitLayout(child: any, specified: any): void;
+                    Layout(container: any, layoutEventArgs: any): boolean;
+                    ToString(): string;
+                    Equals(obj: any): boolean;
+                    GetHashCode(): number;
+                    GetType(): any;
+                }
+            }
+        }
+    }
+}
+declare namespace System {
+    namespace Windows {
+        namespace Forms {
+            /**
+            名前:ImageLayout
+            名前空間:System.Windows.Forms
+            完全限定名:System.Windows.Forms.ImageLayout
+            このメンバを宣言するクラス:
+            親クラス:System.Enum
+            属性:AutoLayout, AnsiClass, Class, Public, Sealed
+            */
+            interface ImageLayout {
+                value__ :number;
+                None :any;
+                Tile :any;
+                Center :any;
+                Stretch :any;
+                Zoom :any;
+                Equals(obj: any): boolean;
+                GetHashCode(): number;
+                ToString(): string;
+                ToString(format: string, provider: any): string;
+                CompareTo(target: any): number;
+                ToString(format: string): string;
+                ToString(provider: any): string;
+                HasFlag(flag: any): boolean;
+                GetTypeCode(): any;
+                GetType(): any;
+            }
+        }
+    }
+}
+declare namespace System {
+    namespace Windows {
+        namespace Forms {
+            /**
+            名前:BindingContext
+            名前空間:System.Windows.Forms
+            完全限定名:System.Windows.Forms.BindingContext
+            このメンバを宣言するクラス:
+            親クラス:System.Object
+            属性:AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+            */
+            interface BindingContext {
+                new();
+                IsReadOnly :boolean;
+                Item :any;
+                CollectionChanged :any;
+                // [dataSource: any]: any;
+                // [dataSource: any, dataMember: string]: any;
+                Contains(dataSource: any): boolean;
+                Contains(dataSource: any, dataMember: string): boolean;
+                UpdateBinding(newBindingContext: any, binding: any): void;
+                ToString(): string;
+                Equals(obj: any): boolean;
+                GetHashCode(): number;
+                GetType(): any;
+            }
+        }
+    }
+}
+declare namespace System {
+    namespace Drawing {
+        /**
+        名前:Rectangle
+        名前空間:System.Drawing
+        完全限定名:System.Drawing.Rectangle
+        このメンバを宣言するクラス:
+        親クラス:System.ValueType
+        属性:AutoLayout, AnsiClass, Class, Public, SequentialLayout, Sealed, Serializable, BeforeFieldInit
+        */
+        interface Rectangle {
+            new(x: number, y: number, width: number, height: number);
+            new(location: any, size: any);
+            Empty :any;
+            Location :any;
+            Size :any;
+            X :number;
+            Y :number;
+            Width :number;
+            Height :number;
+            Left :number;
+            Top :number;
+            Right :number;
+            Bottom :number;
+            IsEmpty :boolean;
+            FromLTRB(left: number, top: number, right: number, bottom: number): any;
+            Truncate(value: any): any;
+            Contains(x: number, y: number): boolean;
+            Contains(pt: any): boolean;
+            Contains(rect: any): boolean;
+            Inflate(width: number, height: number): void;
+            Intersect(rect: any): void;
+            Intersect(a: any, b: any): any;
+            IntersectsWith(rect: any): boolean;
+            Union(a: any, b: any): any;
+            Equals(obj: any): boolean;
+            Ceiling(value: any): any;
+            Round(value: any): any;
+            GetHashCode(): number;
+            Inflate(size: any): void;
+            Inflate(rect: any, x: number, y: number): any;
+            Offset(pos: any): void;
+            Offset(x: number, y: number): void;
+            ToString(): string;
+            GetType(): any;
+        }
+    }
+}
+declare namespace System {
+    namespace Drawing {
+        /**
+        名前:Size
+        名前空間:System.Drawing
+        完全限定名:System.Drawing.Size
+        このメンバを宣言するクラス:
+        親クラス:System.ValueType
+        属性:AutoLayout, AnsiClass, Class, Public, SequentialLayout, Sealed, Serializable, BeforeFieldInit
+        */
+        interface Size {
+            new(pt: any);
+            new(width: number, height: number);
+            Empty :any;
+            IsEmpty :boolean;
+            Width :number;
+            Height :number;
+            Add(sz1: any, sz2: any): any;
+            Ceiling(value: any): any;
+            Subtract(sz1: any, sz2: any): any;
+            Truncate(value: any): any;
+            Round(value: any): any;
+            Equals(obj: any): boolean;
+            GetHashCode(): number;
+            ToString(): string;
+            GetType(): any;
+        }
+    }
+}
+declare namespace System {
+    namespace Windows {
+        namespace Forms {
+            /**
+            名前:ContextMenu
+            名前空間:System.Windows.Forms
+            完全限定名:System.Windows.Forms.ContextMenu
+            このメンバを宣言するクラス:
+            親クラス:System.Windows.Forms.Menu
+            属性:AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+            */
+            interface ContextMenu {
+                new();
+                new(menuItems: any);
+                SourceControl :any;
+                RightToLeft :any;
+                Handle :any;
+                IsParent :boolean;
+                MdiListItem :any;
+                Name :string;
+                MenuItems :any;
+                Tag :any;
+                Site :any;
+                Container :any;
+                Popup :any;
+                Collapse :any;
+                Disposed :any;
+                Show(control: any, pos: any): void;
+                Show(control: any, pos: any, alignment: any): void;
+                FindMenuItem(type: number, value: any): any;
+                GetContextMenu(): any;
+                GetMainMenu(): any;
+                MergeMenu(menuSrc: any): void;
+                ToString(): string;
+                Dispose(): void;
+                GetLifetimeService(): any;
+                InitializeLifetimeService(): any;
+                CreateObjRef(requestedType: any): any;
+                Equals(obj: any): boolean;
+                GetHashCode(): number;
+                GetType(): any;
+            }
+        }
+    }
+}
+declare namespace System {
+    namespace Windows {
+        namespace Forms {
+            /**
+            名前:ContextMenuStrip
+            名前空間:System.Windows.Forms
+            完全限定名:System.Windows.Forms.ContextMenuStrip
+            このメンバを宣言するクラス:
+            親クラス:System.Windows.Forms.ToolStripDropDownMenu
+            属性:AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+            */
+            interface ContextMenuStrip {
+                new(container: any);
+                new();
+                SourceControl :any;
+                DisplayRectangle :any;
+                LayoutEngine :any;
+                LayoutStyle :any;
+                ShowImageMargin :boolean;
+                ShowCheckMargin :boolean;
+                AllowItemReorder :boolean;
+                AllowTransparency :boolean;
+                Anchor :any;
+                AutoSize :boolean;
+                AutoClose :boolean;
+                CanOverflow :boolean;
+                ContextMenu :any;
+                ContextMenuStrip :any;
+                DefaultDropDownDirection :any;
+                Dock :any;
+                DropShadowEnabled :boolean;
+                Font :any;
+                GripDisplayStyle :any;
+                GripRectangle :any;
+                GripMargin :any;
+                GripStyle :any;
+                IsAutoGenerated :boolean;
+                Location :any;
+                Opacity :number;
+                OverflowButton :any;
+                OwnerItem :any;
+                Region :any;
+                RightToLeft :any;
+                Stretch :boolean;
+                TextDirection :any;
+                TopLevel :boolean;
+                TabIndex :number;
+                Visible :boolean;
+                AutoScroll :boolean;
+                AutoScrollMargin :any;
+                AutoScrollMinSize :any;
+                AutoScrollPosition :any;
+                AllowDrop :boolean;
+                AllowMerge :boolean;
+                BackColor :any;
+                BindingContext :any;
+                CausesValidation :boolean;
+                Controls :any;
+                Cursor :any;
+                ForeColor :any;
+                HasChildren :boolean;
+                HorizontalScroll :any;
+                ImageScalingSize :any;
+                ImageList :any;
+                IsCurrentlyDragging :boolean;
+                Items :any;
+                IsDropDown :boolean;
+                LayoutSettings :any;
+                Orientation :any;
+                Renderer :any;
+                RenderMode :any;
+                ShowItemToolTips :boolean;
+                TabStop :boolean;
+                VerticalScroll :any;
+                DockPadding :any;
+                AccessibilityObject :any;
+                AccessibleDefaultActionDescription :string;
+                AccessibleDescription :string;
+                AccessibleName :string;
+                AccessibleRole :any;
+                AutoScrollOffset :any;
+                BackgroundImage :any;
+                BackgroundImageLayout :any;
+                Bottom :number;
+                Bounds :any;
+                CanFocus :boolean;
+                CanSelect :boolean;
+                Capture :boolean;
+                ClientRectangle :any;
+                ClientSize :any;
+                CompanyName :string;
+                ContainsFocus :boolean;
+                Created :boolean;
+                DataBindings :any;
+                DeviceDpi :number;
+                IsDisposed :boolean;
+                Disposing :boolean;
+                Enabled :boolean;
+                Focused :boolean;
+                Handle :any;
+                Height :number;
+                IsHandleCreated :boolean;
+                InvokeRequired :boolean;
+                IsAccessible :boolean;
+                IsMirrored :boolean;
+                Left :number;
+                Margin :any;
+                MaximumSize :any;
+                MinimumSize :any;
+                Name :string;
+                Parent :any;
+                ProductName :string;
+                ProductVersion :string;
+                RecreatingHandle :boolean;
+                Right :number;
+                Site :any;
+                Size :any;
+                Tag :any;
+                Text :string;
+                Top :number;
+                TopLevelControl :any;
+                UseWaitCursor :boolean;
+                Width :number;
+                WindowTarget :any;
+                PreferredSize :any;
+                Padding :any;
+                ImeMode :any;
+                Container :any;
+                BackgroundImageChanged :any;
+                BackgroundImageLayoutChanged :any;
+                BindingContextChanged :any;
+                ChangeUICues :any;
+                ContextMenuChanged :any;
+                ContextMenuStripChanged :any;
+                DockChanged :any;
+                Closed :any;
+                Closing :any;
+                Enter :any;
+                FontChanged :any;
+                ForeColorChanged :any;
+                GiveFeedback :any;
+                HelpRequested :any;
+                ImeModeChanged :any;
+                KeyDown :any;
+                KeyPress :any;
+                KeyUp :any;
+                Leave :any;
+                Opening :any;
+                Opened :any;
+                RegionChanged :any;
+                Scroll :any;
+                StyleChanged :any;
+                TabStopChanged :any;
+                TextChanged :any;
+                TabIndexChanged :any;
+                Validated :any;
+                Validating :any;
+                AutoSizeChanged :any;
+                BeginDrag :any;
+                CausesValidationChanged :any;
+                ControlAdded :any;
+                CursorChanged :any;
+                ControlRemoved :any;
+                EndDrag :any;
+                ItemAdded :any;
+                ItemClicked :any;
+                ItemRemoved :any;
+                LayoutCompleted :any;
+                LayoutStyleChanged :any;
+                PaintGrip :any;
+                RendererChanged :any;
+                BackColorChanged :any;
+                ClientSizeChanged :any;
+                EnabledChanged :any;
+                LocationChanged :any;
+                MarginChanged :any;
+                RightToLeftChanged :any;
+                SizeChanged :any;
+                VisibleChanged :any;
+                Click :any;
+                DragDrop :any;
+                DragEnter :any;
+                DragOver :any;
+                DragLeave :any;
+                HandleCreated :any;
+                HandleDestroyed :any;
+                Invalidated :any;
+                PaddingChanged :any;
+                Paint :any;
+                QueryContinueDrag :any;
+                QueryAccessibilityHelp :any;
+                DoubleClick :any;
+                GotFocus :any;
+                Layout :any;
+                LostFocus :any;
+                MouseClick :any;
+                MouseDoubleClick :any;
+                MouseCaptureChanged :any;
+                MouseDown :any;
+                MouseEnter :any;
+                MouseLeave :any;
+                DpiChangedBeforeParent :any;
+                DpiChangedAfterParent :any;
+                MouseHover :any;
+                MouseMove :any;
+                MouseUp :any;
+                MouseWheel :any;
+                Move :any;
+                PreviewKeyDown :any;
+                Resize :any;
+                SystemColorsChanged :any;
+                ParentChanged :any;
+                Disposed :any;
+                Close(): void;
+                Close(reason: any): void;
+                Show(): void;
+                Show(control: any, position: any): void;
+                Show(control: any, position: any, direction: any): void;
+                Show(control: any, x: number, y: number): void;
+                Show(screenLocation: any): void;
+                Show(position: any, direction: any): void;
+                Show(x: number, y: number): void;
+                GetNextItem(start: any, direction: any): any;
+                GetChildAtPoint(point: any): any;
+                GetChildAtPoint(pt: any, skipValue: any): any;
+                GetItemAt(x: number, y: number): any;
+                GetItemAt(point: any): any;
+                ResetMinimumSize(): void;
+                SetAutoScrollMargin(x: number, y: number): void;
+                ToString(): string;
+                ScrollControlIntoView(activeControl: any): void;
+                ResetBindings(): void;
+                GetPreferredSize(proposedSize: any): any;
+                BeginInvoke(method: any): any;
+                BeginInvoke(method: any, args: any): any;
+                BringToFront(): void;
+                Contains(ctl: any): boolean;
+                CreateGraphics(): any;
+                CreateControl(): void;
+                DoDragDrop(data: any, allowedEffects: any): any;
+                DrawToBitmap(bitmap: any, targetBounds: any): void;
+                EndInvoke(asyncResult: any): any;
+                FindForm(): any;
+                Focus(): boolean;
+                GetChildAtPoint(pt: any): any;
+                GetContainerControl(): any;
+                GetNextControl(ctl: any, forward: boolean): any;
+                Hide(): void;
+                Invalidate(region: any): void;
+                Invalidate(region: any, invalidateChildren: boolean): void;
+                Invalidate(): void;
+                Invalidate(invalidateChildren: boolean): void;
+                Invalidate(rc: any): void;
+                Invalidate(rc: any, invalidateChildren: boolean): void;
+                Invoke(method: any): any;
+                Invoke(method: any, args: any): any;
+                LogicalToDeviceUnits(value: number): number;
+                ScaleBitmapLogicalToDevice(logicalBitmap: any): void;
+                PerformLayout(): void;
+                PerformLayout(affectedControl: any, affectedProperty: string): void;
+                PointToClient(p: any): any;
+                PointToScreen(p: any): any;
+                PreProcessMessage(msg: any): boolean;
+                PreProcessControlMessage(msg: any): any;
+                ResetBackColor(): void;
+                ResetCursor(): void;
+                ResetFont(): void;
+                ResetForeColor(): void;
+                ResetRightToLeft(): void;
+                RectangleToClient(r: any): any;
+                RectangleToScreen(r: any): any;
+                Refresh(): void;
+                ResetText(): void;
+                ResumeLayout(): void;
+                ResumeLayout(performLayout: boolean): void;
+                Scale(ratio: number): void;
+                Scale(dx: number, dy: number): void;
+                Scale(factor: any): void;
+                Select(): void;
+                SelectNextControl(ctl: any, forward: boolean, tabStopOnly: boolean, nested: boolean, wrap: boolean): boolean;
+                SendToBack(): void;
+                SetBounds(x: number, y: number, width: number, height: number): void;
+                SetBounds(x: number, y: number, width: number, height: number, specified: any): void;
+                SuspendLayout(): void;
+                Update(): void;
+                ResetImeMode(): void;
+                Dispose(): void;
+                GetLifetimeService(): any;
+                InitializeLifetimeService(): any;
+                CreateObjRef(requestedType: any): any;
+                Equals(obj: any): boolean;
+                GetHashCode(): number;
+                GetType(): any;
+            }
+        }
+    }
+}
+declare namespace System {
+    namespace Windows {
+        namespace Forms {
+            /**
+            名前:ControlCollection
+            名前空間:System.Windows.Forms
+            完全限定名:System.Windows.Forms.Control+ControlCollection
+            このメンバを宣言するクラス:System.Windows.Forms.Control
+            親クラス:System.Windows.Forms.Layout.ArrangedElementCollection
+            属性:AutoLayout, AnsiClass, Class, NestedPublic, BeforeFieldInit
+            */
+            interface ControlCollection {
+                new(owner: any);
+                Owner :any;
+                Item :any;
+                IsReadOnly :boolean;
+                Count :number;
+                ContainsKey(key: string): boolean;
+                Add(value: any): void;
+                AddRange(controls: any): void;
+                Contains(control: any): boolean;
+                Find(key: string, searchAllChildren: boolean): any;
+                GetEnumerator(): any;
+                IndexOf(control: any): number;
+                IndexOfKey(key: string): number;
+                Remove(value: any): void;
+                RemoveAt(index: number): void;
+                RemoveByKey(key: string): void;
+                [index: number]: any;
+                [key: string]: any;
+                Clear(): void;
+                GetChildIndex(child: any): number;
+                GetChildIndex(child: any, throwException: boolean): number;
+                SetChildIndex(child: any, newIndex: number): void;
+                Equals(obj: any): boolean;
+                GetHashCode(): number;
+                CopyTo(array: any, index: number): void;
+                ToString(): string;
+                GetType(): any;
+            }
+        }
+    }
+}
+declare namespace System {
+    namespace Windows {
+        namespace Forms {
+            /**
+            名前:Cursor
+            名前空間:System.Windows.Forms
+            完全限定名:System.Windows.Forms.Cursor
+            このメンバを宣言するクラス:
+            親クラス:System.Object
+            属性:AutoLayout, AnsiClass, Class, Public, Sealed, Serializable, BeforeFieldInit
+            */
+            interface Cursor {
+                new(handle: any);
+                new(stream: any);
+                new(fileName: string);
+                new(type: any, resource: string);
+                Clip :any;
+                Current :any;
+                Handle :any;
+                HotSpot :any;
+                Position :any;
+                Size :any;
+                Tag :any;
+                CopyHandle(): any;
+                Dispose(): void;
+                Draw(g: any, targetRect: any): void;
+                DrawStretched(g: any, targetRect: any): void;
+                Hide(): void;
+                Show(): void;
+                ToString(): string;
+                GetHashCode(): number;
+                Equals(obj: any): boolean;
+                GetType(): any;
+            }
+        }
+    }
+}
+declare namespace System {
+    namespace Windows {
+        namespace Forms {
+            /**
+            名前:ControlBindingsCollection
+            名前空間:System.Windows.Forms
+            完全限定名:System.Windows.Forms.ControlBindingsCollection
+            このメンバを宣言するクラス:
+            親クラス:System.Windows.Forms.BindingsCollection
+            属性:AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+            */
+            interface ControlBindingsCollection {
+                new(control: any);
+                BindableComponent :any;
+                Control :any;
+                Item :any;
+                DefaultDataSourceUpdateMode :any;
+                Count :number;
+                IsReadOnly :boolean;
+                IsSynchronized :boolean;
+                SyncRoot :any;
+                CollectionChanging :any;
+                CollectionChanged :any;
+                [propertyName: string]: any;
+                Add(binding: any): void;
+                Add(propertyName: string, dataSource: any, dataMember: string): any;
+                Add(propertyName: string, dataSource: any, dataMember: string, formattingEnabled: boolean): any;
+                Add(propertyName: string, dataSource: any, dataMember: string, formattingEnabled: boolean, updateMode: any): any;
+                Add(propertyName: string, dataSource: any, dataMember: string, formattingEnabled: boolean, updateMode: any, nullValue: any): any;
+                Add(propertyName: string, dataSource: any, dataMember: string, formattingEnabled: boolean, updateMode: any, nullValue: any, formatString: string): any;
+                Add(propertyName: string, dataSource: any, dataMember: string, formattingEnabled: boolean, updateMode: any, nullValue: any, formatString: string, formatInfo: any): any;
+                Clear(): void;
+                Remove(binding: any): void;
+                RemoveAt(index: number): void;
+                [index: number]: any;
+                CopyTo(ar: any, index: number): void;
+                GetEnumerator(): any;
+                GetLifetimeService(): any;
+                InitializeLifetimeService(): any;
+                CreateObjRef(requestedType: any): any;
+                ToString(): string;
+                Equals(obj: any): boolean;
+                GetHashCode(): number;
+                GetType(): any;
+            }
+        }
+    }
+}
+declare namespace System {
+    namespace Windows {
+        namespace Forms {
+            /**
+            名前:DockStyle
+            名前空間:System.Windows.Forms
+            完全限定名:System.Windows.Forms.DockStyle
+            このメンバを宣言するクラス:
+            親クラス:System.Enum
+            属性:AutoLayout, AnsiClass, Class, Public, Sealed
+            */
+            interface DockStyle {
+                value__ :number;
+                None :any;
+                Top :any;
+                Bottom :any;
+                Left :any;
+                Right :any;
+                Fill :any;
+                Equals(obj: any): boolean;
+                GetHashCode(): number;
+                ToString(): string;
+                ToString(format: string, provider: any): string;
+                CompareTo(target: any): number;
+                ToString(format: string): string;
+                ToString(provider: any): string;
+                HasFlag(flag: any): boolean;
+                GetTypeCode(): any;
+                GetType(): any;
+            }
+        }
+    }
+}
+declare namespace System {
+    namespace Drawing {
+        /**
+        名前:Font
+        名前空間:System.Drawing
+        完全限定名:System.Drawing.Font
+        このメンバを宣言するクラス:
+        親クラス:System.MarshalByRefObject
+        属性:AutoLayout, AnsiClass, Class, Public, Sealed, Serializable, BeforeFieldInit
+        */
+        interface Font {
+            new(prototype: any, newStyle: any);
+            new(family: any, emSize: number, style: any, unit: any, gdiCharSet: any, gdiVerticalFont: boolean);
+            new(family: any, emSize: number, style: any);
+            new(familyName: string, emSize: number);
+            new(family: any, emSize: number, style: any, unit: any);
+            new(family: any, emSize: number, style: any, unit: any, gdiCharSet: any);
+            new(familyName: string, emSize: number, style: any, unit: any, gdiCharSet: any);
+            new(familyName: string, emSize: number, style: any, unit: any, gdiCharSet: any, gdiVerticalFont: boolean);
+            new(family: any, emSize: number, unit: any);
+            new(family: any, emSize: number);
+            new(familyName: string, emSize: number, style: any, unit: any);
+            new(familyName: string, emSize: number, style: any);
+            new(familyName: string, emSize: number, unit: any);
+            FontFamily :any;
+            Bold :boolean;
+            GdiCharSet :any;
+            GdiVerticalFont :boolean;
+            Italic :boolean;
+            Name :string;
+            OriginalFontName :string;
+            Strikeout :boolean;
+            Underline :boolean;
+            Style :any;
+            Size :number;
+            SizeInPoints :number;
+            Unit :any;
+            Height :number;
+            IsSystemFont :boolean;
+            SystemFontName :string;
+            FromHfont(hfont: any): any;
+            FromLogFont(lf: any, hdc: any): any;
+            ToLogFont(logFont: any): void;
+            ToLogFont(logFont: any, graphics: any): void;
+            ToHfont(): any;
+            FromLogFont(lf: any): any;
+            FromHdc(hdc: any): any;
+            Clone(): any;
+            Dispose(): void;
+            Equals(obj: any): boolean;
+            GetHashCode(): number;
+            ToString(): string;
+            GetHeight(graphics: any): number;
+            GetHeight(): number;
+            GetHeight(dpi: number): number;
+            GetLifetimeService(): any;
+            InitializeLifetimeService(): any;
+            CreateObjRef(requestedType: any): any;
+            GetType(): any;
+        }
+    }
+}
+declare namespace System {
+    /**
+    名前:IntPtr
+    名前空間:System
+    完全限定名:System.IntPtr
+    このメンバを宣言するクラス:
+    親クラス:System.ValueType
+    属性:AutoLayout, AnsiClass, Class, Public, SequentialLayout, Sealed, Serializable, BeforeFieldInit
+    */
+    interface IntPtr {
+        new(value: number);
+        new(value: void);
+        Zero :any;
+        Size :number;
+        Equals(obj: any): boolean;
+        GetHashCode(): number;
+        ToInt32(): number;
+        ToInt64(): number;
+        ToString(): string;
+        ToString(format: string): string;
+        Add(pointer: any, offset: number): any;
+        Subtract(pointer: any, offset: number): any;
+        ToPointer(): void;
+        GetType(): any;
+    }
+}
+declare namespace System {
+    namespace Windows {
+        namespace Forms {
+            /**
+            名前:Padding
+            名前空間:System.Windows.Forms
+            完全限定名:System.Windows.Forms.Padding
+            このメンバを宣言するクラス:
+            親クラス:System.ValueType
+            属性:AutoLayout, AnsiClass, Class, Public, SequentialLayout, Sealed, Serializable, BeforeFieldInit
+            */
+            interface Padding {
+                new(all: number);
+                new(left: number, top: number, right: number, bottom: number);
+                Empty :any;
+                All :number;
+                Bottom :number;
+                Left :number;
+                Right :number;
+                Top :number;
+                Horizontal :number;
+                Vertical :number;
+                Size :any;
+                Add(p1: any, p2: any): any;
+                Subtract(p1: any, p2: any): any;
+                Equals(other: any): boolean;
+                GetHashCode(): number;
+                ToString(): string;
+                GetType(): any;
+            }
+        }
+    }
+}
+declare namespace System {
+    namespace Windows {
+        namespace Forms {
+            /**
+            名前:Control
+            名前空間:System.Windows.Forms
+            完全限定名:System.Windows.Forms.Control
+            このメンバを宣言するクラス:
+            親クラス:System.ComponentModel.Component
+            属性:AutoLayout, AnsiClass, Class, Public
+            */
+            interface Control {
+                new();
+                new(text: string);
+                new(text: string, left: number, top: number, width: number, height: number);
+                new(parent: any, text: string);
+                new(parent: any, text: string, left: number, top: number, width: number, height: number);
+                AccessibilityObject :any;
+                AccessibleDefaultActionDescription :string;
+                AccessibleDescription :string;
+                AccessibleName :string;
+                AccessibleRole :any;
+                AllowDrop :boolean;
+                Anchor :any;
+                AutoSize :boolean;
+                AutoScrollOffset :any;
+                LayoutEngine :any;
+                BackColor :any;
+                BackgroundImage :any;
+                BackgroundImageLayout :any;
+                BindingContext :any;
+                Bottom :number;
+                Bounds :any;
+                CanFocus :boolean;
+                CanSelect :boolean;
+                Capture :boolean;
+                CausesValidation :boolean;
+                CheckForIllegalCrossThreadCalls :boolean;
+                ClientRectangle :any;
+                ClientSize :any;
+                CompanyName :string;
+                ContainsFocus :boolean;
+                ContextMenu :any;
+                ContextMenuStrip :any;
+                Controls :any;
+                Created :boolean;
+                Cursor :any;
+                DataBindings :any;
+                DefaultBackColor :any;
+                DefaultFont :any;
+                DefaultForeColor :any;
+                DeviceDpi :number;
+                DisplayRectangle :any;
+                IsDisposed :boolean;
+                Disposing :boolean;
+                Dock :any;
+                Enabled :boolean;
+                Focused :boolean;
+                Font :any;
+                ForeColor :any;
+                Handle :any;
+                HasChildren :boolean;
+                Height :number;
+                IsHandleCreated :boolean;
+                InvokeRequired :boolean;
+                IsAccessible :boolean;
+                IsMirrored :boolean;
+                Left :number;
+                Location :any;
+                Margin :any;
+                MaximumSize :any;
+                MinimumSize :any;
+                ModifierKeys :any;
+                MouseButtons :any;
+                MousePosition :any;
+                Name :string;
+                Parent :any;
+                ProductName :string;
+                ProductVersion :string;
+                RecreatingHandle :boolean;
+                Region :any;
+                Right :number;
+                RightToLeft :any;
+                Site :any;
+                Size :any;
+                TabIndex :number;
+                TabStop :boolean;
+                Tag :any;
+                Text :string;
+                Top :number;
+                TopLevelControl :any;
+                UseWaitCursor :boolean;
+                Visible :boolean;
+                Width :number;
+                WindowTarget :any;
+                PreferredSize :any;
+                Padding :any;
+                ImeMode :any;
+                Container :any;
+                AutoSizeChanged :any;
+                BackColorChanged :any;
+                BackgroundImageChanged :any;
+                BackgroundImageLayoutChanged :any;
+                BindingContextChanged :any;
+                CausesValidationChanged :any;
+                ClientSizeChanged :any;
+                ContextMenuChanged :any;
+                ContextMenuStripChanged :any;
+                CursorChanged :any;
+                DockChanged :any;
+                EnabledChanged :any;
+                FontChanged :any;
+                ForeColorChanged :any;
+                LocationChanged :any;
+                MarginChanged :any;
+                RegionChanged :any;
+                RightToLeftChanged :any;
+                SizeChanged :any;
+                TabIndexChanged :any;
+                TabStopChanged :any;
+                TextChanged :any;
+                VisibleChanged :any;
+                Click :any;
+                ControlAdded :any;
+                ControlRemoved :any;
+                DragDrop :any;
+                DragEnter :any;
+                DragOver :any;
+                DragLeave :any;
+                GiveFeedback :any;
+                HandleCreated :any;
+                HandleDestroyed :any;
+                HelpRequested :any;
+                Invalidated :any;
+                PaddingChanged :any;
+                Paint :any;
+                QueryContinueDrag :any;
+                QueryAccessibilityHelp :any;
+                DoubleClick :any;
+                Enter :any;
+                GotFocus :any;
+                KeyDown :any;
+                KeyPress :any;
+                KeyUp :any;
+                Layout :any;
+                Leave :any;
+                LostFocus :any;
+                MouseClick :any;
+                MouseDoubleClick :any;
+                MouseCaptureChanged :any;
+                MouseDown :any;
+                MouseEnter :any;
+                MouseLeave :any;
+                DpiChangedBeforeParent :any;
+                DpiChangedAfterParent :any;
+                MouseHover :any;
+                MouseMove :any;
+                MouseUp :any;
+                MouseWheel :any;
+                Move :any;
+                PreviewKeyDown :any;
+                Resize :any;
+                ChangeUICues :any;
+                StyleChanged :any;
+                SystemColorsChanged :any;
+                Validating :any;
+                Validated :any;
+                ParentChanged :any;
+                ImeModeChanged :any;
+                Disposed :any;
+                ResetBindings(): void;
+                GetPreferredSize(proposedSize: any): any;
+                BeginInvoke(method: any): any;
+                BeginInvoke(method: any, args: any): any;
+                BringToFront(): void;
+                Contains(ctl: any): boolean;
+                CreateGraphics(): any;
+                CreateControl(): void;
+                DoDragDrop(data: any, allowedEffects: any): any;
+                DrawToBitmap(bitmap: any, targetBounds: any): void;
+                EndInvoke(asyncResult: any): any;
+                FindForm(): any;
+                Focus(): boolean;
+                FromChildHandle(handle: any): any;
+                FromHandle(handle: any): any;
+                GetChildAtPoint(pt: any, skipValue: any): any;
+                GetChildAtPoint(pt: any): any;
+                GetContainerControl(): any;
+                GetNextControl(ctl: any, forward: boolean): any;
+                Hide(): void;
+                Invalidate(region: any): void;
+                Invalidate(region: any, invalidateChildren: boolean): void;
+                Invalidate(): void;
+                Invalidate(invalidateChildren: boolean): void;
+                Invalidate(rc: any): void;
+                Invalidate(rc: any, invalidateChildren: boolean): void;
+                Invoke(method: any): any;
+                Invoke(method: any, args: any): any;
+                IsKeyLocked(keyVal: any): boolean;
+                IsMnemonic(charCode: any, text: string): boolean;
+                LogicalToDeviceUnits(value: number): number;
+                ScaleBitmapLogicalToDevice(logicalBitmap: any): void;
+                PerformLayout(): void;
+                PerformLayout(affectedControl: any, affectedProperty: string): void;
+                PointToClient(p: any): any;
+                PointToScreen(p: any): any;
+                PreProcessMessage(msg: any): boolean;
+                PreProcessControlMessage(msg: any): any;
+                ResetBackColor(): void;
+                ResetCursor(): void;
+                ResetFont(): void;
+                ResetForeColor(): void;
+                ResetRightToLeft(): void;
+                RectangleToClient(r: any): any;
+                RectangleToScreen(r: any): any;
+                Refresh(): void;
+                ResetText(): void;
+                ResumeLayout(): void;
+                ResumeLayout(performLayout: boolean): void;
+                Scale(ratio: number): void;
+                Scale(dx: number, dy: number): void;
+                Scale(factor: any): void;
+                Select(): void;
+                SelectNextControl(ctl: any, forward: boolean, tabStopOnly: boolean, nested: boolean, wrap: boolean): boolean;
+                SendToBack(): void;
+                SetBounds(x: number, y: number, width: number, height: number): void;
+                SetBounds(x: number, y: number, width: number, height: number, specified: any): void;
+                Show(): void;
+                SuspendLayout(): void;
+                Update(): void;
+                ResetImeMode(): void;
+                Dispose(): void;
+                ToString(): string;
+                GetLifetimeService(): any;
+                InitializeLifetimeService(): any;
+                CreateObjRef(requestedType: any): any;
+                Equals(obj: any): boolean;
+                GetHashCode(): number;
+                GetType(): any;
+            }
+        }
+    }
+}
+declare namespace System {
+    namespace Drawing {
+        /**
+        名前:Region
+        名前空間:System.Drawing
+        完全限定名:System.Drawing.Region
+        このメンバを宣言するクラス:
+        親クラス:System.MarshalByRefObject
+        属性:AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+        */
+        interface Region {
+            new();
+            new(rect: any);
+            new(path: any);
+            new(rgnData: any);
+            Clone(): any;
+            MakeInfinite(): void;
+            MakeEmpty(): void;
+            Intersect(region: any): void;
+            Union(rect: any): void;
+            Exclude(rect: any): void;
+            GetHrgn(g: any): any;
+            IsInfinite(g: any): boolean;
+            FromHrgn(hrgn: any): any;
+            Dispose(): void;
+            Intersect(rect: any): void;
+            Intersect(path: any): void;
+            ReleaseHrgn(regionHandle: any): void;
+            Union(path: any): void;
+            Union(region: any): void;
+            Xor(rect: any): void;
+            Xor(path: any): void;
+            Xor(region: any): void;
+            Exclude(path: any): void;
+            Exclude(region: any): void;
+            Complement(rect: any): void;
+            Complement(path: any): void;
+            Complement(region: any): void;
+            Translate(dx: number, dy: number): void;
+            Transform(matrix: any): void;
+            GetBounds(g: any): any;
+            IsEmpty(g: any): boolean;
+            Equals(region: any, g: any): boolean;
+            GetRegionData(): any;
+            IsVisible(x: number, y: number): boolean;
+            IsVisible(point: any): boolean;
+            IsVisible(x: number, y: number, g: any): boolean;
+            IsVisible(point: any, g: any): boolean;
+            IsVisible(x: number, y: number, width: number, height: number): boolean;
+            IsVisible(rect: any): boolean;
+            IsVisible(x: number, y: number, width: number, height: number, g: any): boolean;
+            IsVisible(rect: any, g: any): boolean;
+            GetRegionScans(matrix: any): any;
+            GetLifetimeService(): any;
+            InitializeLifetimeService(): any;
+            CreateObjRef(requestedType: any): any;
+            ToString(): string;
+            Equals(obj: any): boolean;
+            GetHashCode(): number;
+            GetType(): any;
+        }
+    }
+}
+declare namespace System {
+    namespace Windows {
+        namespace Forms {
+            /**
+            名前:RightToLeft
+            名前空間:System.Windows.Forms
+            完全限定名:System.Windows.Forms.RightToLeft
+            このメンバを宣言するクラス:
+            親クラス:System.Enum
+            属性:AutoLayout, AnsiClass, Class, Public, Sealed
+            */
+            interface RightToLeft {
+                value__ :number;
+                No :any;
+                Yes :any;
+                Inherit :any;
+                Equals(obj: any): boolean;
+                GetHashCode(): number;
+                ToString(): string;
+                ToString(format: string, provider: any): string;
+                CompareTo(target: any): number;
+                ToString(format: string): string;
+                ToString(provider: any): string;
+                HasFlag(flag: any): boolean;
+                GetTypeCode(): any;
+                GetType(): any;
+            }
+        }
+    }
+}
+declare namespace System {
+    namespace ComponentModel {
+        /**
+        名前:ISite
+        名前空間:System.ComponentModel
+        完全限定名:System.ComponentModel.ISite
+        このメンバを宣言するクラス:
+        親クラス:
+        属性:AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract
+        */
+        interface ISite {
+            Component :any;
+            Container :any;
+            DesignMode :boolean;
+            Name :string;
+        }
+    }
+}
+declare namespace System {
+    namespace Windows {
+        namespace Forms {
+            /**
+            名前:IWindowTarget
+            名前空間:System.Windows.Forms
+            完全限定名:System.Windows.Forms.IWindowTarget
+            このメンバを宣言するクラス:
+            親クラス:
+            属性:AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract
+            */
+            interface IWindowTarget {
+                OnHandleChange(newHandle: any): void;
+                OnMessage(m: any): void;
+            }
+        }
+    }
+}
+declare namespace System {
+    namespace ComponentModel {
+        /**
+        名前:IContainer
+        名前空間:System.ComponentModel
+        完全限定名:System.ComponentModel.IContainer
+        このメンバを宣言するクラス:
+        親クラス:
+        属性:AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract
+        */
+        interface IContainer {
+            Components :any;
+            Add(component: any): void;
+            Add(component: any, name: string): void;
+            Remove(component: any): void;
+        }
+    }
+}
+declare namespace System {
+    /**
+    名前:EventHandler
+    名前空間:System
+    完全限定名:System.EventHandler
+    このメンバを宣言するクラス:
+    親クラス:System.MulticastDelegate
+    属性:AutoLayout, AnsiClass, Class, Public, Sealed, Serializable
+    */
+    interface EventHandler {
+        new(object: any, method: any);
+        Method :any;
+        Target :any;
+        connect(func: any) :void
+        disconnect(func: any) :void
+        Invoke(sender: any, e: any): void;
+        BeginInvoke(sender: any, e: any, callback: any, object: any): any;
+        EndInvoke(result: any): void;
+        GetObjectData(info: any, context: any): void;
+        Equals(obj: any): boolean;
+        GetInvocationList(): any;
+        GetHashCode(): number;
+        DynamicInvoke(args: any): any;
+        Clone(): any;
+        ToString(): string;
+        GetType(): any;
+    }
+}
+declare namespace System {
+    namespace Windows {
+        namespace Forms {
+            /**
+            名前:MouseEventHandler
+            名前空間:System.Windows.Forms
+            完全限定名:System.Windows.Forms.MouseEventHandler
+            このメンバを宣言するクラス:
+            親クラス:System.MulticastDelegate
+            属性:AutoLayout, AnsiClass, Class, Public, Sealed
+            */
+            interface MouseEventHandler {
+                new(object: any, method: any);
+                Method :any;
+                Target :any;
+                Invoke(sender: any, e: any): void;
+                BeginInvoke(sender: any, e: any, callback: any, object: any): any;
+                EndInvoke(result: any): void;
+                GetObjectData(info: any, context: any): void;
+                Equals(obj: any): boolean;
+                GetInvocationList(): any;
+                GetHashCode(): number;
+                DynamicInvoke(args: any): any;
+                Clone(): any;
+                ToString(): string;
+                GetType(): any;
+            }
+        }
+    }
+}
+declare namespace System {
+    namespace Windows {
+        namespace Forms {
+            /**
+            名前:ControlEventHandler
+            名前空間:System.Windows.Forms
+            完全限定名:System.Windows.Forms.ControlEventHandler
+            このメンバを宣言するクラス:
+            親クラス:System.MulticastDelegate
+            属性:AutoLayout, AnsiClass, Class, Public, Sealed
+            */
+            interface ControlEventHandler {
+                new(object: any, method: any);
+                Method :any;
+                Target :any;
+                Invoke(sender: any, e: any): void;
+                BeginInvoke(sender: any, e: any, callback: any, object: any): any;
+                EndInvoke(result: any): void;
+                GetObjectData(info: any, context: any): void;
+                Equals(obj: any): boolean;
+                GetInvocationList(): any;
+                GetHashCode(): number;
+                DynamicInvoke(args: any): any;
+                Clone(): any;
+                ToString(): string;
+                GetType(): any;
+            }
+        }
+    }
+}
+declare namespace System {
+    namespace Windows {
+        namespace Forms {
+            /**
+            名前:DragEventHandler
+            名前空間:System.Windows.Forms
+            完全限定名:System.Windows.Forms.DragEventHandler
+            このメンバを宣言するクラス:
+            親クラス:System.MulticastDelegate
+            属性:AutoLayout, AnsiClass, Class, Public, Sealed
+            */
+            interface DragEventHandler {
+                new(object: any, method: any);
+                Method :any;
+                Target :any;
+                Invoke(sender: any, e: any): void;
+                BeginInvoke(sender: any, e: any, callback: any, object: any): any;
+                EndInvoke(result: any): void;
+                GetObjectData(info: any, context: any): void;
+                Equals(obj: any): boolean;
+                GetInvocationList(): any;
+                GetHashCode(): number;
+                DynamicInvoke(args: any): any;
+                Clone(): any;
+                ToString(): string;
+                GetType(): any;
+            }
+        }
+    }
+}
+declare namespace System {
+    namespace Windows {
+        namespace Forms {
+            /**
+            名前:GiveFeedbackEventHandler
+            名前空間:System.Windows.Forms
+            完全限定名:System.Windows.Forms.GiveFeedbackEventHandler
+            このメンバを宣言するクラス:
+            親クラス:System.MulticastDelegate
+            属性:AutoLayout, AnsiClass, Class, Public, Sealed
+            */
+            interface GiveFeedbackEventHandler {
+                new(object: any, method: any);
+                Method :any;
+                Target :any;
+                Invoke(sender: any, e: any): void;
+                BeginInvoke(sender: any, e: any, callback: any, object: any): any;
+                EndInvoke(result: any): void;
+                GetObjectData(info: any, context: any): void;
+                Equals(obj: any): boolean;
+                GetInvocationList(): any;
+                GetHashCode(): number;
+                DynamicInvoke(args: any): any;
+                Clone(): any;
+                ToString(): string;
+                GetType(): any;
+            }
+        }
+    }
+}
+declare namespace System {
+    namespace Windows {
+        namespace Forms {
+            /**
+            名前:HelpEventHandler
+            名前空間:System.Windows.Forms
+            完全限定名:System.Windows.Forms.HelpEventHandler
+            このメンバを宣言するクラス:
+            親クラス:System.MulticastDelegate
+            属性:AutoLayout, AnsiClass, Class, Public, Sealed
+            */
+            interface HelpEventHandler {
+                new(object: any, method: any);
+                Method :any;
+                Target :any;
+                Invoke(sender: any, hlpevent: any): void;
+                BeginInvoke(sender: any, hlpevent: any, callback: any, object: any): any;
+                EndInvoke(result: any): void;
+                GetObjectData(info: any, context: any): void;
+                Equals(obj: any): boolean;
+                GetInvocationList(): any;
+                GetHashCode(): number;
+                DynamicInvoke(args: any): any;
+                Clone(): any;
+                ToString(): string;
+                GetType(): any;
+            }
+        }
+    }
+}
+declare namespace System {
+    namespace Windows {
+        namespace Forms {
+            /**
+            名前:InvalidateEventHandler
+            名前空間:System.Windows.Forms
+            完全限定名:System.Windows.Forms.InvalidateEventHandler
+            このメンバを宣言するクラス:
+            親クラス:System.MulticastDelegate
+            属性:AutoLayout, AnsiClass, Class, Public, Sealed
+            */
+            interface InvalidateEventHandler {
+                new(object: any, method: any);
+                Method :any;
+                Target :any;
+                Invoke(sender: any, e: any): void;
+                BeginInvoke(sender: any, e: any, callback: any, object: any): any;
+                EndInvoke(result: any): void;
+                GetObjectData(info: any, context: any): void;
+                Equals(obj: any): boolean;
+                GetInvocationList(): any;
+                GetHashCode(): number;
+                DynamicInvoke(args: any): any;
+                Clone(): any;
+                ToString(): string;
+                GetType(): any;
+            }
+        }
+    }
+}
+declare namespace System {
+    namespace Windows {
+        namespace Forms {
+            /**
+            名前:PaintEventHandler
+            名前空間:System.Windows.Forms
+            完全限定名:System.Windows.Forms.PaintEventHandler
+            このメンバを宣言するクラス:
+            親クラス:System.MulticastDelegate
+            属性:AutoLayout, AnsiClass, Class, Public, Sealed
+            */
+            interface PaintEventHandler {
+                new(object: any, method: any);
+                Method :any;
+                Target :any;
+                Invoke(sender: any, e: any): void;
+                BeginInvoke(sender: any, e: any, callback: any, object: any): any;
+                EndInvoke(result: any): void;
+                GetObjectData(info: any, context: any): void;
+                Equals(obj: any): boolean;
+                GetInvocationList(): any;
+                GetHashCode(): number;
+                DynamicInvoke(args: any): any;
+                Clone(): any;
+                ToString(): string;
+                GetType(): any;
+            }
+        }
+    }
+}
+declare namespace System {
+    namespace Windows {
+        namespace Forms {
+            /**
+            名前:QueryContinueDragEventHandler
+            名前空間:System.Windows.Forms
+            完全限定名:System.Windows.Forms.QueryContinueDragEventHandler
+            このメンバを宣言するクラス:
+            親クラス:System.MulticastDelegate
+            属性:AutoLayout, AnsiClass, Class, Public, Sealed
+            */
+            interface QueryContinueDragEventHandler {
+                new(object: any, method: any);
+                Method :any;
+                Target :any;
+                Invoke(sender: any, e: any): void;
+                BeginInvoke(sender: any, e: any, callback: any, object: any): any;
+                EndInvoke(result: any): void;
+                GetObjectData(info: any, context: any): void;
+                Equals(obj: any): boolean;
+                GetInvocationList(): any;
+                GetHashCode(): number;
+                DynamicInvoke(args: any): any;
+                Clone(): any;
+                ToString(): string;
+                GetType(): any;
+            }
+        }
+    }
+}
+declare namespace System {
+    namespace Windows {
+        namespace Forms {
+            /**
+            名前:QueryAccessibilityHelpEventHandler
+            名前空間:System.Windows.Forms
+            完全限定名:System.Windows.Forms.QueryAccessibilityHelpEventHandler
+            このメンバを宣言するクラス:
+            親クラス:System.MulticastDelegate
+            属性:AutoLayout, AnsiClass, Class, Public, Sealed
+            */
+            interface QueryAccessibilityHelpEventHandler {
+                new(object: any, method: any);
+                Method :any;
+                Target :any;
+                Invoke(sender: any, e: any): void;
+                BeginInvoke(sender: any, e: any, callback: any, object: any): any;
+                EndInvoke(result: any): void;
+                GetObjectData(info: any, context: any): void;
+                Equals(obj: any): boolean;
+                GetInvocationList(): any;
+                GetHashCode(): number;
+                DynamicInvoke(args: any): any;
+                Clone(): any;
+                ToString(): string;
+                GetType(): any;
+            }
+        }
+    }
+}
+declare namespace System {
+    namespace Windows {
+        namespace Forms {
+            /**
+            名前:KeyEventHandler
+            名前空間:System.Windows.Forms
+            完全限定名:System.Windows.Forms.KeyEventHandler
+            このメンバを宣言するクラス:
+            親クラス:System.MulticastDelegate
+            属性:AutoLayout, AnsiClass, Class, Public, Sealed
+            */
+            interface KeyEventHandler {
+                new(object: any, method: any);
+                Method :any;
+                Target :any;
+                Invoke(sender: any, e: any): void;
+                BeginInvoke(sender: any, e: any, callback: any, object: any): any;
+                EndInvoke(result: any): void;
+                GetObjectData(info: any, context: any): void;
+                Equals(obj: any): boolean;
+                GetInvocationList(): any;
+                GetHashCode(): number;
+                DynamicInvoke(args: any): any;
+                Clone(): any;
+                ToString(): string;
+                GetType(): any;
+            }
+        }
+    }
+}
+declare namespace System {
+    namespace Windows {
+        namespace Forms {
+            /**
+            名前:KeyPressEventHandler
+            名前空間:System.Windows.Forms
+            完全限定名:System.Windows.Forms.KeyPressEventHandler
+            このメンバを宣言するクラス:
+            親クラス:System.MulticastDelegate
+            属性:AutoLayout, AnsiClass, Class, Public, Sealed
+            */
+            interface KeyPressEventHandler {
+                new(object: any, method: any);
+                Method :any;
+                Target :any;
+                Invoke(sender: any, e: any): void;
+                BeginInvoke(sender: any, e: any, callback: any, object: any): any;
+                EndInvoke(result: any): void;
+                GetObjectData(info: any, context: any): void;
+                Equals(obj: any): boolean;
+                GetInvocationList(): any;
+                GetHashCode(): number;
+                DynamicInvoke(args: any): any;
+                Clone(): any;
+                ToString(): string;
+                GetType(): any;
+            }
+        }
+    }
+}
+declare namespace System {
+    namespace Windows {
+        namespace Forms {
+            /**
+            名前:LayoutEventHandler
+            名前空間:System.Windows.Forms
+            完全限定名:System.Windows.Forms.LayoutEventHandler
+            このメンバを宣言するクラス:
+            親クラス:System.MulticastDelegate
+            属性:AutoLayout, AnsiClass, Class, Public, Sealed
+            */
+            interface LayoutEventHandler {
+                new(object: any, method: any);
+                Method :any;
+                Target :any;
+                Invoke(sender: any, e: any): void;
+                BeginInvoke(sender: any, e: any, callback: any, object: any): any;
+                EndInvoke(result: any): void;
+                GetObjectData(info: any, context: any): void;
+                Equals(obj: any): boolean;
+                GetInvocationList(): any;
+                GetHashCode(): number;
+                DynamicInvoke(args: any): any;
+                Clone(): any;
+                ToString(): string;
+                GetType(): any;
+            }
+        }
+    }
+}
+declare namespace System {
+    namespace Windows {
+        namespace Forms {
+            /**
+            名前:PreviewKeyDownEventHandler
+            名前空間:System.Windows.Forms
+            完全限定名:System.Windows.Forms.PreviewKeyDownEventHandler
+            このメンバを宣言するクラス:
+            親クラス:System.MulticastDelegate
+            属性:AutoLayout, AnsiClass, Class, Public, Sealed
+            */
+            interface PreviewKeyDownEventHandler {
+                new(object: any, method: any);
+                Method :any;
+                Target :any;
+                Invoke(sender: any, e: any): void;
+                BeginInvoke(sender: any, e: any, callback: any, object: any): any;
+                EndInvoke(result: any): void;
+                GetObjectData(info: any, context: any): void;
+                Equals(obj: any): boolean;
+                GetInvocationList(): any;
+                GetHashCode(): number;
+                DynamicInvoke(args: any): any;
+                Clone(): any;
+                ToString(): string;
+                GetType(): any;
+            }
+        }
+    }
+}
+declare namespace System {
+    namespace Windows {
+        namespace Forms {
+            /**
+            名前:UICuesEventHandler
+            名前空間:System.Windows.Forms
+            完全限定名:System.Windows.Forms.UICuesEventHandler
+            このメンバを宣言するクラス:
+            親クラス:System.MulticastDelegate
+            属性:AutoLayout, AnsiClass, Class, Public, Sealed
+            */
+            interface UICuesEventHandler {
+                new(object: any, method: any);
+                Method :any;
+                Target :any;
+                Invoke(sender: any, e: any): void;
+                BeginInvoke(sender: any, e: any, callback: any, object: any): any;
+                EndInvoke(result: any): void;
+                GetObjectData(info: any, context: any): void;
+                Equals(obj: any): boolean;
+                GetInvocationList(): any;
+                GetHashCode(): number;
+                DynamicInvoke(args: any): any;
+                Clone(): any;
+                ToString(): string;
+                GetType(): any;
+            }
+        }
+    }
+}
+declare namespace System {
+    namespace ComponentModel {
+        /**
+        名前:CancelEventHandler
+        名前空間:System.ComponentModel
+        完全限定名:System.ComponentModel.CancelEventHandler
+        このメンバを宣言するクラス:
+        親クラス:System.MulticastDelegate
+        属性:AutoLayout, AnsiClass, Class, Public, Sealed, HasSecurity
+        */
+        interface CancelEventHandler {
+            new(object: any, method: any);
+            Method :any;
+            Target :any;
+            Invoke(sender: any, e: any): void;
+            BeginInvoke(sender: any, e: any, callback: any, object: any): any;
+            EndInvoke(result: any): void;
+            GetObjectData(info: any, context: any): void;
+            Equals(obj: any): boolean;
+            GetInvocationList(): any;
+            GetHashCode(): number;
+            DynamicInvoke(args: any): any;
+            Clone(): any;
+            ToString(): string;
+            GetType(): any;
+        }
+    }
+}
+declare namespace System {
+    /**
+    名前:Delegate
+    名前空間:System
+    完全限定名:System.Delegate
+    このメンバを宣言するクラス:
+    親クラス:System.Object
+    属性:AutoLayout, AnsiClass, Class, Public, Abstract, Serializable, BeforeFieldInit
+    */
+    interface Delegate {
+        Method :any;
+        Target :any;
+        DynamicInvoke(args: any): any;
+        Equals(obj: any): boolean;
+        GetHashCode(): number;
+        Combine(a: any, b: any): any;
+        Combine(delegates: any): any;
+        GetInvocationList(): any;
+        Remove(source: any, value: any): any;
+        RemoveAll(source: any, value: any): any;
+        Clone(): any;
+        CreateDelegate(type: any, target: any, method: string): any;
+        CreateDelegate(type: any, target: any, method: string, ignoreCase: boolean): any;
+        CreateDelegate(type: any, target: any, method: string, ignoreCase: boolean, throwOnBindFailure: boolean): any;
+        CreateDelegate(type: any, method: any, throwOnBindFailure: boolean): any;
+        CreateDelegate(type: any, firstArgument: any, method: any): any;
+        CreateDelegate(type: any, firstArgument: any, method: any, throwOnBindFailure: boolean): any;
+        GetObjectData(info: any, context: any): void;
+        CreateDelegate(type: any, method: any): any;
+        ToString(): string;
+        GetType(): any;
+    }
+}
+declare namespace System {
+    /**
+    名前:IAsyncResult
+    名前空間:System
+    完全限定名:System.IAsyncResult
+    このメンバを宣言するクラス:
+    親クラス:
+    属性:AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract
+    */
+    interface IAsyncResult {
+        IsCompleted :boolean;
+        AsyncWaitHandle :any;
+        AsyncState :any;
+        CompletedSynchronously :boolean;
+    }
+}
+declare namespace System {
+    namespace Drawing {
+        /**
+        名前:Graphics
+        名前空間:System.Drawing
+        完全限定名:System.Drawing.Graphics
+        このメンバを宣言するクラス:
+        親クラス:System.MarshalByRefObject
+        属性:AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+        */
+        interface Graphics {
+            CompositingMode :any;
+            RenderingOrigin :any;
+            CompositingQuality :any;
+            TextRenderingHint :any;
+            TextContrast :number;
+            SmoothingMode :any;
+            PixelOffsetMode :any;
+            InterpolationMode :any;
+            Transform :any;
+            PageUnit :any;
+            PageScale :number;
+            DpiX :number;
+            DpiY :number;
+            Clip :any;
+            ClipBounds :any;
+            IsClipEmpty :boolean;
+            VisibleClipBounds :any;
+            IsVisibleClipEmpty :boolean;
+            FromHdc(hdc: any): any;
+            FromHdcInternal(hdc: any): any;
+            FromHwndInternal(hwnd: any): any;
+            FromImage(image: any): any;
+            ReleaseHdc(hdc: any): void;
+            ReleaseHdcInternal(hdc: any): void;
+            TranslateTransform(dx: number, dy: number): void;
+            TranslateTransform(dx: number, dy: number, order: any): void;
+            GetNearestColor(color: any): any;
+            DrawLine(pen: any, x1: number, y1: number, x2: number, y2: number): void;
+            DrawRectangle(pen: any, rect: any): void;
+            DrawRectangle(pen: any, x: number, y: number, width: number, height: number): void;
+            DrawEllipse(pen: any, rect: any): void;
+            Clear(color: any): void;
+            FillRectangle(brush: any, x: number, y: number, width: number, height: number): void;
+            FillRectangle(brush: any, rect: any): void;
+            FillRectangles(brush: any, rects: any): void;
+            FillPolygon(brush: any, points: any): void;
+            FillEllipse(brush: any, x: number, y: number, width: number, height: number): void;
+            FillRegion(brush: any, region: any): void;
+            DrawString(s: string, font: any, brush: any, x: number, y: number): void;
+            DrawString(s: string, font: any, brush: any, layoutRectangle: any): void;
+            DrawString(s: string, font: any, brush: any, layoutRectangle: any, format: any): void;
+            MeasureString(text: string, font: any, layoutArea: any, stringFormat: any): any;
+            MeasureString(text: string, font: any): any;
+            MeasureString(text: string, font: any, width: number, format: any): any;
+            DrawImage(image: any, x: number, y: number): void;
+            DrawImage(image: any, rect: any): void;
+            DrawImage(image: any, x: number, y: number, width: number, height: number): void;
+            DrawImage(image: any, destRect: any, srcRect: any, srcUnit: any): void;
+            DrawImage(image: any, destRect: any, srcX: number, srcY: number, srcWidth: number, srcHeight: number, srcUnit: any, imageAttr: any): void;
+            DrawImage(image: any, destRect: any, srcX: number, srcY: number, srcWidth: number, srcHeight: number, srcUnit: any, imageAttrs: any, callback: any, callbackData: any): void;
+            SetClip(rect: any): void;
+            SetClip(region: any, combineMode: any): void;
+            ExcludeClip(region: any): void;
+            TranslateClip(dx: number, dy: number): void;
+            GetContextInfo(): any;
+            IsVisible(rect: any): boolean;
+            Save(): any;
+            Restore(gstate: any): void;
+            BeginContainer(): any;
+            EndContainer(container: any): void;
+            GetHalftonePalette(): any;
+            FromHdc(hdc: any, hdevice: any): any;
+            FromHwnd(hwnd: any): any;
+            GetHdc(): any;
+            ReleaseHdc(): void;
+            Dispose(): void;
+            Flush(): void;
+            Flush(intention: any): void;
+            CopyFromScreen(upperLeftSource: any, upperLeftDestination: any, blockRegionSize: any): void;
+            CopyFromScreen(sourceX: number, sourceY: number, destinationX: number, destinationY: number, blockRegionSize: any): void;
+            CopyFromScreen(upperLeftSource: any, upperLeftDestination: any, blockRegionSize: any, copyPixelOperation: any): void;
+            CopyFromScreen(sourceX: number, sourceY: number, destinationX: number, destinationY: number, blockRegionSize: any, copyPixelOperation: any): void;
+            ResetTransform(): void;
+            MultiplyTransform(matrix: any): void;
+            MultiplyTransform(matrix: any, order: any): void;
+            ScaleTransform(sx: number, sy: number): void;
+            ScaleTransform(sx: number, sy: number, order: any): void;
+            RotateTransform(angle: number): void;
+            RotateTransform(angle: number, order: any): void;
+            TransformPoints(destSpace: any, srcSpace: any, pts: any): void;
+            DrawLine(pen: any, pt1: any, pt2: any): void;
+            DrawLines(pen: any, points: any): void;
+            DrawArc(pen: any, x: number, y: number, width: number, height: number, startAngle: number, sweepAngle: number): void;
+            DrawArc(pen: any, rect: any, startAngle: number, sweepAngle: number): void;
+            DrawBezier(pen: any, x1: number, y1: number, x2: number, y2: number, x3: number, y3: number, x4: number, y4: number): void;
+            DrawBezier(pen: any, pt1: any, pt2: any, pt3: any, pt4: any): void;
+            DrawBeziers(pen: any, points: any): void;
+            DrawRectangles(pen: any, rects: any): void;
+            DrawEllipse(pen: any, x: number, y: number, width: number, height: number): void;
+            DrawPie(pen: any, rect: any, startAngle: number, sweepAngle: number): void;
+            DrawPie(pen: any, x: number, y: number, width: number, height: number, startAngle: number, sweepAngle: number): void;
+            DrawPolygon(pen: any, points: any): void;
+            DrawPath(pen: any, path: any): void;
+            DrawCurve(pen: any, points: any): void;
+            DrawCurve(pen: any, points: any, tension: number): void;
+            DrawCurve(pen: any, points: any, offset: number, numberOfSegments: number): void;
+            DrawCurve(pen: any, points: any, offset: number, numberOfSegments: number, tension: number): void;
+            DrawClosedCurve(pen: any, points: any): void;
+            DrawClosedCurve(pen: any, points: any, tension: number, fillmode: any): void;
+            FillPolygon(brush: any, points: any, fillMode: any): void;
+            FillEllipse(brush: any, rect: any): void;
+            FillPie(brush: any, rect: any, startAngle: number, sweepAngle: number): void;
+            FillPie(brush: any, x: number, y: number, width: number, height: number, startAngle: number, sweepAngle: number): void;
+            FillPath(brush: any, path: any): void;
+            FillClosedCurve(brush: any, points: any): void;
+            FillClosedCurve(brush: any, points: any, fillmode: any): void;
+            FillClosedCurve(brush: any, points: any, fillmode: any, tension: number): void;
+            DrawString(s: string, font: any, brush: any, point: any): void;
+            DrawString(s: string, font: any, brush: any, x: number, y: number, format: any): void;
+            DrawString(s: string, font: any, brush: any, point: any, format: any): void;
+            MeasureString(text: string, font: any, layoutArea: any, stringFormat: any, charactersFitted: number, linesFilled: number): any;
+            MeasureString(text: string, font: any, origin: any, stringFormat: any): any;
+            MeasureString(text: string, font: any, layoutArea: any): any;
+            MeasureString(text: string, font: any, width: number): any;
+            MeasureCharacterRanges(text: string, font: any, layoutRect: any, stringFormat: any): any;
+            DrawIcon(icon: any, x: number, y: number): void;
+            DrawIcon(icon: any, targetRect: any): void;
+            DrawIconUnstretched(icon: any, targetRect: any): void;
+            DrawImage(image: any, point: any): void;
+            DrawImageUnscaled(image: any, point: any): void;
+            DrawImageUnscaled(image: any, x: number, y: number): void;
+            DrawImageUnscaled(image: any, rect: any): void;
+            DrawImageUnscaled(image: any, x: number, y: number, width: number, height: number): void;
+            DrawImageUnscaledAndClipped(image: any, rect: any): void;
+            DrawImage(image: any, destPoints: any): void;
+            DrawImage(image: any, x: number, y: number, srcRect: any, srcUnit: any): void;
+            DrawImage(image: any, destPoints: any, srcRect: any, srcUnit: any): void;
+            DrawImage(image: any, destPoints: any, srcRect: any, srcUnit: any, imageAttr: any): void;
+            DrawImage(image: any, destPoints: any, srcRect: any, srcUnit: any, imageAttr: any, callback: any): void;
+            DrawImage(image: any, destPoints: any, srcRect: any, srcUnit: any, imageAttr: any, callback: any, callbackData: number): void;
+            DrawImage(image: any, destRect: any, srcX: number, srcY: number, srcWidth: number, srcHeight: number, srcUnit: any): void;
+            DrawImage(image: any, destRect: any, srcX: number, srcY: number, srcWidth: number, srcHeight: number, srcUnit: any, imageAttrs: any): void;
+            DrawImage(image: any, destRect: any, srcX: number, srcY: number, srcWidth: number, srcHeight: number, srcUnit: any, imageAttrs: any, callback: any): void;
+            DrawImage(image: any, destRect: any, srcX: number, srcY: number, srcWidth: number, srcHeight: number, srcUnit: any, imageAttr: any, callback: any): void;
+            EnumerateMetafile(metafile: any, destPoint: any, callback: any): void;
+            EnumerateMetafile(metafile: any, destPoint: any, callback: any, callbackData: any): void;
+            EnumerateMetafile(metafile: any, destPoint: any, callback: any, callbackData: any, imageAttr: any): void;
+            EnumerateMetafile(metafile: any, destRect: any, callback: any): void;
+            EnumerateMetafile(metafile: any, destRect: any, callback: any, callbackData: any): void;
+            EnumerateMetafile(metafile: any, destRect: any, callback: any, callbackData: any, imageAttr: any): void;
+            EnumerateMetafile(metafile: any, destPoints: any, callback: any): void;
+            EnumerateMetafile(metafile: any, destPoints: any, callback: any, callbackData: any): void;
+            EnumerateMetafile(metafile: any, destPoints: any, callback: any, callbackData: any, imageAttr: any): void;
+            EnumerateMetafile(metafile: any, destPoint: any, srcRect: any, srcUnit: any, callback: any): void;
+            EnumerateMetafile(metafile: any, destPoint: any, srcRect: any, srcUnit: any, callback: any, callbackData: any): void;
+            EnumerateMetafile(metafile: any, destPoint: any, srcRect: any, unit: any, callback: any, callbackData: any, imageAttr: any): void;
+            EnumerateMetafile(metafile: any, destRect: any, srcRect: any, srcUnit: any, callback: any): void;
+            EnumerateMetafile(metafile: any, destRect: any, srcRect: any, srcUnit: any, callback: any, callbackData: any): void;
+            EnumerateMetafile(metafile: any, destRect: any, srcRect: any, unit: any, callback: any, callbackData: any, imageAttr: any): void;
+            EnumerateMetafile(metafile: any, destPoints: any, srcRect: any, srcUnit: any, callback: any): void;
+            EnumerateMetafile(metafile: any, destPoints: any, srcRect: any, srcUnit: any, callback: any, callbackData: any): void;
+            EnumerateMetafile(metafile: any, destPoints: any, srcRect: any, unit: any, callback: any, callbackData: any, imageAttr: any): void;
+            SetClip(g: any): void;
+            SetClip(g: any, combineMode: any): void;
+            SetClip(rect: any, combineMode: any): void;
+            SetClip(path: any): void;
+            SetClip(path: any, combineMode: any): void;
+            IntersectClip(rect: any): void;
+            IntersectClip(region: any): void;
+            ExcludeClip(rect: any): void;
+            ResetClip(): void;
+            IsVisible(x: number, y: number): boolean;
+            IsVisible(point: any): boolean;
+            IsVisible(x: number, y: number, width: number, height: number): boolean;
+            BeginContainer(dstrect: any, srcrect: any, unit: any): any;
+            AddMetafileComment(data: any): void;
+            GetLifetimeService(): any;
+            InitializeLifetimeService(): any;
+            CreateObjRef(requestedType: any): any;
+            ToString(): string;
+            Equals(obj: any): boolean;
+            GetHashCode(): number;
+            GetType(): any;
+        }
+    }
+}
+declare namespace System {
+    namespace Windows {
+        namespace Forms {
+            /**
+            名前:DragDropEffects
+            名前空間:System.Windows.Forms
+            完全限定名:System.Windows.Forms.DragDropEffects
+            このメンバを宣言するクラス:
+            親クラス:System.Enum
+            属性:AutoLayout, AnsiClass, Class, Public, Sealed
+            */
+            interface DragDropEffects {
+                value__ :number;
+                None :any;
+                Copy :any;
+                Move :any;
+                Link :any;
+                Scroll :any;
+                All :any;
+                Equals(obj: any): boolean;
+                GetHashCode(): number;
+                ToString(): string;
+                ToString(format: string, provider: any): string;
+                CompareTo(target: any): number;
+                ToString(format: string): string;
+                ToString(provider: any): string;
+                HasFlag(flag: any): boolean;
+                GetTypeCode(): any;
+                GetType(): any;
+            }
+        }
+    }
+}
+declare namespace System {
+    namespace Drawing {
+        /**
+        名前:Bitmap
+        名前空間:System.Drawing
+        完全限定名:System.Drawing.Bitmap
+        このメンバを宣言するクラス:
+        親クラス:System.Drawing.Image
+        属性:AutoLayout, AnsiClass, Class, Public, Sealed, Serializable, BeforeFieldInit
+        */
+        interface Bitmap {
+            new(filename: string);
+            new(filename: string, useIcm: boolean);
+            new(type: any, resource: string);
+            new(stream: any);
+            new(stream: any, useIcm: boolean);
+            new(width: number, height: number, stride: number, format: any, scan0: any);
+            new(width: number, height: number, format: any);
+            new(width: number, height: number);
+            new(width: number, height: number, g: any);
+            new(original: any);
+            new(original: any, width: number, height: number);
+            new(original: any, newSize: any);
+            Tag :any;
+            PhysicalDimension :any;
+            Size :any;
+            Width :number;
+            Height :number;
+            HorizontalResolution :number;
+            VerticalResolution :number;
+            Flags :number;
+            RawFormat :any;
+            PixelFormat :any;
+            Palette :any;
+            FrameDimensionsList :any;
+            PropertyIdList :any;
+            PropertyItems :any;
+            FromHicon(hicon: any): any;
+            FromResource(hinstance: any, bitmapName: string): any;
+            GetHbitmap(): any;
+            GetHbitmap(background: any): any;
+            GetHicon(): any;
+            Clone(rect: any, format: any): any;
+            MakeTransparent(): void;
+            MakeTransparent(transparentColor: any): void;
+            LockBits(rect: any, flags: any, format: any): any;
+            LockBits(rect: any, flags: any, format: any, bitmapData: any): any;
+            UnlockBits(bitmapdata: any): void;
+            GetPixel(x: number, y: number): any;
+            SetPixel(x: number, y: number, color: any): void;
+            SetResolution(xDpi: number, yDpi: number): void;
+            Clone(): any;
+            Dispose(): void;
+            GetEncoderParameterList(encoder: any): any;
+            Save(filename: string): void;
+            Save(filename: string, format: any): void;
+            Save(filename: string, encoder: any, encoderParams: any): void;
+            Save(stream: any, format: any): void;
+            Save(stream: any, encoder: any, encoderParams: any): void;
+            SaveAdd(encoderParams: any): void;
+            SaveAdd(image: any, encoderParams: any): void;
+            GetBounds(pageUnit: any): any;
+            GetThumbnailImage(thumbWidth: number, thumbHeight: number, callback: any, callbackData: any): any;
+            GetFrameCount(dimension: any): number;
+            SelectActiveFrame(dimension: any, frameIndex: number): number;
+            RotateFlip(rotateFlipType: any): void;
+            GetPropertyItem(propid: number): any;
+            RemovePropertyItem(propid: number): void;
+            SetPropertyItem(propitem: any): void;
+            GetLifetimeService(): any;
+            InitializeLifetimeService(): any;
+            CreateObjRef(requestedType: any): any;
+            ToString(): string;
+            Equals(obj: any): boolean;
+            GetHashCode(): number;
+            GetType(): any;
+        }
+    }
+}
+declare namespace System {
+    namespace Windows {
+        namespace Forms {
+            /**
+            名前:Form
+            名前空間:System.Windows.Forms
+            完全限定名:System.Windows.Forms.Form
+            このメンバを宣言するクラス:
+            親クラス:System.Windows.Forms.ContainerControl
+            属性:AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+            */
+            interface Form {
+                new();
+                AcceptButton :any;
+                ActiveForm :any;
+                ActiveMdiChild :any;
+                AllowTransparency :boolean;
+                AutoScale :boolean;
+                AutoScaleBaseSize :any;
+                AutoScroll :boolean;
+                AutoSize :boolean;
+                AutoSizeMode :any;
+                AutoValidate :any;
+                BackColor :any;
+                FormBorderStyle :any;
+                CancelButton :any;
+                ClientSize :any;
+                ControlBox :boolean;
+                DesktopBounds :any;
+                DesktopLocation :any;
+                DialogResult :any;
+                HelpButton :boolean;
+                Icon :any;
+                IsMdiChild :boolean;
+                IsMdiContainer :boolean;
+                IsRestrictedWindow :boolean;
+                KeyPreview :boolean;
+                Location :any;
+                MaximumSize :any;
+                MainMenuStrip :any;
+                Margin :any;
+                Menu :any;
+                MinimumSize :any;
+                MaximizeBox :boolean;
+                MdiChildren :any;
+                MdiParent :any;
+                MergedMenu :any;
+                MinimizeBox :boolean;
+                Modal :boolean;
+                Opacity :number;
+                OwnedForms :any;
+                Owner :any;
+                RestoreBounds :any;
+                RightToLeftLayout :boolean;
+                ShowInTaskbar :boolean;
+                ShowIcon :boolean;
+                Size :any;
+                SizeGripStyle :any;
+                StartPosition :any;
+                TabIndex :number;
+                TabStop :boolean;
+                Text :string;
+                TopLevel :boolean;
+                TopMost :boolean;
+                TransparencyKey :any;
+                WindowState :any;
+                AutoScaleDimensions :any;
+                AutoScaleMode :any;
+                BindingContext :any;
+                ActiveControl :any;
+                CurrentAutoScaleDimensions :any;
+                ParentForm :any;
+                AutoScrollMargin :any;
+                AutoScrollPosition :any;
+                AutoScrollMinSize :any;
+                DisplayRectangle :any;
+                HorizontalScroll :any;
+                VerticalScroll :any;
+                DockPadding :any;
+                AccessibilityObject :any;
+                AccessibleDefaultActionDescription :string;
+                AccessibleDescription :string;
+                AccessibleName :string;
+                AccessibleRole :any;
+                AllowDrop :boolean;
+                Anchor :any;
+                AutoScrollOffset :any;
+                LayoutEngine :any;
+                BackgroundImage :any;
+                BackgroundImageLayout :any;
+                Bottom :number;
+                Bounds :any;
+                CanFocus :boolean;
+                CanSelect :boolean;
+                Capture :boolean;
+                CausesValidation :boolean;
+                ClientRectangle :any;
+                CompanyName :string;
+                ContainsFocus :boolean;
+                ContextMenu :any;
+                ContextMenuStrip :any;
+                Controls :any;
+                Created :boolean;
+                Cursor :any;
+                DataBindings :any;
+                DeviceDpi :number;
+                IsDisposed :boolean;
+                Disposing :boolean;
+                Dock :any;
+                Enabled :boolean;
+                Focused :boolean;
+                Font :any;
+                ForeColor :any;
+                Handle :any;
+                HasChildren :boolean;
+                Height :number;
+                IsHandleCreated :boolean;
+                InvokeRequired :boolean;
+                IsAccessible :boolean;
+                IsMirrored :boolean;
+                Left :number;
+                Name :string;
+                Parent :any;
+                ProductName :string;
+                ProductVersion :string;
+                RecreatingHandle :boolean;
+                Region :any;
+                Right :number;
+                RightToLeft :any;
+                Site :any;
+                Tag :any;
+                Top :number;
+                TopLevelControl :any;
+                UseWaitCursor :boolean;
+                Visible :boolean;
+                Width :number;
+                WindowTarget :any;
+                PreferredSize :any;
+                Padding :any;
+                ImeMode :any;
+                Container :any;
+                AutoSizeChanged :any;
+                AutoValidateChanged :any;
+                HelpButtonClicked :any;
+                MaximizedBoundsChanged :any;
+                MaximumSizeChanged :any;
+                MarginChanged :any;
+                MinimumSizeChanged :any;
+                TabIndexChanged :any;
+                TabStopChanged :any;
+                Activated :any;
+                Closing :any;
+                Closed :any;
+                Deactivate :any;
+                FormClosing :any;
+                FormClosed :any;
+                Load :any;
+                MdiChildActivate :any;
+                MenuComplete :any;
+                MenuStart :any;
+                InputLanguageChanged :any;
+                InputLanguageChanging :any;
+                RightToLeftLayoutChanged :any;
+                Shown :any;
+                DpiChanged :any;
+                ResizeBegin :any;
+                ResizeEnd :any;
+                Scroll :any;
+                BackColorChanged :any;
+                BackgroundImageChanged :any;
+                BackgroundImageLayoutChanged :any;
+                BindingContextChanged :any;
+                CausesValidationChanged :any;
+                ClientSizeChanged :any;
+                ContextMenuChanged :any;
+                ContextMenuStripChanged :any;
+                CursorChanged :any;
+                DockChanged :any;
+                EnabledChanged :any;
+                FontChanged :any;
+                ForeColorChanged :any;
+                LocationChanged :any;
+                RegionChanged :any;
+                RightToLeftChanged :any;
+                SizeChanged :any;
+                TextChanged :any;
+                VisibleChanged :any;
+                Click :any;
+                ControlAdded :any;
+                ControlRemoved :any;
+                DragDrop :any;
+                DragEnter :any;
+                DragOver :any;
+                DragLeave :any;
+                GiveFeedback :any;
+                HandleCreated :any;
+                HandleDestroyed :any;
+                HelpRequested :any;
+                Invalidated :any;
+                PaddingChanged :any;
+                Paint :any;
+                QueryContinueDrag :any;
+                QueryAccessibilityHelp :any;
+                DoubleClick :any;
+                Enter :any;
+                GotFocus :any;
+                KeyDown :any;
+                KeyPress :any;
+                KeyUp :any;
+                Layout :any;
+                Leave :any;
+                LostFocus :any;
+                MouseClick :any;
+                MouseDoubleClick :any;
+                MouseCaptureChanged :any;
+                MouseDown :any;
+                MouseEnter :any;
+                MouseLeave :any;
+                DpiChangedBeforeParent :any;
+                DpiChangedAfterParent :any;
+                MouseHover :any;
+                MouseMove :any;
+                MouseUp :any;
+                MouseWheel :any;
+                Move :any;
+                PreviewKeyDown :any;
+                Resize :any;
+                ChangeUICues :any;
+                StyleChanged :any;
+                SystemColorsChanged :any;
+                Validating :any;
+                Validated :any;
+                ParentChanged :any;
+                ImeModeChanged :any;
+                Disposed :any;
+                Activate(): void;
+                AddOwnedForm(ownedForm: any): void;
+                Close(): void;
+                GetAutoScaleSize(font: any): any;
+                LayoutMdi(value: any): void;
+                RemoveOwnedForm(ownedForm: any): void;
+                SetDesktopBounds(x: number, y: number, width: number, height: number): void;
+                SetDesktopLocation(x: number, y: number): void;
+                Show(owner: any): void;
+                ShowDialog(): any;
+                ShowDialog(owner: any): any;
+                ToString(): string;
+                ValidateChildren(): boolean;
+                ValidateChildren(validationConstraints: any): boolean;
+                PerformAutoScale(): void;
+                Validate(): boolean;
+                Validate(checkAutoValidate: boolean): boolean;
+                ScrollControlIntoView(activeControl: any): void;
+                SetAutoScrollMargin(x: number, y: number): void;
+                ResetBindings(): void;
+                GetPreferredSize(proposedSize: any): any;
+                BeginInvoke(method: any): any;
+                BeginInvoke(method: any, args: any): any;
+                BringToFront(): void;
+                Contains(ctl: any): boolean;
+                CreateGraphics(): any;
+                CreateControl(): void;
+                DoDragDrop(data: any, allowedEffects: any): any;
+                DrawToBitmap(bitmap: any, targetBounds: any): void;
+                EndInvoke(asyncResult: any): any;
+                FindForm(): any;
+                Focus(): boolean;
+                GetChildAtPoint(pt: any, skipValue: any): any;
+                GetChildAtPoint(pt: any): any;
+                GetContainerControl(): any;
+                GetNextControl(ctl: any, forward: boolean): any;
+                Hide(): void;
+                Invalidate(region: any): void;
+                Invalidate(region: any, invalidateChildren: boolean): void;
+                Invalidate(): void;
+                Invalidate(invalidateChildren: boolean): void;
+                Invalidate(rc: any): void;
+                Invalidate(rc: any, invalidateChildren: boolean): void;
+                Invoke(method: any): any;
+                Invoke(method: any, args: any): any;
+                LogicalToDeviceUnits(value: number): number;
+                ScaleBitmapLogicalToDevice(logicalBitmap: any): void;
+                PerformLayout(): void;
+                PerformLayout(affectedControl: any, affectedProperty: string): void;
+                PointToClient(p: any): any;
+                PointToScreen(p: any): any;
+                PreProcessMessage(msg: any): boolean;
+                PreProcessControlMessage(msg: any): any;
+                ResetBackColor(): void;
+                ResetCursor(): void;
+                ResetFont(): void;
+                ResetForeColor(): void;
+                ResetRightToLeft(): void;
+                RectangleToClient(r: any): any;
+                RectangleToScreen(r: any): any;
+                Refresh(): void;
+                ResetText(): void;
+                ResumeLayout(): void;
+                ResumeLayout(performLayout: boolean): void;
+                Scale(ratio: number): void;
+                Scale(dx: number, dy: number): void;
+                Scale(factor: any): void;
+                Select(): void;
+                SelectNextControl(ctl: any, forward: boolean, tabStopOnly: boolean, nested: boolean, wrap: boolean): boolean;
+                SendToBack(): void;
+                SetBounds(x: number, y: number, width: number, height: number): void;
+                SetBounds(x: number, y: number, width: number, height: number, specified: any): void;
+                Show(): void;
+                SuspendLayout(): void;
+                Update(): void;
+                ResetImeMode(): void;
+                Dispose(): void;
+                GetLifetimeService(): any;
+                InitializeLifetimeService(): any;
+                CreateObjRef(requestedType: any): any;
+                Equals(obj: any): boolean;
+                GetHashCode(): number;
+                GetType(): any;
+            }
+        }
+    }
+}
+declare namespace System {
+    namespace Windows {
+        namespace Forms {
+            /**
+            名前:GetChildAtPointSkip
+            名前空間:System.Windows.Forms
+            完全限定名:System.Windows.Forms.GetChildAtPointSkip
+            このメンバを宣言するクラス:
+            親クラス:System.Enum
+            属性:AutoLayout, AnsiClass, Class, Public, Sealed
+            */
+            interface GetChildAtPointSkip {
+                value__ :number;
+                None :any;
+                Invisible :any;
+                Disabled :any;
+                Transparent :any;
+                Equals(obj: any): boolean;
+                GetHashCode(): number;
+                ToString(): string;
+                ToString(format: string, provider: any): string;
+                CompareTo(target: any): number;
+                ToString(format: string): string;
+                ToString(provider: any): string;
+                HasFlag(flag: any): boolean;
+                GetTypeCode(): any;
+                GetType(): any;
+            }
+        }
+    }
+}
+declare namespace System {
+    namespace Windows {
+        namespace Forms {
+            /**
+            名前:IContainerControl
+            名前空間:System.Windows.Forms
+            完全限定名:System.Windows.Forms.IContainerControl
+            このメンバを宣言するクラス:
+            親クラス:
+            属性:AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract
+            */
+            interface IContainerControl {
+                ActiveControl :any;
+                ActivateControl(active: any): boolean;
+            }
+        }
+    }
+}
+declare namespace System {
+    namespace Windows {
+        namespace Forms {
+            /**
+            名前:Message
+            名前空間:System.Windows.Forms
+            完全限定名:System.Windows.Forms.Message
+            このメンバを宣言するクラス:
+            親クラス:System.ValueType
+            属性:AutoLayout, AnsiClass, Class, Public, SequentialLayout, Sealed, HasSecurity, BeforeFieldInit
+            */
+            interface Message {
+                HWnd :any;
+                Msg :number;
+                WParam :any;
+                LParam :any;
+                Result :any;
+                GetLParam(cls: any): any;
+                Create(hWnd: any, msg: number, wparam: any, lparam: any): any;
+                Equals(o: any): boolean;
+                GetHashCode(): number;
+                ToString(): string;
+                GetType(): any;
+            }
+        }
+    }
+}
+declare namespace System {
+    namespace Windows {
+        namespace Forms {
+            /**
+            名前:PreProcessControlState
+            名前空間:System.Windows.Forms
+            完全限定名:System.Windows.Forms.PreProcessControlState
+            このメンバを宣言するクラス:
+            親クラス:System.Enum
+            属性:AutoLayout, AnsiClass, Class, Public, Sealed
+            */
+            interface PreProcessControlState {
+                value__ :number;
+                MessageProcessed :any;
+                MessageNeeded :any;
+                MessageNotNeeded :any;
+                Equals(obj: any): boolean;
+                GetHashCode(): number;
+                ToString(): string;
+                ToString(format: string, provider: any): string;
+                CompareTo(target: any): number;
+                ToString(format: string): string;
+                ToString(provider: any): string;
+                HasFlag(flag: any): boolean;
+                GetTypeCode(): any;
+                GetType(): any;
+            }
+        }
+    }
+}
+declare namespace System {
+    namespace Drawing {
+        /**
+        名前:SizeF
+        名前空間:System.Drawing
+        完全限定名:System.Drawing.SizeF
+        このメンバを宣言するクラス:
+        親クラス:System.ValueType
+        属性:AutoLayout, AnsiClass, Class, Public, SequentialLayout, Sealed, Serializable, BeforeFieldInit
+        */
+        interface SizeF {
+            new(size: any);
+            new(pt: any);
+            new(width: number, height: number);
+            Empty :any;
+            IsEmpty :boolean;
+            Width :number;
+            Height :number;
+            Add(sz1: any, sz2: any): any;
+            Subtract(sz1: any, sz2: any): any;
+            Equals(obj: any): boolean;
+            GetHashCode(): number;
+            ToPointF(): any;
+            ToSize(): any;
+            ToString(): string;
+            GetType(): any;
+        }
+    }
+}
+declare namespace System {
+    namespace Windows {
+        namespace Forms {
+            /**
+            名前:BoundsSpecified
+            名前空間:System.Windows.Forms
+            完全限定名:System.Windows.Forms.BoundsSpecified
+            このメンバを宣言するクラス:
+            親クラス:System.Enum
+            属性:AutoLayout, AnsiClass, Class, Public, Sealed
+            */
+            interface BoundsSpecified {
+                value__ :number;
+                X :any;
+                Y :any;
+                Width :any;
+                Height :any;
+                Location :any;
+                Size :any;
+                All :any;
+                None :any;
+                Equals(obj: any): boolean;
+                GetHashCode(): number;
+                ToString(): string;
+                ToString(format: string, provider: any): string;
+                CompareTo(target: any): number;
+                ToString(format: string): string;
+                ToString(provider: any): string;
+                HasFlag(flag: any): boolean;
+                GetTypeCode(): any;
+                GetType(): any;
+            }
+        }
+    }
+}
+declare namespace System {
+    /**
+    名前:Type
+    名前空間:System
+    完全限定名:System.Type
+    このメンバを宣言するクラス:
+    親クラス:System.Reflection.MemberInfo
+    属性:AutoLayout, AnsiClass, Class, Public, Abstract, Serializable, BeforeFieldInit
+    */
+    interface Type {
+        FilterAttribute :any;
+        FilterName :any;
+        FilterNameIgnoreCase :any;
+        Missing :any;
+        Delimiter :any;
+        EmptyTypes :any;
+        MemberType :any;
+        DeclaringType :any;
+        DeclaringMethod :any;
+        ReflectedType :any;
+        StructLayoutAttribute :any;
+        GUID :any;
+        DefaultBinder :any;
+        Module :any;
+        Assembly :any;
+        TypeHandle :any;
+        FullName :string;
+        Namespace :string;
+        AssemblyQualifiedName :string;
+        BaseType :any;
+        TypeInitializer :any;
+        IsNested :boolean;
+        Attributes :any;
+        GenericParameterAttributes :any;
+        IsVisible :boolean;
+        IsNotPublic :boolean;
+        IsPublic :boolean;
+        IsNestedPublic :boolean;
+        IsNestedPrivate :boolean;
+        IsNestedFamily :boolean;
+        IsNestedAssembly :boolean;
+        IsNestedFamANDAssem :boolean;
+        IsNestedFamORAssem :boolean;
+        IsAutoLayout :boolean;
+        IsLayoutSequential :boolean;
+        IsExplicitLayout :boolean;
+        IsClass :boolean;
+        IsInterface :boolean;
+        IsValueType :boolean;
+        IsAbstract :boolean;
+        IsSealed :boolean;
+        IsEnum :boolean;
+        IsSpecialName :boolean;
+        IsImport :boolean;
+        IsSerializable :boolean;
+        IsAnsiClass :boolean;
+        IsUnicodeClass :boolean;
+        IsAutoClass :boolean;
+        IsArray :boolean;
+        IsGenericType :boolean;
+        IsGenericTypeDefinition :boolean;
+        IsConstructedGenericType :boolean;
+        IsGenericParameter :boolean;
+        GenericParameterPosition :number;
+        ContainsGenericParameters :boolean;
+        IsByRef :boolean;
+        IsPointer :boolean;
+        IsPrimitive :boolean;
+        IsCOMObject :boolean;
+        HasElementType :boolean;
+        IsContextful :boolean;
+        IsMarshalByRef :boolean;
+        GenericTypeArguments :any;
+        IsSecurityCritical :boolean;
+        IsSecuritySafeCritical :boolean;
+        IsSecurityTransparent :boolean;
+        UnderlyingSystemType :any;
+        Name :string;
+        CustomAttributes :any;
+        MetadataToken :number;
+        GetType(typeName: string, throwOnError: boolean, ignoreCase: boolean): any;
+        GetType(typeName: string, throwOnError: boolean): any;
+        GetType(typeName: string): any;
+        GetType<D>(typeName: string, assemblyResolver: any, typeResolver: any): any;
+        GetType<D>(typeName: string, assemblyResolver: any, typeResolver: any, throwOnError: boolean): any;
+        GetType<D>(typeName: string, assemblyResolver: any, typeResolver: any, throwOnError: boolean, ignoreCase: boolean): any;
+        ReflectionOnlyGetType(typeName: string, throwIfNotFound: boolean, ignoreCase: boolean): any;
+        MakePointerType(): any;
+        MakeByRefType(): any;
+        MakeArrayType(): any;
+        MakeArrayType(rank: number): any;
+        GetTypeFromProgID(progID: string): any;
+        GetTypeFromProgID(progID: string, throwOnError: boolean): any;
+        GetTypeFromProgID(progID: string, server: string): any;
+        GetTypeFromProgID(progID: string, server: string, throwOnError: boolean): any;
+        GetTypeFromCLSID(clsid: any): any;
+        GetTypeFromCLSID(clsid: any, throwOnError: boolean): any;
+        GetTypeFromCLSID(clsid: any, server: string): any;
+        GetTypeFromCLSID(clsid: any, server: string, throwOnError: boolean): any;
+        GetTypeCode(type: any): any;
+        InvokeMember(name: string, invokeAttr: any, binder: any, target: any, args: any, modifiers: any, culture: any, namedParameters: any): any;
+        InvokeMember(name: string, invokeAttr: any, binder: any, target: any, args: any, culture: any): any;
+        InvokeMember(name: string, invokeAttr: any, binder: any, target: any, args: any): any;
+        GetTypeHandle(o: any): any;
+        GetTypeFromHandle(handle: any): any;
+        GetArrayRank(): number;
+        GetConstructor(bindingAttr: any, binder: any, callConvention: any, types: any, modifiers: any): any;
+        GetConstructor(bindingAttr: any, binder: any, types: any, modifiers: any): any;
+        GetConstructor(types: any): any;
+        GetConstructors(): any;
+        GetConstructors(bindingAttr: any): any;
+        GetMethod(name: string, bindingAttr: any, binder: any, callConvention: any, types: any, modifiers: any): any;
+        GetMethod(name: string, bindingAttr: any, binder: any, types: any, modifiers: any): any;
+        GetMethod(name: string, types: any, modifiers: any): any;
+        GetMethod(name: string, types: any): any;
+        GetMethod(name: string, bindingAttr: any): any;
+        GetMethod(name: string): any;
+        GetMethods(): any;
+        GetMethods(bindingAttr: any): any;
+        GetField(name: string, bindingAttr: any): any;
+        GetField(name: string): any;
+        GetFields(): any;
+        GetFields(bindingAttr: any): any;
+        GetInterface(name: string): any;
+        GetInterface(name: string, ignoreCase: boolean): any;
+        GetInterfaces(): any;
+        FindInterfaces(filter: any, filterCriteria: any): any;
+        GetEvent(name: string): any;
+        GetEvent(name: string, bindingAttr: any): any;
+        GetEvents(): any;
+        GetEvents(bindingAttr: any): any;
+        GetProperty(name: string, bindingAttr: any, binder: any, returnType: any, types: any, modifiers: any): any;
+        GetProperty(name: string, returnType: any, types: any, modifiers: any): any;
+        GetProperty(name: string, bindingAttr: any): any;
+        GetProperty(name: string, returnType: any, types: any): any;
+        GetProperty(name: string, types: any): any;
+        GetProperty(name: string, returnType: any): any;
+        GetProperty(name: string): any;
+        GetProperties(bindingAttr: any): any;
+        GetProperties(): any;
+        GetNestedTypes(): any;
+        GetNestedTypes(bindingAttr: any): any;
+        GetNestedType(name: string): any;
+        GetNestedType(name: string, bindingAttr: any): any;
+        GetMember(name: string): any;
+        GetMember(name: string, bindingAttr: any): any;
+        GetMember(name: string, type: any, bindingAttr: any): any;
+        GetMembers(): any;
+        GetMembers(bindingAttr: any): any;
+        GetDefaultMembers(): any;
+        FindMembers(memberType: any, bindingAttr: any, filter: any, filterCriteria: any): any;
+        GetGenericParameterConstraints(): any;
+        MakeGenericType(typeArguments: any): any;
+        GetElementType(): any;
+        GetGenericArguments(): any;
+        GetGenericTypeDefinition(): any;
+        GetEnumNames(): any;
+        GetEnumValues(): any;
+        GetEnumUnderlyingType(): any;
+        IsEnumDefined(value: any): boolean;
+        GetEnumName(value: any): string;
+        IsSubclassOf(c: any): boolean;
+        IsInstanceOfType(o: any): boolean;
+        IsAssignableFrom(c: any): boolean;
+        IsEquivalentTo(other: any): boolean;
+        ToString(): string;
+        GetTypeArray(args: any): any;
+        Equals(o: any): boolean;
+        GetHashCode(): number;
+        GetInterfaceMap(interfaceType: any): any;
+        GetType(): any;
+        GetCustomAttributes(inherit: boolean): any;
+        GetCustomAttributes(attributeType: any, inherit: boolean): any;
+        IsDefined(attributeType: any, inherit: boolean): boolean;
+        GetCustomAttributesData(): any;
+    }
+}
+declare namespace System {
+    namespace Runtime {
+        namespace Remoting {
+            /**
+            名前:ObjRef
+            名前空間:System.Runtime.Remoting
+            完全限定名:System.Runtime.Remoting.ObjRef
+            このメンバを宣言するクラス:
+            親クラス:System.Object
+            属性:AutoLayout, AnsiClass, Class, Public, Serializable, HasSecurity, BeforeFieldInit
+            */
+            interface ObjRef {
+                new(o: any, requestedType: any);
+                new();
+                URI :string;
+                TypeInfo :any;
+                EnvoyInfo :any;
+                ChannelInfo :any;
+                GetRealObject(context: any): any;
+                GetObjectData(info: any, context: any): void;
+                IsFromThisProcess(): boolean;
+                IsFromThisAppDomain(): boolean;
+                ToString(): string;
+                Equals(obj: any): boolean;
+                GetHashCode(): number;
+                GetType(): any;
+            }
+        }
+    }
+}

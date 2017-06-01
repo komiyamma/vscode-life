@@ -13,3 +13,4 @@ C:\Users\0300002167\Downloads\vscode-life-master (1)\vscode-life-master\win-gene
 C:\Users\0300002167\OneDrive\win_assembly_to_ts_declare\WinAssemblyToTypeScriptDeclare.src\WinAssemblyToTypeScriptDeclare\bin\Release\WinAssemblyToTypeScriptDeclare.exe.config
 C:\Users\0300002167\OneDrive\win_assembly_to_ts_declare\WinAssemblyToTypeScriptDeclare.src\WinAssemblyToTypeScriptDeclare\bin\Release\WinAssemblyToTypeScriptDeclare.exe
 C:\Users\0300002167\OneDrive\win_assembly_to_ts_declare\WinAssemblyToTypeScriptDeclare.src\WinAssemblyToTypeScriptDeclare\obj\Release\WinAssemblyToTypeScriptDeclare.exe
+C:\usr\web\vscode-life\win-general-app\win_assembly_to_ts_declare\WinAssemblyToTypeScriptDeclare.src\WinAssemblyToTypeScriptDeclare\obj\Release\WinAssemblyToTypeScriptDeclare.csprojResolveAssemblyReference.cache
