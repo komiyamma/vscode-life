@@ -6,9 +6,9 @@
    (新しいものは古いものも読めるが、古いと新しいアセンブリは読めないため)
 - 検索対象は、「.NET Framework 4系のフォルダ」と「カレントフォルダ」
 - PowerShellだと「`」などが邪魔するので、cmd.exeの方が良い。
-
+- PowerShellでやる場合は'List`1'や'Dictionary`2'といったように、シングルクォーテーションで囲むと良い。
 ```
-WinAssemblyToTypeScriptDeclare [NameSpace] [Class] [Option] -deep:0-2 -complex
+WinAssemblyToTypeScriptDeclare [NameSpace] [Class] -deep:0-2 -complex
 
 -- 「名前空間 System」の「Console」クラスをTypeScript風の宣言に
 WinAssemblyToTypeScriptDeclare System Console
