@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Reflection;
 using System.Text.RegularExpressions;
-using System.IO;
 
 namespace WinAssemblyToTypeScriptDeclare
 {
@@ -71,6 +71,7 @@ namespace WinAssemblyToTypeScriptDeclare
             }
         }
 
+        // 返りの型の分析
         static void AnalyzeResultInfo(MethodInfo m, int nestLevel, List<string> genericParameterTypeStringList)
         {
             //戻り値を表示
@@ -103,7 +104,13 @@ namespace WinAssemblyToTypeScriptDeclare
             }
         }
 
-        static List<string> GetMethodGenericTypeList(MethodInfo m, List<string> genericParameterTypeStringList)
+        /// <summary>
+        /// 対象のメソッドが持つジェネリックパラメータのリストを返す。
+        /// </summary>
+        /// <param name="m">メソッドオブジェクト</param>
+        /// <param name="genericParameterTypeStringList">クラスが持つジェネリックパラメータ</param>
+        /// <returns>メソッドが持つジェネリックパラメータを文字列のリスト形式で</returns>
+        static List<string> GetMethodGenericTypeList(MethodBase m, List<string> genericParameterTypeStringList)
         {
             //パラメータを表示
             ParameterInfo[] prms = m.GetParameters();
@@ -112,17 +119,17 @@ namespace WinAssemblyToTypeScriptDeclare
             for (int i = 0; i < prms.Length; i++)
             {
                 ParameterInfo p = prms[i];
-                var genepara = p.ParameterType.GetGenericArguments();
+                var genlist = p.ParameterType.GetGenericArguments();
 
-                foreach (var g in genepara)
+                foreach (var g in genlist)
                 {
                     if (!genericParameterTypeStringList.Exists((e) => { return e.ToString() == g.ToString(); }))
                     {
                         if (g.ToString().Contains("."))
                         {
-                            if (!prmList.Contains("TANY"))
+                            if (!prmList.Contains("D"))
                             {
-                                prmList.Add("TANY");
+                                prmList.Add("D");
                             }
                         }
                         else
@@ -154,9 +161,13 @@ namespace WinAssemblyToTypeScriptDeclare
             }
 
             return prmList;
-
         }
 
+        /// <summary>
+        /// メソッド群の分析
+        /// </summary>
+        /// <param name="t">オブジェクト</param>
+        /// <param name="nestLevel">整形用</param>
         static void AnalyzeMethodInfoList(Type t, int nestLevel)
         {
 
@@ -177,6 +188,12 @@ namespace WinAssemblyToTypeScriptDeclare
             }
         }
 
+        /// <summary>
+        /// １つのメソッドタイプの分析
+        /// </summary>
+        /// <param name="m">オブジェクト</param>
+        /// <param name="nestLevel">整形用</param>
+        /// <param name="genericParameterTypeStringList">クラスが持つジェネリック</param>
         static void AnalyzeMethodInfo(MethodInfo m, int nestLevel, List<string> genericParameterTypeStringList)
         {
             //特別な名前のメソッドは表示しない
@@ -223,16 +240,9 @@ namespace WinAssemblyToTypeScriptDeclare
 
                 ts = ModifyType(ts, isComplex);
 
-
-                // 使ってはダメな変数名
-                if (p.Name == "function")
-                {
-                    SW.Write("_function" + ": " + ts);
-                }
-                else
-                {
-                    SW.Write(p.Name + ": " + ts);
-                }
+                var varname = ModifyVarName(p.Name);
+                SW.Write(varname + ": " + ts);
+                
                 // 引数がまだ残ってるなら、「,」で繋げて次へ
                 if (prms.Length - 1 > i)
                 {

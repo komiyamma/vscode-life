@@ -1,12 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Reflection;
-using System.Text.RegularExpressions;
 
 namespace WinAssemblyToTypeScriptDeclare
 {
     partial class WinAssemblyToTypeScriptDeclare
     {
+        /// <summary>
+        ///  コンストラクタタイプのメソッド群の分析
+        /// </summary>
+        /// <param name="t">オブジェクト</param>
+        /// <param name="nestLevel">整形用</param>
         static void AnalyzeConstructorInfoList(Type t, int nestLevel)
         {
             var genericParameterTypeStringList = GetGenericParameterTypeStringList(t);
@@ -24,13 +28,26 @@ namespace WinAssemblyToTypeScriptDeclare
                 }
             }
         }
-
+        
+        /// <summary>
+        /// １つのコンストラクタの分析
+        /// </summary>
+        /// <param name="m">オブジェクト</param>
+        /// <param name="nestLevel">整形用</param>
+        /// <param name="genericParameterTypeStringList">クラス自体のジェネリックパラメータ</param>
         static void AnalyzeConstructorInfo(ConstructorInfo m, int nestLevel, List<string> genericParameterTypeStringList)
         {
             SWTabSpace(nestLevel + 1);
 
             //メソッド名を表示
             SW.Write("new");
+
+            var prmList = GetMethodGenericTypeList(m, genericParameterTypeStringList);
+
+            if (prmList.Count > 0)
+            {
+                SW.Write("<" + String.Join(", ", prmList) + ">");
+            }
 
             //パラメータを表示
             ParameterInfo[] prms = m.GetParameters();
@@ -55,13 +72,8 @@ namespace WinAssemblyToTypeScriptDeclare
 
                 ts = ModifyType(ts, isComplex);
 
-                // 使ってはダメな変数名
-                if (p.Name == "function")
-                {
-                    SW.Write("_function" + ": " + ts);
-                }　else { 
-                    SW.Write(p.Name + ": " + ts);
-                }
+                var varname = ModifyVarName(p.Name);
+                SW.Write(varname + ": " + ts);
 
                 // 引数がまだ残ってるなら、「,」で繋げて次へ
                 if (prms.Length - 1 > i)

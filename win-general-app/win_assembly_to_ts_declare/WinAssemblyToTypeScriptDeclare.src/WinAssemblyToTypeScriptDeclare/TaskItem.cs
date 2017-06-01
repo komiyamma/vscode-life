@@ -59,8 +59,6 @@ namespace WinAssemblyToTypeScriptDeclare
                 TaskItems.Add(new TaskItem { strClassName = strClassName, strNameSpace = strNameSpace, Status = TaskItem.DoStatus.Unregist });
             }
         }
-
-
     }
 
 

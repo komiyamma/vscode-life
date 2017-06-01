@@ -2,7 +2,7 @@
 
 namespace WinAssemblyToTypeScriptDeclare
 {
-
+    // 指定の名前空間+クラス名で、整形用
     class NameSpaceNested : IComparable
     {
         public int NestLevel;

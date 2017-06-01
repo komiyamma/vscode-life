@@ -1,12 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Reflection;
-using System.Text.RegularExpressions;
 
 namespace WinAssemblyToTypeScriptDeclare
 {
     partial class WinAssemblyToTypeScriptDeclare
     {
+        /// <summary>
+        /// プロパティタイプ群の分析
+        /// </summary>
+        /// <param name="t">オブジェクト</param>
+        /// <param name="nestLevel">整形用</param>
         static void AnalyzePropertyInfoList(Type t, int nestLevel)
         {
             // プロパティの一覧を取得する
@@ -24,6 +27,11 @@ namespace WinAssemblyToTypeScriptDeclare
                 }
             }
         }
+        /// <summary>
+        /// １つのプロパティの分析
+        /// </summary>
+        /// <param name="p">オブジェクト</param>
+        /// <param name="nestLevel">整形用</param>
         static void AnalyzePropertyInfo(PropertyInfo p, int nestLevel)
         {
  
@@ -31,10 +39,10 @@ namespace WinAssemblyToTypeScriptDeclare
             var ts = TypeToString(p.PropertyType);
 
             // 引数一覧
-            var genepara = p.PropertyType.GetGenericArguments();
+            var genlist = p.PropertyType.GetGenericArguments();
 
             // 「.」があったら、複雑すぎると判断する。
-            bool isComplex = IsGenericAnyCondtion(genepara, (g) => { return g.ToString().Contains("."); });
+            bool isComplex = IsGenericAnyCondtion(genlist, (g) => { return g.ToString().Contains("."); });
 
             ts = ModifyType(ts, isComplex);
 

@@ -3,10 +3,11 @@ using System.Collections.Generic;
 
 namespace WinAssemblyToTypeScriptDeclare
 {
+    /// <summary>
+    /// １つのアセンブリ中において…
+    /// </summary>
     partial class WinAssemblyToTypeScriptDeclare
     {
-        static List<NameSpaceNested> nsList;
-
         static bool m_isTypeAnyMode = false;
 
         static void PrintClassDetail(Type t, String _ns, int n)
@@ -21,9 +22,98 @@ namespace WinAssemblyToTypeScriptDeclare
             SWTabSpace(n); SW.WriteLine("*/");
         }
 
+        /// <summary>
+        /// ネームスペースを全部分解して、連結リスト的なものへと収める
+        /// </summary>
+        /// <param name="_ns"></param>
+        /// <returns></returns>
+        static List<NameSpaceNested> GetNameSpaceNestedData(string _ns)
+        {
+            List<NameSpaceNested> nsList = new List<NameSpaceNested>();
+            {
+                string[] s = _ns.Split('.');
+                List<string> nls = new List<string>();
+                nls.AddRange(s);
+
+                int nNextLevel = 0;
+
+                NameSpaceNested cut_parent = null;
+                while (nls.Count > 0)
+                {
+                    var ns = new NameSpaceNested();
+                    ns.ParentNameSpace = cut_parent;
+                    ns.NestLevel = nNextLevel;
+                    ns.NameSpace = nls[0];
+                    cut_parent = ns;
+                    nls.RemoveAt(0);
+                    nNextLevel++;
+
+                    nsList.Add(ns);
+                }
+            }
+
+            nsList.Sort();
+
+            return nsList;
+        }
+
+        /// <summary>
+        /// クラスの説明文のコメント部を出力
+        /// </summary>
+        /// <param name="t"></param>
+        /// <param name="_ns"></param>
+        /// <param name="nsList"></param>
+        static void PrintClassCommentLabel(Type t, string _ns, List<NameSpaceNested> nsList)
+        {
+            int nLastNext = 0;
+            for (int n = 0; n < nsList.Count; n++)
+            {
+                if (nsList[n].NameSpace != "any" && nsList[n].NameSpace != "NONE")
+                {
+                    SWTabSpace(n);
+                    if (n == 0)
+                    {
+                        SW.Write("declare ");
+                    }
+                    SW.WriteLine("namespace " + nsList[n].NameSpace + " {");
+
+                    // 一番深いネームスペースのところで…
+                    if (n == nsList.Count - 1)
+                    {
+                        PrintClassDetail(t, _ns, n + 1);
+                        nLastNext = n;
+                        AnalyzeMemberInfo(t, n + 1);
+                    }
+
+                }
+                else
+                {
+                    PrintClassDetail(t, _ns, 0);
+
+                    SW.Write("declare ");
+                    nLastNext = n;
+                    AnalyzeMemberInfo(t, 0);
+                }
+            }
+
+            for (int n = nLastNext; n >= 0; n--)
+            {
+                if (nsList[n].NameSpace != "any" && nsList[n].NameSpace != "NONE")
+                {
+                    SWTabSpace(n);
+                    SW.WriteLine("}");
+                }
+            }
+        }
+
+        /// <summary>
+        /// オブジェクトが指定の名前空間とクラス名なら分析
+        /// </summary>
+        /// <param name="t">比較対象のオブジェクト</param>
+        /// <param name="strNameSpace">指定の名前空間</param>
+        /// <param name="strClassName">指定のクラス名</param>
         static void AnalyzeAssembly(Type t, string strNameSpace, string strClassName)
         {
-            nsList = new List<NameSpaceNested>();
 
             // 通常のネームスペース系
             var cond1 = (t.Namespace == strNameSpace || strNameSpace == "any" || strNameSpace == "NONE") && t.Name == strClassName;
@@ -62,6 +152,7 @@ namespace WinAssemblyToTypeScriptDeclare
                     return;
                 }
 
+                // まだなので、新たなタスクを作る。今からこのまま実行するので「済状態」を同時に付ける
                 if (item == null)
                 {
                     item = new TaskItem { strNameSpace = _ns, strClassName = t.Name, Status = TaskItem.DoStatus.Done };
@@ -71,71 +162,10 @@ namespace WinAssemblyToTypeScriptDeclare
                     item.Status = TaskItem.DoStatus.Done;
                 }
 
-                var exist = nsList.Find((ns) => { return ns.FullNameSpace == _ns; });
-                if (exist == null)
-                {
-                    string[] s = _ns.Split('.');
-                    List<string> nls = new List<string>();
-                    nls.AddRange(s);
 
-                    int nNextLevel = 0;
+                var nsList = GetNameSpaceNestedData(_ns);
 
-                    NameSpaceNested cut_parent = null;
-                    while (nls.Count > 0)
-                    {
-                        var ns = new NameSpaceNested();
-                        ns.ParentNameSpace = cut_parent;
-                        ns.NestLevel = nNextLevel;
-                        ns.NameSpace = nls[0];
-                        cut_parent = ns;
-                        nls.RemoveAt(0);
-                        nNextLevel++;
-
-                        nsList.Add(ns);
-                    }
-                }
-
-                nsList.Sort();
-
-                int nLastNext = 0;
-                for (int n = 0; n < nsList.Count; n++)
-                {
-                    if (nsList[n].NameSpace != "any" && nsList[n].NameSpace != "NONE")
-                    {
-                        SWTabSpace(n);
-                        if (n == 0)
-                        {
-                            SW.Write("declare ");
-                        }
-                        SW.WriteLine("namespace " + nsList[n].NameSpace + " {");
-
-                        // 一番深いネームスペースのところで…
-                        if (n == nsList.Count - 1)
-                        {
-                            PrintClassDetail(t, _ns, n+1);
-                            nLastNext = n;
-                            AnalyzeMemberInfo(t, n + 1);
-                        }
-
-                    }
-                    else
-                    {
-                        PrintClassDetail(t, _ns, 0);
-
-                        SW.Write("declare ");
-                        nLastNext = n;
-                        AnalyzeMemberInfo(t, 0);
-                    }
-                }
-
-                for (int n = nLastNext; n >= 0; n--)
-                {
-                    if (nsList[n].NameSpace != "any" && nsList[n].NameSpace != "NONE")
-                    {
-                        SWTabSpace(n);
-                        SW.WriteLine("}");
-                    }
-                }
+                PrintClassCommentLabel(t, _ns, nsList);
             }
 
         }

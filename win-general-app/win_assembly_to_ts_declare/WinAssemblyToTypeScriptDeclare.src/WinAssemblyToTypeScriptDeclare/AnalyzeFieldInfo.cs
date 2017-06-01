@@ -1,12 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Reflection;
-using System.Text.RegularExpressions;
 
 namespace WinAssemblyToTypeScriptDeclare
 {
     partial class WinAssemblyToTypeScriptDeclare
     {
+        /// <summary>
+        /// フィールド群の分析
+        /// </summary>
+        /// <param name="t">オブジェクト</param>
+        /// <param name="nestLevel">整形用</param>
         static void AnalyzeFieldInfoList(Type t, int nestLevel)
         {
 
@@ -26,6 +29,11 @@ namespace WinAssemblyToTypeScriptDeclare
             }
 
         }
+        /// <summary>
+        /// １つのフィールドの分析
+        /// </summary>
+        /// <param name="m">オブジェクト</param>
+        /// <param name="nestLevel">整形用</param>
         static void AnalyzeFieldInfo(FieldInfo m, int nestLevel)
         {
             if (!m.IsPublic)

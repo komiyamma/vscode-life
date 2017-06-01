@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Reflection;
-using System.Text.RegularExpressions;
 
 namespace WinAssemblyToTypeScriptDeclare
 {
@@ -30,7 +29,7 @@ namespace WinAssemblyToTypeScriptDeclare
             List<string> generic_param_type_list = new List<string>();
             foreach (var g in generics)
             {
-                generic_param_type_list.Add(TypeToString(g));
+                generic_param_type_list.Add(TypeToString(g, ingeneric: true));
             }
 
             return generic_param_type_list;
@@ -38,7 +37,7 @@ namespace WinAssemblyToTypeScriptDeclare
         }
 
         // タイプを文字列に
-        static string TypeToString(Type t)
+        static string TypeToString(Type t, bool ingeneric = false)
         {
             string ts = t.ToString();
 
@@ -57,9 +56,11 @@ namespace WinAssemblyToTypeScriptDeclare
                 ns = tp.Namespace + ".";
             }
 
+            bool isClass = true;
             // ジェネリックパラメータとハッキリ出ているか、もしくは、toStringしたなかに、名前空間文字が含まれてない
             if (t.IsGenericParameter || (ns.Length > 0) && !tp.ToString().Contains(ns))
             {
+                isClass = false;
                 ns = "";
             }
             if (gen.Count == 0)
@@ -78,7 +79,11 @@ namespace WinAssemblyToTypeScriptDeclare
             }
 
             ts = ReplaceCsToTs(ts);
-            RegistClassTypeToTaskList(ns + tp.Name.Replace("[]", ""));
+
+            if (isClass)
+            {
+                ModifyType(ts, false);
+            }
 
             return ts;
         }
@@ -111,6 +116,16 @@ namespace WinAssemblyToTypeScriptDeclare
 
             return ts;
 
+        }
+
+        // 使っては駄目な変数名を修正する
+        static string ModifyVarName(string varname)
+        {
+            if (varname == "function")
+            {
+                return "_function";
+            }
+            return varname;
         }
 
         // フラグ。あちこちに書き散らさないようにするだけ

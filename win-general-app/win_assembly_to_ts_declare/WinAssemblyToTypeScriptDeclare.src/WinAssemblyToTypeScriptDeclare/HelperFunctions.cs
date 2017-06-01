@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Reflection;
 using System.Text.RegularExpressions;
-using System.IO;
 
 namespace WinAssemblyToTypeScriptDeclare
 {
@@ -45,6 +42,7 @@ namespace WinAssemblyToTypeScriptDeclare
         }
 
         // ILのGenericの表記を、TypeScriptのGenericの表記に
+        // (実情としてはこの正規表現で分解しているわけではない)
         static string ILAssemblyGenericToTypeScriptGeneric(string ts)
         {
             ts = Regex.Replace(ts, @"`1\[\[(.+?),.+?\]\]", "`1[$1]");
@@ -98,8 +96,6 @@ namespace WinAssemblyToTypeScriptDeclare
             }
             ts = Regex.Replace(ts, @"`6", "");
 
-            // どうもうまく変換できないことがあるのでパッチ
-
             return ts;
 
         }
@@ -118,7 +114,7 @@ namespace WinAssemblyToTypeScriptDeclare
         // TypeScriptの値型
         static bool IsTypeScriptPrimitiveType(string ts)
         {
-            if (ts == "string" || ts == "number" || ts == "boolean" || ts == "any" || ts == "void" ) {
+            if (ts == "string" || ts == "number" || ts == "boolean" || ts == "void" || ts == "any" ) {
                 return true;
             }
 
@@ -168,6 +164,7 @@ namespace WinAssemblyToTypeScriptDeclare
             return (strNameSpace, strClassName);
         }
 
+        // 整形用
         static void SWTabSpace(int cnt)
         {
             SW.Write(new string(' ', cnt * 4));
