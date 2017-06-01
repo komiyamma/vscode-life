@@ -28,7 +28,7 @@ namespace WinAssemblyToTypeScriptDeclare
             }
 
             // EventHandlerかEventHandlerのサブクラス
-            if (t == typeof(System.EventHandler) || t.IsSubclassOf(typeof(System.EventHandler))) { 
+            if (t == typeof(System.EventHandler) || t.IsSubclassOf(typeof(System.Delegate))) { 
 
                 // ClearScriptでは、イベント系に、connectとdisconnectが特別に付け加えられる。
                 SWTabSpace(nestLevel + 1);
