@@ -22,6 +22,16 @@ namespace WinAssemblyToTypeScriptDeclare
         static void Main(string[] args)
         {
             AnalyzeAll(args);
+
+            while (true)
+            {
+                var nextTask = GetNextTask();
+                if (nextTask == null)
+                {
+                    break;
+                }
+                DoNextTask(nextTask);
+            }
         }
 
         static void AnalyzeAll(string[] args)
@@ -41,8 +51,6 @@ namespace WinAssemblyToTypeScriptDeclare
             //"C:\test"以下のファイルをすべて取得する
             IEnumerable<string> files2 = System.IO.Directory.EnumerateFiles(@"C:\Windows\Microsoft.NET\Framework\v4.0.30319", "*.dll");
             ForEachAnalyzeAssembly(files2);
-
-            DoNextTask();
         }
 
         // 重複行を削除して出力

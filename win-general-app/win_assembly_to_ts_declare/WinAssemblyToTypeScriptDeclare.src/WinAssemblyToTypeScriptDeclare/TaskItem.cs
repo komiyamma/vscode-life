@@ -20,11 +20,16 @@ namespace WinAssemblyToTypeScriptDeclare
         }
         static List<TaskItem> TaskItems = new List<TaskItem>();
 
-        static void DoNextTask()
+        static TaskItem GetNextTask()
         {
             var nextTask = TaskItems.Find((tsk) => { return tsk.Status == TaskItem.DoStatus.Unregist; });
 
-            // まだ未処理のものがある。
+            return nextTask;
+        }
+
+
+        static void DoNextTask(TaskItem nextTask)
+        {
             if (nextTask != null)
             {
                 string[] next_analyze_args = { nextTask.strNameSpace, nextTask.strClassName, nextTask.Nest >= m_AnalyzeDeepLevel - 1 ? "-deep:0" : "", "-deep:" + m_AnalyzeDeepLevel }; // ずっとやり続けると終わりがなくなるので、anyで
