@@ -26,17 +26,6 @@ namespace WinAssemblyToTypeScriptDeclare
                     // SW.WriteLine(e.Message);
                 }
             }
-
-            // EventHandlerかEventHandlerのサブクラス
-            if (t == typeof(System.EventHandler) || t.IsSubclassOf(typeof(System.Delegate))) { 
-
-                // ClearScriptでは、イベント系に、connectとdisconnectが特別に付け加えられる。
-                SWTabSpace(nestLevel + 1);
-                SW.WriteLine("connect(func: any) :void");
-
-                SWTabSpace(nestLevel + 1);
-                SW.WriteLine("disconnect(func: any) :void");
-            }
         }
         /// <summary>
         /// １つのイベントの分析

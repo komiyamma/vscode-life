@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using System.Text.RegularExpressions;
+using System.Linq;
 
 namespace WinAssemblyToTypeScriptDeclare
 {
@@ -33,18 +34,13 @@ namespace WinAssemblyToTypeScriptDeclare
             // 引数のうち、オプション系
             AnalizeArgsOption(args);
 
-            var (strNameSpace, strClassName) = (args[0], args[1]);
-
             //"C:\test"以下のファイルをすべて取得する
             IEnumerable<string> files1 = System.IO.Directory.EnumerateFiles(@".", "*.dll");
-            ForEachAnalyzeAssembly(files1, strNameSpace, strClassName);
+            ForEachAnalyzeAssembly(files1);
 
             //"C:\test"以下のファイルをすべて取得する
             IEnumerable<string> files2 = System.IO.Directory.EnumerateFiles(@"C:\Windows\Microsoft.NET\Framework\v4.0.30319", "*.dll");
-            ForEachAnalyzeAssembly(files2, strNameSpace, strClassName);
-
-            WriteConsoleUniqueLine();
-            SetNextStringWriter();
+            ForEachAnalyzeAssembly(files2);
 
             DoNextTask();
         }
@@ -58,7 +54,7 @@ namespace WinAssemblyToTypeScriptDeclare
                 while (sr.Peek() >= 0)
                 {
                     string line = sr.ReadLine();
-                    if (!preline.Contains(line) )
+                    if (!preline.Contains(line))
                     {
                         preline.Add(line);
                         Console.WriteLine(line);
@@ -74,16 +70,17 @@ namespace WinAssemblyToTypeScriptDeclare
             SW = new StringWriter();
         }
 
-
+        static List<KeyValuePair<string, string>> NsAndCnList = new List<KeyValuePair<string, string>>();
+        enum NameSpaceAndClassName { None, NameSpace, ClassName };
         // 引数分析。オプション系
         static void AnalizeArgsOption(string[] args)
         {
             foreach (var v in args)
             {
-                Match m = Regex.Match(v, @"\-\-?deep:(\d+)");
-                if (m.Success)
+                Match mDeep = Regex.Match(v, @"\-\-?deep:(\d+)");
+                if (mDeep.Success)
                 {
-                    var deep = m.Groups[1].Value;
+                    var deep = mDeep.Groups[1].Value;
                     m_AnalyzeDeepLevel = Int32.Parse(deep);
                     if (m_AnalyzeDeepLevel >= 2)
                     {
@@ -95,17 +92,38 @@ namespace WinAssemblyToTypeScriptDeclare
                     }
 
                 }
-                Match m2 = Regex.Match(v, @"\-\-?complex");
-                if (m2.Success)
+                Match mComplex = Regex.Match(v, @"\-\-?complex");
+                if (mComplex.Success)
                 {
                     m_isAcceptComplexType = true;
 
                 }
             }
+
+            List<string> ns_and_cn = new List<string>();
+            ns_and_cn.AddRange(args);
+            // オプション系は全部削除
+            ns_and_cn.RemoveAll((arg) => { return arg.StartsWith("-"); });
+
+            for (int ix = 0; ix < ns_and_cn.Count - 1; ix += 2)
+            {
+                try
+                {
+                    var (strNameSpace, strClassName) = (ns_and_cn[ix], ns_and_cn[ix + 1]);
+                    var pair = new KeyValuePair<string, string>(strNameSpace, strClassName);
+                    NsAndCnList.Add(pair);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+            }
         }
 
+        static List<KeyValuePair<string, Assembly>> asmMap = new List<KeyValuePair<string, Assembly>>();
+
         // ファイルリストを対象の名前空間とクラスの定義があるかどうか探して分析する。
-        static void ForEachAnalyzeAssembly(IEnumerable<string> files, string strNameSpace, string strClassName)
+        static void ForEachAnalyzeAssembly(IEnumerable<string> files)
         {
             //ファイルを列挙する
             foreach (string f in files)
@@ -113,11 +131,26 @@ namespace WinAssemblyToTypeScriptDeclare
                 try
                 {
                     string full = System.IO.Path.GetFullPath(f);
-                    Assembly asm = Assembly.LoadFile(full);
+                    var find = asmMap.Find((pair) => { return pair.Key == full; });
+                    Assembly asm;
+                    if (find.Key!=null)
+                    {
+                        asm = find.Value;
+                    } else
+                    {
+                        asm = Assembly.LoadFile(full);
+                        var pair = new KeyValuePair<string, Assembly>(full, asm);
+                        asmMap.Add(pair);
+                    }
                     Type[] types = asm.GetTypes();
                     foreach (Type t in types)
                     {
-                        AnalyzeAssembly(t, strNameSpace, strClassName);
+                        foreach (var pair in NsAndCnList)
+                        {
+                            AnalyzeAssembly(t, pair.Key, pair.Value);
+                            WriteConsoleUniqueLine();
+                            SetNextStringWriter();
+                        }
                     }
                 }
                 catch (Exception)

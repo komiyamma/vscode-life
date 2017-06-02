@@ -13,3 +13,10 @@ C:\Users\0300002167\Downloads\vscode-life-master (1)\vscode-life-master\win-gene
 C:\Users\0300002167\Downloads\vscode-life-master (1)\vscode-life-master\win-general-app\win_assembly_to_ts_declare\WinAssemblyToTypeScriptDeclare.src\WinAssemblyToTypeScriptDeclare\bin\Debug\WinAssemblyToTypeScriptDeclare.pdb
 C:\Users\0300002167\Downloads\vscode-life-master (1)\vscode-life-master\win-general-app\win_assembly_to_ts_declare\WinAssemblyToTypeScriptDeclare.src\WinAssemblyToTypeScriptDeclare\obj\Debug\WinAssemblyToTypeScriptDeclare.exe
 C:\Users\0300002167\Downloads\vscode-life-master (1)\vscode-life-master\win-general-app\win_assembly_to_ts_declare\WinAssemblyToTypeScriptDeclare.src\WinAssemblyToTypeScriptDeclare\obj\Debug\WinAssemblyToTypeScriptDeclare.pdb
+C:\Users\0300002167\Downloads\vscode-life-master (2)\vscode-life-master\win-general-app\win_assembly_to_ts_declare\WinAssemblyToTypeScriptDeclare.src\WinAssemblyToTypeScriptDeclare\obj\Debug\WinAssemblyToTypeScriptDeclare.csprojResolveAssemblyReference.cache
+C:\Users\0300002167\Downloads\vscode-life-master (2)\vscode-life-master\win-general-app\win_assembly_to_ts_declare\WinAssemblyToTypeScriptDeclare.src\WinAssemblyToTypeScriptDeclare\obj\Debug\WinAssemblyToTypeScriptDeclare.exe
+C:\win_assembly_to_ts_declare\WinAssemblyToTypeScriptDeclare.src\WinAssemblyToTypeScriptDeclare\bin\Debug\WinAssemblyToTypeScriptDeclare.exe.config
+C:\win_assembly_to_ts_declare\WinAssemblyToTypeScriptDeclare.src\WinAssemblyToTypeScriptDeclare\bin\Debug\WinAssemblyToTypeScriptDeclare.exe
+C:\win_assembly_to_ts_declare\WinAssemblyToTypeScriptDeclare.src\WinAssemblyToTypeScriptDeclare\bin\Debug\WinAssemblyToTypeScriptDeclare.pdb
+C:\win_assembly_to_ts_declare\WinAssemblyToTypeScriptDeclare.src\WinAssemblyToTypeScriptDeclare\obj\Debug\WinAssemblyToTypeScriptDeclare.exe
+C:\win_assembly_to_ts_declare\WinAssemblyToTypeScriptDeclare.src\WinAssemblyToTypeScriptDeclare\obj\Debug\WinAssemblyToTypeScriptDeclare.pdb

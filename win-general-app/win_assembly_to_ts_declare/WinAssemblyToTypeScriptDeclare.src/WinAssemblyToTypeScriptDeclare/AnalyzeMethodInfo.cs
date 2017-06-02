@@ -78,6 +78,7 @@ namespace WinAssemblyToTypeScriptDeclare
             if (m.ReturnType == typeof(void))
             {
                 SW.Write("void");
+                FI.Write("void");
             }
             else
             {
@@ -101,6 +102,7 @@ namespace WinAssemblyToTypeScriptDeclare
                 ts = ModifyType(ts, isComplex);
 
                 SW.Write(ts + "");
+                FI.Write(ts + "");
             }
         }
 
@@ -164,6 +166,11 @@ namespace WinAssemblyToTypeScriptDeclare
         }
 
         /// <summary>
+        ///  For Invokeメソッドのため。特別に複製を持つ
+        /// </summary>
+        static StringWriter FI;
+
+        /// <summary>
         /// メソッド群の分析
         /// </summary>
         /// <param name="t">オブジェクト</param>
@@ -176,17 +183,38 @@ namespace WinAssemblyToTypeScriptDeclare
 
             var genericParameterTypeStringList = GetGenericParameterTypeStringList(t);
 
+            FI = new StringWriter();
+
             foreach (MethodInfo m in methods)
             {
                 try
                 {
-                    AnalyzeMethodInfo(m, nestLevel, genericParameterTypeStringList);                }
+                    AnalyzeMethodInfo(m, nestLevel, genericParameterTypeStringList);
+
+                    if (m.Name == "Invoke")
+                    {
+                        // EventHandlerかEventHandlerのサブクラス
+                        if (t == typeof(System.EventHandler) || t.IsSubclassOf(typeof(System.Delegate)))
+                        {
+
+                            // ClearScriptでは、イベント系に、connectとdisconnectが特別に付け加えられる。
+                            SWTabSpace(nestLevel + 1);
+                            SW.WriteLine("connect(func: " + FI + ") :void");
+
+                            SWTabSpace(nestLevel + 1);
+                            SW.WriteLine("disconnect(func: " + FI + ") :void");
+                        }
+                    }
+                }
                 catch (Exception e)
                 {
                     SW.WriteLine(e.Message);
                 }
             }
+
+
         }
+
 
         /// <summary>
         /// １つのメソッドタイプの分析
@@ -210,15 +238,18 @@ namespace WinAssemblyToTypeScriptDeclare
 
             //メソッド名を表示
             SW.Write(m.Name);
+            // FI.Write(m.Name);
 
             var prmList = GetMethodGenericTypeList(m, genericParameterTypeStringList);
 
             if (prmList.Count > 0)
             {
                 SW.Write("<" + String.Join(", ", prmList) + ">");
+                // FI.Write("<" + String.Join(", ", prmList) + ">");
             }
 
             SW.Write("(");
+            FI.Write("(");
 
             //パラメータを表示
             ParameterInfo[] prms = m.GetParameters();
@@ -242,14 +273,17 @@ namespace WinAssemblyToTypeScriptDeclare
 
                 var varname = ModifyVarName(p.Name);
                 SW.Write(varname + ": " + ts);
-                
+                FI.Write(varname + ": " + ts);
+
                 // 引数がまだ残ってるなら、「,」で繋げて次へ
                 if (prms.Length - 1 > i)
                 {
                     SW.Write(", ");
+                    FI.Write(", ");
                 }
             }
             SW.Write("): ");
+            FI.Write(") => ");
 
             // 戻り値を分析
             AnalyzeResultInfo(m, nestLevel, genericParameterTypeStringList);
