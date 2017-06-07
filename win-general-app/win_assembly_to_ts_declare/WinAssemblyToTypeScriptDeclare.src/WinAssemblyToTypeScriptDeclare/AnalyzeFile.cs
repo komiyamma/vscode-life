@@ -150,7 +150,7 @@ namespace WinAssemblyToTypeScriptDeclare
                         var pair = new KeyValuePair<string, Assembly>(full, asm);
                         asmMap.Add(pair);
                     }
-                    Type[] types = asm.GetTypes();
+                    var types = asm.ExportedTypes;
                     foreach (Type t in types)
                     {
                         foreach (var pair in NsAndCnList)

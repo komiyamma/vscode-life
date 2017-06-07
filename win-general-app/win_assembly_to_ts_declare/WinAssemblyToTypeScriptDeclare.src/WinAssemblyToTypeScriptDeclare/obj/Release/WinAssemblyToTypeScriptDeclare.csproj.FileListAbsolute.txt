@@ -20,3 +20,4 @@ C:\win_assembly_to_ts_declare\WinAssemblyToTypeScriptDeclare.src\WinAssemblyToTy
 C:\usr\web\vscode-life\win-general-app\win_assembly_to_ts_declare\WinAssemblyToTypeScriptDeclare.src\WinAssemblyToTypeScriptDeclare\bin\Release\WinAssemblyToTypeScriptDeclare.exe.config
 C:\usr\web\vscode-life\win-general-app\win_assembly_to_ts_declare\WinAssemblyToTypeScriptDeclare.src\WinAssemblyToTypeScriptDeclare\bin\Release\WinAssemblyToTypeScriptDeclare.exe
 C:\usr\web\vscode-life\win-general-app\win_assembly_to_ts_declare\WinAssemblyToTypeScriptDeclare.src\WinAssemblyToTypeScriptDeclare\obj\Release\WinAssemblyToTypeScriptDeclare.exe
+C:\usr\web\vscode-life\win-general-app\win_assembly_to_ts_declare\WinAssemblyToTypeScriptDeclare.src\WinAssemblyToTypeScriptDeclare\obj\Release\WinAssemblyToTypeScriptDeclare.csprojResolveAssemblyReference.cache
