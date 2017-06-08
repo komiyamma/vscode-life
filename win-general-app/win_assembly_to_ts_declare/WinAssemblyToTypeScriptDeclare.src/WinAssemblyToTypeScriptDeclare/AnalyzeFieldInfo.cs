@@ -51,6 +51,12 @@ namespace WinAssemblyToTypeScriptDeclare
 
             SWTabSpace(nestLevel + 1);
 
+            // 読み取り専用
+            if (m.IsInitOnly || m.IsLiteral)
+            {
+                SW.Write("readonly ");
+            }
+
             SW.WriteLine(m.Name + " :" + ts + ";");
         }
     }

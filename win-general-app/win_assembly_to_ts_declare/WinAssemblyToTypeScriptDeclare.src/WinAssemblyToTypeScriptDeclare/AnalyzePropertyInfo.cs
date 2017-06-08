@@ -48,6 +48,12 @@ namespace WinAssemblyToTypeScriptDeclare
 
             SWTabSpace(nestLevel + 1);
 
+            // 読み取り専用
+            if (p.CanRead && !p.CanWrite)
+            {
+                SW.Write("readonly ");
+            }
+
             SW.WriteLine(p.Name + " :" + ts + ";");
         }
 
