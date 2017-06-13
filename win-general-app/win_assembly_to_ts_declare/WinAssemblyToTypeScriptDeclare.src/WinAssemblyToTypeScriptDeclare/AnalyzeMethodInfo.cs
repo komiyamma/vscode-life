@@ -271,7 +271,7 @@ namespace WinAssemblyToTypeScriptDeclare
 
                 ts = ModifyType(ts, isComplex);
 
-                var varname = ModifyVarName(p.Name);
+                var varname = ModifyVarName(p);
                 SW.Write(varname + ": " + ts);
                 FI.Write(varname + ": " + ts);
 

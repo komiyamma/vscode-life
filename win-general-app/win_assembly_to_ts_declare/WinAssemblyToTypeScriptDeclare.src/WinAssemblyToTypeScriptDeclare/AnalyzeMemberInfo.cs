@@ -6,6 +6,12 @@ namespace WinAssemblyToTypeScriptDeclare
 {
     partial class WinAssemblyToTypeScriptDeclare
     {
+        // 可変長引数である
+        static bool IsParams(ParameterInfo param)
+        {
+            return param.IsDefined(typeof(ParamArrayAttribute), false);
+        }
+
         // Type配列について、１つでもfuncを満たしているか
         static bool IsGenericAnyCondtion(Type[] GenericArguments, Predicate<Type> func)
         {
@@ -119,13 +125,18 @@ namespace WinAssemblyToTypeScriptDeclare
         }
 
         // 使っては駄目な変数名を修正する
-        static string ModifyVarName(string varname)
+        static string ModifyVarName(ParameterInfo pinfo)
         {
-            if (varname == "function")
+            if (pinfo.Name == "function")
             {
                 return "_function";
             }
-            return varname;
+            if (IsParams(pinfo))
+            {
+                return "..." + pinfo.Name;
+            }
+
+            return pinfo.Name;
         }
 
         // フラグ。あちこちに書き散らさないようにするだけ

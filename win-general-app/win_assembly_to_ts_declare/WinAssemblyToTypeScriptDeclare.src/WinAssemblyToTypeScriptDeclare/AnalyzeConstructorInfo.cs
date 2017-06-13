@@ -72,7 +72,7 @@ namespace WinAssemblyToTypeScriptDeclare
 
                 ts = ModifyType(ts, isComplex);
 
-                var varname = ModifyVarName(p.Name);
+                var varname = ModifyVarName(p);
                 SW.Write(varname + ": " + ts);
 
                 // 引数がまだ残ってるなら、「,」で繋げて次へ
