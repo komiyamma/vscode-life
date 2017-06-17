@@ -112,7 +112,7 @@ namespace WinAssemblyToTypeScriptDeclare
         /// <param name="t">比較対象のオブジェクト</param>
         /// <param name="strNameSpace">指定の名前空間</param>
         /// <param name="strClassName">指定のクラス名</param>
-        static void AnalyzeAssembly(Type t, string strNameSpace, string strClassName)
+        static bool AnalyzeAssembly(Type t, string strNameSpace, string strClassName)
         {
 
             // 通常のネームスペース系
@@ -141,7 +141,7 @@ namespace WinAssemblyToTypeScriptDeclare
 
                     // NameSpaceはちゃんと存在するのに、NONE指定ならやらない
                 } else if (strNameSpace == "NONE") {
-                    return;
+                    return false;
                 }
 
                 // 対象の「名前空間、クラス名」の組み合わせはすでに、出力済み？
@@ -149,7 +149,7 @@ namespace WinAssemblyToTypeScriptDeclare
                 // すでに登録済みで、すでに処理済み
                 if (item != null && item.Status >= TaskItem.DoStatus.Done)
                 {
-                    return;
+                    return false;
                 }
 
                 // まだなので、新たなタスクを作る。今からこのまま実行するので「済状態」を同時に付ける
@@ -166,8 +166,10 @@ namespace WinAssemblyToTypeScriptDeclare
                 var nsList = GetNameSpaceNestedData(_ns);
 
                 PrintClassCommentLabel(t, _ns, nsList);
+                return true;
             }
 
+            return false;
         }
     }
 }

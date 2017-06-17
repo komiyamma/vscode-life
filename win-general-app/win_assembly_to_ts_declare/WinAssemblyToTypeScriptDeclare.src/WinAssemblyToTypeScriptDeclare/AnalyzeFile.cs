@@ -46,11 +46,13 @@ namespace WinAssemblyToTypeScriptDeclare
 
             //"C:\test"以下のファイルをすべて取得する
             IEnumerable<string> files1 = System.IO.Directory.EnumerateFiles(@".", "*.dll");
-            ForEachAnalyzeAssembly(files1);
-
+            ForEachLoadAssembly(files1);
             //"C:\test"以下のファイルをすべて取得する
             IEnumerable<string> files2 = System.IO.Directory.EnumerateFiles(@"C:\Windows\Microsoft.NET\Framework\v4.0.30319", "*.dll");
-            ForEachAnalyzeAssembly(files2);
+            ForEachLoadAssembly(files2);
+
+            ForEachAnalyzeAssembly();
+
         }
 
         // 重複行を削除して出力
@@ -131,26 +133,39 @@ namespace WinAssemblyToTypeScriptDeclare
         static List<KeyValuePair<string, Assembly>> asmMap = new List<KeyValuePair<string, Assembly>>();
 
         // ファイルリストを対象の名前空間とクラスの定義があるかどうか探して分析する。
-        static void ForEachAnalyzeAssembly(IEnumerable<string> files)
+        static void ForEachLoadAssembly(IEnumerable<string> files)
         {
+            // すでにロード済みならなにもしない
+            if (asmMap.Count > 0 )
+            {
+                return;
+            }
             //ファイルを列挙する
             foreach (string f in files)
             {
                 try
                 {
                     string full = System.IO.Path.GetFullPath(f);
-                    var find = asmMap.Find((pair) => { return pair.Key == full; });
-                    Assembly asm;
-                    if (find.Key!=null)
-                    {
-                        asm = find.Value;
-                    } else
-                    {
-                        asm = Assembly.LoadFile(full);
-                        var pair = new KeyValuePair<string, Assembly>(full, asm);
-                        asmMap.Add(pair);
-                    }
-                    var types = asm.ExportedTypes;
+                    Assembly asm = Assembly.LoadFile(full);
+                    var pair = new KeyValuePair<string, Assembly>(full, asm);
+                    asmMap.Add(pair);
+                }
+                catch (Exception)
+                {
+
+                }
+            }
+        }
+
+        // ファイルリストを対象の名前空間とクラスの定義があるかどうか探して分析する。
+        static void ForEachAnalyzeAssembly()
+        {
+            //ファイルを列挙する
+            foreach (var asm in asmMap)
+            {
+                try
+                {
+                    var types = asm.Value.ExportedTypes;
                     foreach (Type t in types)
                     {
                         foreach (var pair in NsAndCnList)
