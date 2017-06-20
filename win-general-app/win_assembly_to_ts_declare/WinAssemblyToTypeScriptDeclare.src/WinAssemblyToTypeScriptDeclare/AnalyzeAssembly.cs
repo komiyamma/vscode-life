@@ -145,7 +145,7 @@ namespace WinAssemblyToTypeScriptDeclare
                 }
 
                 // 対象の「名前空間、クラス名」の組み合わせはすでに、出力済み？
-                var item = TaskItems.Find( (tsk) => { return tsk.strNameSpace == _ns && tsk.strClassName == t.Name; } );
+                var item = TaskItems.Find( (tsk) => { return tsk.strClassName == t.Name && tsk.strNameSpace == _ns; } );
                 // すでに登録済みで、すでに処理済み
                 if (item != null && item.Status >= TaskItem.DoStatus.Done)
                 {
