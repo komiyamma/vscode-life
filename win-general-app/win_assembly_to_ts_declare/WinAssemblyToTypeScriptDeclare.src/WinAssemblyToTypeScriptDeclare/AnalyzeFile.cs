@@ -51,6 +51,8 @@ namespace WinAssemblyToTypeScriptDeclare
             IEnumerable<string> files2 = System.IO.Directory.EnumerateFiles(@"C:\Windows\Microsoft.NET\Framework\v4.0.30319", "*.dll");
             ForEachLoadAssembly(files2);
 
+            isLoadAssemblyLoaded = true;
+
             ForEachAnalyzeAssembly();
 
         }
@@ -132,11 +134,11 @@ namespace WinAssemblyToTypeScriptDeclare
 
         static List<KeyValuePair<string, Assembly>> asmMap = new List<KeyValuePair<string, Assembly>>();
 
+        static bool isLoadAssemblyLoaded = false;
         // ファイルリストを対象の名前空間とクラスの定義があるかどうか探して分析する。
         static void ForEachLoadAssembly(IEnumerable<string> files)
         {
-            // すでにロード済みならなにもしない
-            if (asmMap.Count > 0 )
+            if (isLoadAssemblyLoaded)
             {
                 return;
             }

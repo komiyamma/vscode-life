@@ -72,13 +72,16 @@ namespace WinAssemblyToTypeScriptDeclare
         }
 
         // 返りの型の分析
-        static void AnalyzeResultInfo(MethodInfo m, int nestLevel, List<string> genericParameterTypeStringList)
+        static string AnalyzeResultInfo(MethodInfo m, int nestLevel, List<string> genericParameterTypeStringList)
         {
             //戻り値を表示
             if (m.ReturnType == typeof(void))
             {
-                SW.Write("void");
-                FI.Write("void");
+                var ts = "void";
+                SW.Write(ts);
+                FI.Write(ts);
+
+                return ts;
             }
             else
             {
@@ -103,6 +106,8 @@ namespace WinAssemblyToTypeScriptDeclare
 
                 SW.Write(ts + "");
                 FI.Write(ts + "");
+
+                return ts;
             }
         }
 
@@ -272,8 +277,18 @@ namespace WinAssemblyToTypeScriptDeclare
                 ts = ModifyType(ts, isComplex);
 
                 var varname = ModifyVarName(p);
-                SW.Write(varname + ": " + ts);
-                FI.Write(varname + ": " + ts);
+
+                if (ts == "any" && IsParams(p))
+                {
+                    SW.Write(varname + ": " + ts + "[]");
+                    FI.Write(varname + ": " + ts + "[]");
+                }
+                else
+                {
+                    SW.Write(varname + ": " + ts);
+                    FI.Write(varname + ": " + ts);
+                }
+
 
                 // 引数がまだ残ってるなら、「,」で繋げて次へ
                 if (prms.Length - 1 > i)
@@ -286,9 +301,17 @@ namespace WinAssemblyToTypeScriptDeclare
             FI.Write(") => ");
 
             // 戻り値を分析
-            AnalyzeResultInfo(m, nestLevel, genericParameterTypeStringList);
+            string resultType = AnalyzeResultInfo(m, nestLevel, genericParameterTypeStringList);
 
             SW.WriteLine(";");
+
+            // イテレータ可能
+            if (m.Name == "GetEnumerator" && prms.Length == 0)
+            {
+                SWTabSpace(nestLevel + 1);
+                SW.Write("[Symbol.iterator](): IterableIterator<any>");
+                SW.WriteLine(";");
+            }
         }
 
     }
