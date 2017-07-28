@@ -1,0 +1,22 @@
+c:\users\0300002167\documents\visual studio 2017\Projects\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+c:\users\0300002167\documents\visual studio 2017\Projects\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.Cache
+c:\users\0300002167\documents\visual studio 2017\Projects\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+c:\users\0300002167\documents\visual studio 2017\Projects\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+c:\users\0300002167\documents\visual studio 2017\Projects\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+c:\users\0300002167\documents\visual studio 2017\Projects\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+c:\users\0300002167\documents\visual studio 2017\Projects\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\admin\OneDrive\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\admin\OneDrive\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\Users\admin\OneDrive\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\admin\OneDrive\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\admin\OneDrive\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.Cache
+C:\Users\admin\OneDrive\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\Users\admin\OneDrive\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+C:\usr\web\vscode-life\win-general-app\win_console_switcher\bin\Debug\WindowsFormsApp1.exe.config
+C:\usr\web\vscode-life\win-general-app\win_console_switcher\obj\Debug\WindowsFormsApp1.exe
+C:\usr\web\vscode-life\win-general-app\win_console_switcher\obj\Debug\WindowsFormsApp1.pdb
+C:\usr\web\vscode-life\win-general-app\win_console_switcher\bin\Debug\WindowsFormsApp1.exe
+C:\usr\web\vscode-life\win-general-app\win_console_switcher\bin\Debug\WindowsFormsApp1.pdb
+C:\usr\web\vscode-life\win-general-app\win_console_switcher\obj\Debug\WindowsFormsApp1.csprojResolveAssemblyReference.cache
+C:\usr\web\vscode-life\win-general-app\win_console_switcher\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\usr\web\vscode-life\win-general-app\win_console_switcher\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.Cache
