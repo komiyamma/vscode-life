@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ * Copyright (c) 2016-2017 Akitsugu Komiyama
+ * under the MITLicense
+ */
+ 
+using System;
 using System.Windows.Forms;
 
 namespace WinGacInstaller
