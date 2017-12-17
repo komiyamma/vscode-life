@@ -1,0 +1,6 @@
+C:\usr\web\vscode-life\win-general-app\win_completion_typescript\test\ConsoleApp10\bin\Debug\WinCompletionTypeScript.exe.config
+C:\usr\web\vscode-life\win-general-app\win_completion_typescript\test\ConsoleApp10\bin\Debug\WinCompletionTypeScript.exe
+C:\usr\web\vscode-life\win-general-app\win_completion_typescript\test\ConsoleApp10\bin\Debug\WinCompletionTypeScript.pdb
+C:\usr\web\vscode-life\win-general-app\win_completion_typescript\test\ConsoleApp10\obj\Debug\WinCompletionTypeScript.csproj.CoreCompileInputs.cache
+C:\usr\web\vscode-life\win-general-app\win_completion_typescript\test\ConsoleApp10\obj\Debug\WinCompletionTypeScript.exe
+C:\usr\web\vscode-life\win-general-app\win_completion_typescript\test\ConsoleApp10\obj\Debug\WinCompletionTypeScript.pdb

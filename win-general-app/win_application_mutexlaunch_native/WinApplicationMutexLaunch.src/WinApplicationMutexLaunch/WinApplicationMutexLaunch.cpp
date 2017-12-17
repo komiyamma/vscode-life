@@ -1,3 +1,8 @@
+/*
+* Copyright (c) 2017 Akitsugu Komiyama
+* under the MITLicense
+*/
+
 #include <windows.h>
 #include <shlwapi.h>
 #include <tchar.h>

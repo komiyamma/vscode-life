@@ -1,0 +1,10 @@
+C:\usr\web\vscode-life\win-general-app\win_console_switcher\bin\Debug\WindowsFormsApp1.exe.config
+C:\usr\web\vscode-life\win-general-app\win_console_switcher\obj\Debug\WindowsFormsApp1.exe
+C:\usr\web\vscode-life\win-general-app\win_console_switcher\obj\Debug\WindowsFormsApp1.pdb
+C:\usr\web\vscode-life\win-general-app\win_console_switcher\WinConsoleSwitcher.src\bin\Debug\WindowsFormsApp1.exe.config
+C:\usr\web\vscode-life\win-general-app\win_console_switcher\WinConsoleSwitcher.src\obj\Debug\WindowsFormsApp1.exe
+C:\usr\web\vscode-life\win-general-app\win_console_switcher\WinConsoleSwitcher.src\obj\Debug\WindowsFormsApp1.pdb
+C:\usr\web\vscode-life\win-general-app\win_console_switcher\WinConsoleSwitcher.src\obj\Debug\WinConsoleSwitcher.csprojResolveAssemblyReference.cache
+C:\usr\web\vscode-life\win-general-app\win_console_switcher\WinConsoleSwitcher.src\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\usr\web\vscode-life\win-general-app\win_console_switcher\WinConsoleSwitcher.src\obj\Debug\WinConsoleSwitcher.csproj.GenerateResource.Cache
+C:\usr\web\vscode-life\win-general-app\win_console_switcher\WinConsoleSwitcher.src\bin\Debug\WinConsoleSwitcher.exe.config

@@ -1,0 +1,1 @@
+C:\usr\web\vscode-life\win-general-app\win_check_symboliclink\WinCheckSymbolicLink.src\WinCheckSymbolicLink\bin\Debug\WinCheckSymbolicLink.exe.config

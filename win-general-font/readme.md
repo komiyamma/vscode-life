@@ -6,9 +6,7 @@ Ricty Diminished Font の著作やランセンスについては、
 [https://github.com/mzyy94/RictyDiminished-for-Powerline](https://github.com/mzyy94/RictyDiminished-for-Powerline) を参照してください。
 
 # ライセンス
-
 * Ricty Diminished JPYen は [SIL Open Font License (OFL) Version 1.1](http://scripts.sil.org/ofl) に従うものとします。
 
 # バージョン
-
 - 3.2.4

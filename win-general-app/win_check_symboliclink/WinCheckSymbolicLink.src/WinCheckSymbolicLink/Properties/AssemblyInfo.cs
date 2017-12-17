@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("WinCheckSymbolicLink")]
-[assembly: AssemblyCopyright("Copyright © 2015-2017 VSCode.life")]
+[assembly: AssemblyCopyright("Copyright © 2015-2017 Akitsugu Komiyama")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
