@@ -1,6 +1,0 @@
-c:\users\admin\documents\visual studio 2015\Projects\WinAssemblyMethodInfo\WinAssemblyMethodInfo\bin\Release\WinAssemblyMethodInfo.exe.config
-c:\users\admin\documents\visual studio 2015\Projects\WinAssemblyMethodInfo\WinAssemblyMethodInfo\bin\Release\WinAssemblyMethodInfo.exe
-c:\users\admin\documents\visual studio 2015\Projects\WinAssemblyMethodInfo\WinAssemblyMethodInfo\bin\Release\WinAssemblyMethodInfo.pdb
-c:\users\admin\documents\visual studio 2015\Projects\WinAssemblyMethodInfo\WinAssemblyMethodInfo\obj\Release\WinAssemblyMethodInfo.exe
-c:\users\admin\documents\visual studio 2015\Projects\WinAssemblyMethodInfo\WinAssemblyMethodInfo\obj\Release\WinAssemblyMethodInfo.pdb
-C:\Users\admin\Documents\Visual Studio 2015\Projects\WinAssemblyMethodInfo\WinAssemblyMethodInfo\obj\Release\WinAssemblyMethodInfo.csprojResolveAssemblyReference.cache
