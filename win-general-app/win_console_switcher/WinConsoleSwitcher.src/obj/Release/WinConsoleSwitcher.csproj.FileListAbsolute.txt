@@ -1,8 +1,0 @@
-C:\usr\web\vscode-life\win-general-app\win_console_switcher\obj\Release\WindowsFormsApp1.Properties.Resources.resources
-C:\usr\web\vscode-life\win-general-app\win_console_switcher\obj\Release\WinConsoleSwitcher.csproj.GenerateResource.Cache
-C:\usr\web\vscode-life\win-general-app\win_console_switcher\bin\Release\WindowsFormsApp1.exe.config
-C:\usr\web\vscode-life\win-general-app\win_console_switcher\bin\Release\WindowsFormsApp1.exe
-C:\usr\web\vscode-life\win-general-app\win_console_switcher\bin\Release\WindowsFormsApp1.pdb
-C:\usr\web\vscode-life\win-general-app\win_console_switcher\obj\Release\WindowsFormsApp1.exe
-C:\usr\web\vscode-life\win-general-app\win_console_switcher\obj\Release\WindowsFormsApp1.pdb
-C:\usr\web\vscode-life\win-general-app\win_console_switcher\obj\Release\WinConsoleSwitcher.csprojResolveAssemblyReference.cache
