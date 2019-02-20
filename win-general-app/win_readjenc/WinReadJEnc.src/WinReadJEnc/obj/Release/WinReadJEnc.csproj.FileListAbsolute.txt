@@ -1,4 +1,0 @@
-C:\usr\web\vscode-life\win-general-app\win_readjenc\WinReadJEnc.src\WinReadJEnc\bin\Release\WinReadJEnc.dll
-C:\usr\web\vscode-life\win-general-app\win_readjenc\WinReadJEnc.src\WinReadJEnc\obj\Release\WinReadJEnc.csprojAssemblyReference.cache
-C:\usr\web\vscode-life\win-general-app\win_readjenc\WinReadJEnc.src\WinReadJEnc\obj\Release\WinReadJEnc.csproj.CoreCompileInputs.cache
-C:\usr\web\vscode-life\win-general-app\win_readjenc\WinReadJEnc.src\WinReadJEnc\obj\Release\WinReadJEnc.dll
