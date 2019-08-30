@@ -14,10 +14,10 @@
     <link rel="stylesheet" type="text/css" href="./font-awesome/css/font-awesome-plugin.css?v=%(fontpluginupdate)s">
     <link rel="stylesheet" type="text/css" href="./jquery/VS_jquery.multilevelpushmenu.min.css?v=%(mlpmcssdate)s">
     %(style_dynamic)s
-	<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.4.min.js"></script>
-	<script type='text/javascript'>
-	window.jQuery || document.write('<script src="http://hd.xn--rssu31gj1g.jp/jquery/jquery-2.2.4.min.js"><\/script>')
-	</script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type='text/javascript'>
+        window.jQuery || document.write('<script src="./jquery/jquery-3.4.1.min.js"><\/script>')
+    </script>
     %(shcore_head)s
 </head>
 <body>

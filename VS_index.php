@@ -16,7 +16,7 @@ if ( $urlParamPage == "" ) {
 
 
 //-------------- クローラーの判定関数。LazyLoadをしない。 --------------
-require("VS_LIB_crawler.php");
+// require("VS_LIB_crawler.php");
 
 //-------------- シンタックスハイライター系の処理 --------------
 // ソースハイライト用。"%(heilight)s"がある時だけ埋め込まれる
@@ -206,7 +206,7 @@ $strMLPMCSSUpdate = date("YmdHis", $timeMLPMCSSUpdate);
 $timeMLPMCustomUpdate = filemtime("jquery/VS_jquery.multilevelpushmenu.custom.min.js");
 $strMLPMCustomUpdate = date("YmdHis", $timeMLPMCustomUpdate);
 
-// メニューのカスタムJS
+// LazyのカスタムJS
 $timeLazyCustomUpdate = filemtime("jquery/VS_jquery.lazyload-1.9.7.overlay.min.js");
 $strLazyCustomUpdate = date("YmdHis", $timeLazyCustomUpdate);
 
